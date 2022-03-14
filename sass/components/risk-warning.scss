@@ -1,0 +1,15 @@
+.risk-warning{
+    width: 100%;
+    border: 3px solid $tertiary-orange-logo;
+    margin-bottom: 2rem;
+
+    &-inner{
+        position: relative;
+        top: -50%;
+        transform: translateY(50%);
+        width: 100%;
+        text-align: center !important; 
+        font-weight: 700;
+    }
+
+}

@@ -1,0 +1,53 @@
+<% include ../partials/head-tags %>
+<% include ../partials/main-menu %>
+
+
+<h1>Mortgage Rates</h1>
+
+<div id="rates">
+
+</div>
+
+
+<button class="btn btn-success" id="sort">Sort</button>
+
+<script>
+document.getElementById("sort").addEventListener("click", loadUsers);
+
+function loadUsers(){
+    var xhr = new XMLHttpRequest();
+
+    xhr.open("GET", "/rates.json", true);
+
+    xhr.onload = function(){
+        if(this.status == 200){
+
+            var rates = JSON.parse(this.responseText);
+  
+          var output= "";
+
+            for(var i in rates)
+                output += 
+
+                '<div class="rates">'+
+                  '<ul>' +
+                  '<li>Lender: '+rates[i].lender+'</li>'+
+                  '<li>Initial Rate: '+rates[i].initialRate+'</li>'+
+                  '</ul>'+
+                  '</div>';
+            }
+
+            document.getElementById("rates").innerHTML = output;
+        
+        }
+        xhr.send();
+    }
+    
+</script>
+
+
+
+
+
+
+<% include ../partials/footer %>

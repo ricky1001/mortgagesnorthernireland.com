@@ -1,0 +1,9 @@
+The planning process 
+
+
+The Conversion process 
+1.Source the product range on trigold and print to a pdf
+2. Use Tabular to convert the pdf to csv format 
+3. Use https://www.csvjson.com/csv2json to convert the csv to json
+4. loop through each ltv range and remove products that have double entered
+5. grab all of the json file data and add to a single json file 

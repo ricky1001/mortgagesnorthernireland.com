@@ -1,0 +1,239 @@
+.aip-menu{
+    background-color: $primary-purple-light-test;
+
+    .logo-box{
+        position: relative;
+        display: inline-block;
+        width: 30%;
+
+
+
+        @media (max-width: 1110px) {
+        width: 35%;
+        }
+
+        @media (max-width: 870px) {
+            width: 55%;
+            }
+
+        @media (max-width: 660px) {
+            width: 65%;
+            }
+
+        @media (max-width: 570px) {
+            width: 75%;
+            }  
+            
+        @media (max-width: 460px) {
+            width: 80%;
+            }  
+            
+        @media (max-width: 395px) {
+            width: 90%;
+            }  
+
+        & img{
+            position: relative;
+            width: 100%;
+            padding-top: 1rem;
+            padding-left: 2rem;
+
+        @media (max-width: 460px) {
+            padding-left: .2rem;
+            }   
+        }
+        
+    }
+  //Menu on Large Screens
+    & ul{
+        position: absolute;
+        right: 5vw;
+        top: 50%;
+        transform: translate(0, -50%);
+        display: inline-block;
+        color: white;
+        margin-bottom: 0px;
+
+        @media (max-width: 1005px) {
+            display: none;
+          }
+
+        & li{
+            position: relative;
+            height: 2rem;
+            list-style: none;
+            display: inline-block;
+            margin-right: 1.5rem;
+
+            @include media-breakpoint-down(xl){
+                margin-right: 1rem;
+            }
+
+            & a{
+                color: white;
+                text-decoration: none;
+                font-size: 1.2rem;
+
+                @media (max-width: 1110px) {
+                    font-size: 1rem;
+                  }
+
+
+
+                &:hover{
+                    color: orange;
+                }
+            }
+        }
+
+    }
+
+}
+
+.aip-header{
+    background-color: $primary-purple-light-test;
+    position: relative;
+    padding-bottom: 5vh;
+
+    & h1{
+        font-size: 3rem;
+        color: white;
+    }
+    
+
+    & .pos{
+        position: relative;
+        padding-top: 5vh;
+        background-color: $primary-purple-light-test;
+        color: white;
+
+        & h4{
+            font-size: 1.8rem;
+        }
+
+        & i{
+            color: orange;
+            font-size: 1.4rem;
+
+            @media (max-width: 991px) {
+                margin-bottom: .5rem;
+              }
+        }
+
+        & span{
+            padding-left: .5rem;
+            font-size: 1.4rem;
+
+            @media (max-width: 991px) {
+                font-size: 1.2rem;
+              }
+        }
+
+        &-key-points{
+            margin-top: 1.5rem;
+            font-size: 1.2rem;
+        }
+
+
+        
+    }
+
+    .process{
+        position: relative;
+        top: 5vh;
+        background-color: $primary-purple-light-test;
+        color: white;
+
+        & .arrow-box{
+
+            & i{
+                color: green;
+                margin-bottom: 1rem;
+            }
+        }
+
+        & h4{
+            font-size: 1.8rem;
+        }
+
+        & i{
+            font-size: 1.4rem;
+            position: relative;
+            left: 50%;
+            transform:translate(-50%);
+            color: orange;
+            font-size: 1.8rem;
+
+        }
+
+        &-item{
+
+            margin-bottom: .4rem;
+
+            &-text{
+                font-size:1.4rem;
+            }
+        }
+    }
+
+
+}
+
+
+
+    //Menu on small screens 
+    .menu-small{
+        position: absolute;
+        top: 1.5rem;
+        right: 3.5rem;
+        font-size: 2.5rem;
+        color: white;
+
+        @media (max-width: 460px) {
+            right: 2rem
+            } 
+            
+        @media (max-width: 395px) {
+            right: 1rem;
+            }  
+
+        
+
+        @media (min-width: 1005px) {
+            display: none;
+          }
+    }
+
+    .close-side-bar{
+        position: fixed;
+        font-size: 2rem;
+        color: orange; 
+        top: 1rem;
+        right: 1rem;
+    }
+
+    .sliding-side-bar-close{
+        display: none;
+
+        & i{
+            display: none;
+        }
+    }
+
+    .sliding-side-bar-open{
+        display: block;
+
+        & ul{
+            margin-top: 3rem;
+
+            & li{
+                font-weight: 400;
+                font-size: 1.4rem;
+
+                & a{
+                    text-decoration: none;
+                    color: white;
+                }
+            }
+        }
+    }

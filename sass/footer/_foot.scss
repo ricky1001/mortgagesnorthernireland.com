@@ -1,0 +1,252 @@
+//Contact us bar appears on scroll
+.scrolling-footer{
+    display: none;
+}
+
+.scrolling-footer-scrolled{
+    display: block;
+    position: sticky;
+    position: -webkit-sticky;
+    bottom:0;
+    z-index: 10000000;
+
+    @include media-breakpoint-up(sm){
+        display: none;
+    }
+}
+
+.scroll-contact{
+
+    &-outter{
+        position: relative;
+        height: 5rem;
+        background-color: $primary-purple-dark;
+
+    }
+
+    &-inner{
+        position: relative;
+        height: 3rem;
+        top: 50%;
+        transform: translateY(-50%);
+        text-align: center;
+        width: 100%;
+
+        &-buttons{
+            position: relative;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        }
+}
+
+.footer{
+
+    &-upper{
+        background-color: $footer-dark;
+        position: relative;
+        
+    }
+
+    &-upper-row{
+        width: 100%;
+        text-align: center;
+        color: $color-white;
+        font-size: 1.2rem;
+
+        @include media-breakpoint-down(xs){
+            font-size: 1rem;
+        }
+
+        & a{
+            color: $color-white;
+    
+            &:hover{
+                color: $tertiary-orange-dark;
+                text-decoration: none;
+            }
+        }
+
+
+    }
+
+    &-main{
+        background-color: $footer-light;
+        padding-top: 2rem;
+
+        &-warning{
+            background-color: $footer-dark;
+            color: $color-white;
+            padding: 1rem;
+        }
+
+        &-advice{
+            color: $color-white;
+        }
+
+        &-icons{
+            position: relative;
+            width: 5rem;
+            height: 5rem;
+            background-color: $footer-dark;
+            display: inline-block;
+            color: $color-white;
+
+            @include media-breakpoint-down(xs){
+                width: 3rem;
+                height: 3rem;
+
+            }
+
+            & a{
+                color: $color-white;
+            }
+           
+
+            & i{
+                position: relative;
+                top: 50%;
+                transform: translateY(-50%);
+                font-size: 2.5rem;
+
+                @include media-breakpoint-down(xs){
+                    font-size: 1.5rem;
+                }
+            }
+
+            &-col{
+                text-align: center;
+                padding-top: 2rem;
+            }
+        }
+
+        &-bottom{
+            padding-top: 2rem;
+            text-align:center;
+            color: $color-white;
+        }
+    }
+
+}
+
+
+/*
+.footer{
+    position: relative;
+    width: 100%;
+
+    & .container-fluid{
+        padding-right: 0px;
+        padding-left: 0px;
+    }
+
+
+
+    &-top-row{
+        position: relative;
+        background-color: $footer-dark;
+
+        &-item{
+         position: relative;
+         text-align: center;
+         top: 50%;
+         transform: translateY(-50%);
+         font-size: 1.2rem;
+         font-weight: 500;
+         color: $color-white;
+
+         & a{
+            color: $color-white;
+    
+            &:hover{
+                color: $tertiary-orange-dark;
+                text-decoration: none;
+            }
+        }
+
+         @include media-breakpoint-down(sm){
+             font-size: 1rem;
+         }
+
+        }
+    }
+
+    &-main{
+        background-color: $footer-light;
+        padding-bottom: 2rem;
+    }
+
+    & .middle-top{
+     padding-left: 5rem;
+     padding-right: 5rem;
+     padding-top: 2rem;
+
+     @include media-breakpoint-down(sm){
+      padding-top: .5rem;
+      width: 100%;
+      padding-left:1rem;
+      padding-right:1rem;
+      text-align: center;
+     }
+
+    }
+
+    & .warning{
+        position: relative;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        background-color: $footer-dark;
+        color: $color-white;
+        padding: 1rem;
+    }
+
+    &-service{
+        color: $color-white;
+        padding-top: 1rem;
+    }
+
+    &-middle-icons{
+        text-align: center;
+        padding-top: 2rem;
+
+        @include media-breakpoint-down(xs){
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+
+
+        &-item{
+            position: relative;
+            width: 4rem;
+            height:4rem;
+            background-color: $footer-dark;
+            display: inline-block;
+            margin: .4rem;
+
+            & i{
+                position: relative;
+                top: 50%;
+                transform:translateY(-50%);
+                font-size: 2rem;
+                color: $color-white;
+
+            }
+        }
+
+        & p{
+            text-align: center;
+            color: $color-white;
+            padding-left: 6rem;
+            padding-right: 6rem;
+            padding-top: 3rem;
+
+            @include media-breakpoint-down(xs){
+                padding-left:1rem;
+                padding-right: 1rem;
+            }
+        }
+    }
+
+}*/

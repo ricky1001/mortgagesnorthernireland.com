@@ -1,0 +1,11 @@
+.message{
+    display: none;
+}
+
+.message-sent{
+    color: $tertiary-orange-logo;
+    text-align: center;
+    font-weight: 500;
+    font-size: 1.3rem;
+    transition-duration: 6s;
+}

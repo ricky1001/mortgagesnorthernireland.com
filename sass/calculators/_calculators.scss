@@ -1,0 +1,32 @@
+.calculators{
+    margin-top: 2rem;
+
+
+    &-icon{
+        font-size: 5rem;
+
+        @include media-breakpoint-down(lg){
+            text-align: center;
+        }
+        
+
+        &-1{
+            color: $tertiary-orange;
+        }
+
+        &-2{
+            color: $tertiary-orange;
+        }
+
+        &-3{
+            color: $tertiary-orange;
+        }
+    }
+
+    &-text{
+       
+        & h2{
+            text-align: center;
+        }
+    }
+}

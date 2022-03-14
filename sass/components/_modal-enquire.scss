@@ -1,0 +1,10 @@
+.modal{
+    z-index:100000000;
+
+    &-buttons-outter{
+        text-align: center;
+        & button{
+            width: 45%;
+        }
+    }
+}

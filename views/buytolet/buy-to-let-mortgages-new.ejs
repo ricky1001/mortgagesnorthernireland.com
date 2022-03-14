@@ -1,0 +1,48 @@
+<% include ../partials/head-tags %>
+<% include ../partials/main-menu %>
+
+
+<div class="container"> 
+ <div class="rows">
+   <div class="col">  
+         <h3>
+           Create a new Buy to Let Mortgage Post
+         </h3>
+
+     <form action="/buy-to-let-mortgages-post" method="POST">
+           <div class="form-group">
+              <input type="text" class="form-control " placeholder="Custom URL" name="buytolet[_id]">
+           </div>
+   
+           <div class="form-group">
+             <input type="text" class="form-control form-control-lg" placeholder="Image URL" name="buytolet[image]">
+           </div>
+           
+           <div class="form-group">
+             <input type="text" class="form-control form-control-lg" placeholder="Post Title" name="buytolet[title]">
+           </div>
+       
+           <div class="form-group">
+             <input type="text" class="form-control form-control-lg" placeholder="Meta Title" name="buytolet[metatitle]">
+           </div>
+       
+             <div class="form-group">
+             <input type="text" class="form-control form-control-lg" placeholder="Meta Description" name="buytolet[metadescription]">
+           </div>
+           
+           <div class="form-group">
+             <textarea rows="10" class="form-control form-control-lg" placeholder="Post Content" name="buytolet[content]"></textarea>
+           </div>
+       
+
+           <button class="btn btn-outline-primary" type="submit">Submit</button>
+  
+         </form>
+     
+   </div>
+  </div>
+</div>
+
+
+
+<% include ../partials/footer %>

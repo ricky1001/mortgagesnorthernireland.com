@@ -1,0 +1,228 @@
+#quick-call{
+    z-index: 100000000000 !important;
+    background-color: #4b0082;
+    color: white;
+}
+
+.call-us-icon-box{
+    position: fixed;
+    right: 4rem;
+    bottom: 2rem;
+    font-size: 3rem;
+    color: #61B329;
+    animation-duration: 6s;
+    animation-name: phonePulse;
+    z-index: 600000000000000 !important;
+
+} 
+
+/*Media queries for the floating icon*/
+@media only screen and (max-width: 448px) {
+    .call-us-icon-box{
+      right: 2rem;;
+    }
+  }
+
+@media only screen and (max-width: 353px) {
+    .call-us-icon-box{
+      right: .5rem;
+      bottom: 1rem;
+    }
+  }  
+
+
+/*Media Queries for the popup box*/
+@media only screen and (max-width: 448px) {
+    #quick-call{
+      right: 2rem;
+    }
+  }
+
+@media only screen and (max-width: 353px) {
+    #quick-call{
+      right: .2rem;
+    }
+  }  
+
+.quick-call-down, .quick-call-up{
+
+    position: fixed;
+    bottom: 8rem;
+    right: 4rem;
+    width: 20rem;
+    height: 0rem;
+    background-color: white;
+    transition: height 1s ease-in-out;
+    box-shadow: -3px -3px 4px 0 grey;
+    border-radius: 5%;
+
+}
+
+@media only screen and (max-width: 353px) {
+    .quick-call-down, .quick-call-up{
+      right: .2rem;
+      bottom: 7rem;
+    }
+  }  
+
+
+/* when the component is complete add this back in and set css above to height 0rem;*/
+.quick-call-up{
+    height: 20rem;
+  
+}
+
+
+/*The header content in the quick call box*/
+#quick-call-head{
+    height: 20%;
+    background-color:white;
+    width: 95%;
+    margin: 3px auto 0px auto;
+    border-bottom: 1px solid #ff7f27;
+    text-align: center;
+    background-color: #4b0082;
+}
+
+#quick-call-head p{
+    margin-bottom: 0px;
+}
+
+
+/*The body content in the quick call box*/
+#quick-call-body p{
+    padding: 1rem;
+    height: 40%;
+    width: 95%;
+    margin: 0px auto 0px auto;
+    border-bottom: 1px solid #ff7f27;
+    text-align: justify;
+}
+
+.callUsNum{
+    text-decoration: none;
+    color: #ff7f27;
+}
+
+#quick-call-input{
+    height: 20%;
+    border-bottom: 1px solid #ff7f27;
+    
+}
+
+.quick-call-contact-box{
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 90%;
+    height: 60%;
+    margin:auto;
+    text-align: center;
+}
+
+.quick-call-contact-box span{
+    font-size: 1.3rem;
+}
+
+
+.quick-call-contact-box input,
+.quick-call-contact-box input::placeholder{
+    font-size: 1.3rem;
+    border: none;
+    background-color: #4b0082;
+    color: white;
+}
+
+@media only screen and (max-width: 420px) {
+    .quick-call-contact-box span,
+    .quick-call-contact-box input,
+    .quick-call-contact-box input::placeholder{
+      font-size: 1rem;
+    }
+  } 
+
+.quick-call-contact-box input:focus{
+    outline: none
+}
+
+#quick-call-btn{
+ height: 20%;
+ text-align: center;
+}
+
+.scheduleBtn{
+    width: 90%;
+    margin-top: 10px;
+    padding: 6px;
+    text-decoration: none;
+    border-radius: 5px;
+    display: inline-block;
+    border: none;
+    background-color: #47b300;
+    color: white;
+    transition: all 0.4s ease 0s;
+
+}
+
+.scheduleBtn:hover{
+    background: #3EC530;
+    letter-spacing: 1px;
+    -webkit-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+    -moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+    box-shadow: 5px 40px -10px rgba(0,0,0,0.57);
+    transition: all 0.4s ease 0s;
+}
+
+.sm-text{
+    font-size: .7rem;
+}
+
+#quick-call-form-box{
+    width:90%;
+    margin: 0px auto 0px auto;
+}
+
+/*Hides and shows the form within the quick call div*/
+.hidden{
+    display: none;
+}
+
+.show{
+    display: block;
+}
+
+.select-dropdown{
+    height: 50px;
+    overflow: auto;
+}
+
+
+/*button css*/
+/*Animate the size, outside*/
+.pulse:hover, 
+.pulse:focus {
+  animation: pulse 1s;
+  box-shadow: 0 0 0 2em rgba(#fff,0);
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 var(--hover); }
+}
+
+
+/*All Keyframes */
+
+/*Keyfarmes for Phone Pulse */
+@keyframes phonePulse{
+    0%{font-size: 3rem;}
+    10%{font-size: 4rem;}
+    20%{font-size: 3rem;}
+    30%{font-size: 4rem;}
+    40%{font-size: 3rem;}
+    50%{font-size: 4rem;}
+    60%{font-size: 3rem;}
+    70%{font-size: 4rem;}
+    80%{font-size: 3rem;}
+    90%{font-size: 4rem;}
+    100%{font-size: 3rem;}
+}

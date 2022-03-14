@@ -1,0 +1,70 @@
+<% include ../partials/head-tags %>
+<% include ../partials/main-menu %>
+
+<div class="section">
+<div class="container"> 
+ <div class="row"> 
+  <div class="col-lg-8">  
+   <div class="mainContentOuter">
+        <h2 class="card-title"><%= foundmtPost.title %></h2>               
+
+      <div class="card">      
+                <img class="card-img-top" src="<%= foundmtPost.image %>" alt="">
+
+        </div>
+     <div>
+       <%- foundmtPost.content %>
+     </div>
+   
+    </div>
+  </div>
+
+  <div class="col-lg-4 ">
+   <div class="relatedPages">
+     <div class="container ">
+      <ul class="pl-0"> 
+       <li><a href="/mortgage-types">Mortgage Types</a></li>     
+       <li><a href="/mortgage-types/fixed-rate-mortgages">Fixed Rate Mortgages</a></li>
+       <li><a href="/mortgage-types/tracker-rate-mortgages">Tracker Rate Mortgages</a></li>
+       <li><a href="/mortgage-types/discount-mortgages">Discount Mortgages</a></li> 
+       </ul>
+     </div>
+   </div>
+    
+    <h5 class="quick-enquiry"><strong>Quick Enquiry</strong></h5>
+    <div class="container form-container">
+      
+       <div class="form enquiry-form">
+         <div class="container pt-2 pb-2">
+           <form action="enquiry-new" method="POST">
+               <div class="form-group">
+                 <input type="text" class="form-control" placeholder="Your Name" name="enquiry[name]">
+               </div>
+             
+               <div class="form-group">
+                 <input type="text" class="form-control" placeholder="Post Code" name="enquiry[postcode]">
+               </div> 
+
+               <div class="form-group">
+                 <input type="text" class="form-control" placeholder="Your e-mail" name="enquiry[email]">
+               </div>              
+       
+              <div class="form-group">
+                 <input type="text" class="form-control" placeholder="Contact Number" name="enquiry[contactNumber]">
+               </div>
+
+               <div class="form-group">
+              <textarea rows="5" class="form-control" placeholder="Your Message" name="enquiry[content]"></textarea>
+               </div>
+               <input type="submit" value="submit" class="btn btn-block enquiry-form-button">
+             </form>
+          </div>
+         </div>
+    </div>
+  </div>
+ </div>
+</div>
+  
+</div>
+
+  <% include ../partials/footer %>

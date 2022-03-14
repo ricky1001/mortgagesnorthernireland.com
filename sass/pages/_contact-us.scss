@@ -1,0 +1,39 @@
+.contact-us-page-form{
+
+    background-color: $primary-purple-dark;
+    padding: 2rem;
+    border-radius: 5px;
+    & label{
+        color: $color-white;
+
+    }
+
+
+}
+
+.modal-body{
+
+    & form{
+        @include media-breakpoint-down(xs){
+            width: 100%;
+        }
+    }
+
+}
+
+.contact-us{
+    position: relative;
+    width: 100%;
+    font-size: 1.2rem;
+    text-align: center;
+
+    & p{
+        @include media-breakpoint-down(xs){
+            font-size: .9rem;
+        }
+    }
+}
+
+.contact-us-head{
+    text-align: center;
+}

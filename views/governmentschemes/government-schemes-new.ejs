@@ -1,0 +1,48 @@
+<% include ../partials/head-tags %>
+<% include ../partials/main-menu %>
+
+
+<div class="container"> 
+ <div class="rows">
+   <div class="col">  
+         <h3>
+           Create a new Government Scheme Post
+         </h3>
+
+     <form action="/government-schemes-post" method="POST">
+           <div class="form-group">
+              <input type="text" class="form-control " placeholder="Custom URL" name="governmentScheme[_id]">
+           </div>
+   
+           <div class="form-group">
+             <input type="text" class="form-control form-control-lg" placeholder="Image URL" name="governmentScheme[image]">
+           </div>
+           
+           <div class="form-group">
+             <input type="text" class="form-control form-control-lg" placeholder="Post Title" name="governmentScheme[title]">
+           </div>
+       
+           <div class="form-group">
+             <input type="text" class="form-control form-control-lg" placeholder="Meta Title" name="governmentScheme[metatitle]">
+           </div>
+       
+             <div class="form-group">
+             <input type="text" class="form-control form-control-lg" placeholder="Meta Description" name="governmentScheme[metadescription]">
+           </div>
+           
+           <div class="form-group">
+             <textarea rows="10" class="form-control form-control-lg" placeholder="Post Content" name="governmentScheme[content]"></textarea>
+           </div>
+       
+
+           <button class="btn btn-outline-primary" type="submit">Submit</button>
+  
+         </form>
+     
+   </div>
+  </div>
+</div>
+
+
+
+<% include ../partials/footer %>

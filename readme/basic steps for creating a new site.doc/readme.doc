@@ -1,0 +1,54 @@
+Creating a new site from scratch
+
+Initial Setup
+1. Create a blank working folder and run npm init to create a package.json file
+2. Create and app.js file and install necessary dependencies all dependencies will be saved to the package.json file and will need to be required and saved to a variable at the top of the app.js file.
+3. open a sandbox database with mongo lab and save the user credentials under the app config section on the app.js file connect to the database
+4. while you are in the app config area setup the configuration for the require statements
+5. Above the app config section require the routes by setting them equal to a variable 
+6. below the app config section use the app.use(mortgageNewsRoutes); to use the routes in the app.
+
+Models
+*See Models Folder
+
+
+routes
+*See Routes Folder
+
+authentication
+*See authentication folder
+
+
+
+//Things to do to the project next
+
+All 3 basic routes ie mortgage-advice, mortgage-news and rates have been set up add some dummy data to each
+ensure that header and footer are working on each page 
+after the password authentication routes are added block the registration route and form leave detailed instructions on how to open the route.
+Create a logout button that only appears in the header when a user is logged in.
+We will also need to add the ability to update and change a password.
+Create a form for entering a new client into the data base from within the logged in user interface 
+add the ability to update and change your password 
+Block all routes that users should not have access to and add this process to the routes folder.
+create a user interface where you can easily edit posts on the create and edit pages add info on what css classes can be used
+****install bootstrap and pick the segments that you need 
+install a responsive grid 
+
+****install sass and add a link to the style sheet to the header
+Install all of the working tracking tags see notes left in the header file 
+Add Google Maps to the app
+
+
+
+Things To learn 
+
+how to pass a variable to a route depending on what element on a page is clicked think about the dashboard sinario and how page being linked to needs to display 
+models and data associations simple project would be estate agent allowing viewers to talk to sellers and bid etc. Rewatch videos on bootcamp about associating comments.
+
+
+
+Add the delete route to all routes files.
+
+
+
+

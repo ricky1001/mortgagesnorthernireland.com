@@ -1,0 +1,300 @@
+.process{
+    width: 100%;
+    z-index: 7;
+    position: relative;
+
+    @include media-breakpoint-down(lg){
+        margin-bottom:2rem;
+    }
+
+    @include media-breakpoint-down(sm){
+        margin-bottom:3rem;
+    }
+
+    & .row{
+        margin-right: 0px;
+    }
+
+    &-title{
+        height: 9rem;
+        background-color: $primary-purple-dark;
+        text-align: center;
+        color: $color-white;
+        font-weight: 700;
+        font-size: 2rem;
+        padding-top: 1rem;
+
+        @include media-breakpoint-down(sm){
+            font-size: 1.8rem;
+            height:9rem;
+        }
+    
+    }
+
+    &-icon-box{
+ 
+
+        &-circle{
+            position: relative;
+            left: 50%;
+            transform: translate(-50%);
+            top: -3.5rem;
+            width: 7rem;
+            height: 7rem;
+            border-radius: 50%;
+            border: .5rem solid $color-white;
+            box-shadow: 0 8px 15px 3px rgba(0, 0, 0, 0.17);
+            margin-bottom: .5rem;
+
+            @include media-breakpoint-down(md){
+                top: 1rem;
+            }
+            
+
+            & i{
+                color: $color-white;
+                position: relative;
+                left:50%;
+                top: 50%;
+                transform: translate(-50%,-50%);
+                font-size: 3rem;
+            }
+
+
+            &-1{
+              background-color: $tertiary-red;
+            }
+
+            &-2{
+              background-color: $secondary-blue-dark;
+            }
+
+            &-3{
+              background-color: $tertiary-orange;
+
+              @include media-breakpoint-down(md){
+                  margin-top:1rem;
+              }
+            }
+
+            &-4{
+              background-color: $tertiary-yellow-dark;
+              @include media-breakpoint-down(md){
+                margin-top:1rem;
+            }
+            }
+        }
+
+        &-title{
+           font-size: 1.6rem;
+           font-weight: 500;
+           text-align: center;
+           position: relative;
+           top: -3.5rem;
+
+           @include media-breakpoint-down(md){
+            top: 1rem;
+        }
+
+
+            &-1{
+               color: $tertiary-red;
+            }
+
+            &-2{
+                color: $secondary-blue-dark;
+            }
+
+            &-3{
+                color: $tertiary-orange;
+            }
+
+            &-4{
+                color: $tertiary-yellow-dark;
+            }
+        }
+
+        &-content{
+            text-align: center;
+            position: relative;
+            top: -3rem;
+
+            @include media-breakpoint-down(md){
+                top: 1rem;
+            }
+
+        }
+    }
+
+
+}
+
+.time{
+    height: 16rem;
+    width: 100%;
+
+
+    &-top{
+        position: relative;
+        height: 4rem;
+        border-top: 1px solid $background-grey;
+
+        @include media-breakpoint-down(xs){
+            height: 6rem;
+        }
+
+
+        & p{
+            position: relative;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            text-align: center;
+            font-size: 2.2rem;
+            font-weight: 500;
+            color: $primary-purple-dark;
+
+            @include media-breakpoint-down(sm){
+                font-size:1.8rem;
+            }
+
+        }
+    }
+
+    &-bottom{
+        position: relative;
+        width: 100%;
+        height: 12rem;
+        background-color: $primary-purple-dark;
+
+        & div{
+            position: relative;
+            width: 90%;
+            height: 7rem;
+            left: 50%;
+            top: 5%;
+            transform: translateX(-50%);
+            text-align: center;
+            color: $color-white;
+            font-weight: 500;
+
+            @include media-breakpoint-down(xs){
+                font-weight: 500;
+               }
+ 
+
+            & .top{
+                font-size: 2rem;
+
+                @include media-breakpoint-down(xs){
+                 font-size:1.6rem;
+                }
+            }
+
+            & .middle{
+                font-size: 1.5rem;
+
+                @include media-breakpoint-down(xs){
+                    font-size:1.2rem;
+                   }
+            }
+        }
+    }
+}
+
+.about{
+
+    & .container-fluid{
+        background-color: $primary-purple-dark;
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+    }
+
+    & .container{
+        background-color: $color-white;
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+    }
+}
+
+.mtype{
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+
+
+
+    &-item{
+        position: relative;
+        background-color: $primary-purple-dark;
+        color: $color-white;
+        height: 18rem;
+        padding: 1rem;
+
+        @include media-breakpoint-down(lg){
+            margin-bottom: 2rem;
+        }
+
+        &-upper{
+
+            &-ftb{
+                color: $secondary-blue-light;
+            }
+
+            &-btl{
+                color: $tertiary-red-light;
+            }
+
+            &-remortgage{
+                color: $tertiary-orange-light;
+            }
+
+            &-selfBuild{
+                color: $tertiary-yellow-light;
+            }
+         }
+
+        & i {
+            position: absolute;
+            right: 1rem;
+            top: 1rem;
+            font-size: 2rem;
+
+            @include media-breakpoint-down(lg){
+                font-size: 2.4rem;
+            }
+        }
+
+        & h6{
+            font-size: 1.5rem;
+
+            @include media-breakpoint-down(lg){
+                font-size: 1.3rem;
+            }
+
+            @include media-breakpoint-down(md){
+                font-size: 1.7rem;
+            }
+        }
+
+        &-middle{
+            position: relative;
+            top: 2rem;
+        }
+
+        &-bottom{
+           position: absolute;
+        bottom: 1rem;
+
+           & a{
+            padding: .7rem;
+            background-color: $tertiary-orange-dark;
+            font-weight: 500;
+            color: $color-white;
+
+           }
+        }
+    }
+}
+
+

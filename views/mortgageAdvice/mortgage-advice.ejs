@@ -1,0 +1,141 @@
+<% include ../partials/head-tags %>
+<% include ../partials/main-menu %>
+
+<section id="mortgageAdviceHead">
+ <div class="container">
+  <div class="row">
+    <div class="col-lg-8  col-md-12 mt-3">
+      <h4>
+        Mortgage Advice Posts 
+      </h4>
+      <p>
+        The Latest Mortgage Advice Posts written by front line Mortgage Brokers in Northern Ireland
+      </p>
+         <% mAdvice.forEach(function(mAdvice){ %>
+      <div class="row container indexPageBox">
+      <div class="col"> <h5><%=mAdvice.title%></h5></div>
+      
+
+      <div class="row container ml-1 mr-1 indexPageBox">
+                  
+           <div class="col-lg-6 container mt-3">
+             
+           <img class="img-fluid" height="200px" src="<%= mAdvice.image %>" alt="">
+           </div>
+           <div class="col-lg-6">
+         
+            <p class="text-justify">
+             <%- mAdvice.content.substring(0, 211) %>
+              <br><br>
+            <a class="btn btn-sm btn-outline-primary btn-block" href="/mortgage-advice/<%= mAdvice._id %>">Read More</a>  
+            </p>
+           </div>
+           
+         </div>
+      </div>
+   <%   }) %>
+
+    
+   </div>
+   <div class="col-md-12 col-lg-4 side-bar">
+    <div class="side-bar-list">
+      <div class="side-bar-list-title">
+          Other Catagories
+      </div>
+      <div class="side-bar-list-item">
+          <a href="/first-time-buyer-mortgages">First Time Buyer Mortgages</a>
+      </div>
+      <div class="side-bar-list-item">
+          <a href="/buy-to-let-mortgages">Buy to Let Mortgages</a>
+      </div>
+      <div class="side-bar-list-item">
+          <a href="/re-mortgage-advice">Re-mortgages</a>
+      </div>
+      <div class="side-bar-list-item">
+          <a href="/government-schemes">Government Schemes</a>
+      </div>
+      <div class="side-bar-list-item">
+          <a href="/self-employed-mortgages">Self-employed Advice</a>
+      </div>
+      <div class="side-bar-list-item">
+          <a href="/mortgage-advice">General Mortgage Advice</a>
+      </div>
+      <div class="side-bar-list-item">
+        <a href="/mortgage-news">Mortgage News</a>
+      </div>
+  </div>
+  <!--
+  <div id="carousel-widget"></div>
+  -->
+
+  <div class="side-bar-infograph">
+      <div class="side-bar-infograph-top">
+         <div class="side-bar-infograph-item">
+            <div class="side-bar-infograph-item-icon-box">
+               <i class="far fa-thumbs-up"></i>
+            </div>
+            <div class="side-bar-infograph-item-title">
+              Fee Free
+            </div>
+            <div class="side-bar-infograph-item-content">
+              We will never charge you a fee for our services !
+            </div>
+         </div>
+         <div class="side-bar-infograph-item">
+              <div class="side-bar-infograph-item-icon-box">
+                  <i class="fas fa-lock"></i>
+              </div>
+              <div class="side-bar-infograph-item-title">
+                Safe & Secure
+              </div>
+              <div class="side-bar-infograph-item-content">
+                GDPR ready your data is encrpted so you can relax !
+              </div>
+           </div>
+      </div>
+      <div class="side-bar-infograph-bottom">
+              <div class="side-bar-infograph-item">
+                      <div class="side-bar-infograph-item-icon-box">
+                          <i class="far fa-check-circle"></i>
+                      </div>
+                      <div class="side-bar-infograph-item-title">
+                        Range of Lenders
+                      </div>
+                      <div class="side-bar-infograph-item-content">
+                        Competitive rates from across the market !
+                      </div>
+                   </div>
+                   <div class="side-bar-infograph-item">
+                          <div class="side-bar-infograph-item-icon-box">
+                              <i class="fas fa-balance-scale"></i>
+                          </div>
+                          <div class="side-bar-infograph-item-title">
+                            Unbiased Service
+                          </div>
+                          <div class="side-bar-infograph-item-content">
+                            We are not tied to any lender and aim to find the best deal for you !
+                          </div>
+                       </div>
+      </div>
+  </div>
+
+  <div class="side-bar-contact">
+      <div class="side-bar-contact">
+        <div class="side-bar-contact-title">
+            Speak to an Adviser today <br>
+            <P class="number">Call <a onclick="return gtag_report_conversion('tel:08009756476');" id="contactNumber" href="tel:08009756476">0800 975 6476</a></P>
+            <div class="side-bar-contact-title-or">or</div>
+            <a href="" class="btn btn-success" id="contactButton" data-toggle="modal" data-target="#modal-enquire">Enquire Now</a>
+        </div>
+      </div>
+    </div>
+</div>
+        </div>
+       </div>
+</section>
+
+
+<% include ../partials/footer %>
+
+
+

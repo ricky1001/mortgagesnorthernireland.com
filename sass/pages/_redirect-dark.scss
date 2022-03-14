@@ -1,0 +1,178 @@
+//redirect second page
+
+.booking{
+    background-color: $primary-purple-light-test;
+    color: white;
+    
+
+    & h1{
+        font-size: 3rem;
+    }
+
+    & .booking-call{
+        
+
+        & h4{
+            display: inline-block;
+            color: white;
+            padding-left: 1rem;
+
+            @media (max-width: 767px) {
+                margin-bottom: 1rem;
+              }
+        }
+
+        & i{
+            color: orange;
+            font-size: 2rem;
+        }
+
+        & #booking-button{
+            @media (max-width: 767px) {
+                margin-bottom: 1rem;
+              }
+          
+        }
+
+        &-pos{
+        
+
+            & i{
+                font-size: 1.4rem;
+                color: green;
+                padding-right: 1rem;
+
+                @media (max-width: 424px) {
+                    padding-right: .5rem;
+                  }
+            }
+
+            &-text{
+                display: inline-block;
+                margin-bottom: 1rem;
+                font-size: 1.4rem;
+
+                
+            @media (max-width: 991px) {
+                font-size: 1rem;
+              }
+
+              @media (max-width: 767px) {
+                font-size: 1.5rem;
+              }
+
+              @media (max-width: 504px) {
+                font-size: 1.2rem;
+              }
+
+              @media (max-width: 424px) {
+                font-size: 1rem;
+              }
+
+              @media (max-width: 362px) {
+                font-size: .9rem;
+              }
+
+              @media (max-width: 329px) {
+                font-size: .8rem;
+              }
+                 
+            }
+        }
+    }
+}
+
+.sliding-side-bar-close{
+    width: 0vw;
+    height: 100vh;
+    background-color: $primary-purple-light-test;
+    position: fixed;
+    top: 0px;
+    right:0px;
+    z-index: 10000;
+    display: block;
+    transition: .3s;
+    -webkit-transition-property: width;
+    
+
+
+    & .icon-box{
+        height: 4rem;
+        & i{
+            display: none;
+            font-size: 2rem;
+            color: $tertiary-orange-logo;
+            float: right;
+            padding: 1rem;
+            
+            
+        }
+    }
+
+    & ul{
+        display: none;
+        list-style: none;
+        color: $color-white;
+        font-size: 1.4rem;
+        font-weight: 700;
+        margin-left: 0;
+        padding-left: 0px;
+
+        & li{
+            text-align: center;
+        }
+    }
+
+
+
+}
+
+.sliding-side-bar-open{
+    width: 25vw;
+    height: 100vh;
+    background-color: $primary-purple-light-test;
+    position: fixed;
+    top: 0px;
+    right:0px;
+    z-index: 10000;
+    display: block;
+    transition: .3s;
+    -webkit-transition-property: width;
+
+    @media (max-width: 504px) {
+        width: 80vw;
+      }
+
+
+
+
+    & .icon-box{
+        height: 4rem;
+        & i{
+            display: block;
+            font-size: 2rem;
+            color: $tertiary-orange-logo;
+            float: right;
+            padding: 1rem;
+           
+            
+        }
+    }
+
+    & ul{
+        display: block;
+        list-style: none;
+        color: $color-white;
+        font-size: 1.4rem;
+        font-weight: 700;
+        margin-left: 0;
+        padding-left: 0px;
+
+        & li{
+            text-align: center;
+        }
+    }
+
+
+
+}

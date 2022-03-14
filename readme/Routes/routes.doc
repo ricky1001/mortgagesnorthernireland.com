@@ -1,0 +1,126 @@
+Routes 
+1. Each section of the site should have it's own routes page and you can require access to any data in the mongoose database from here simply by requiring it and passsing it to the necessary route see the example below
+
+var express = require("express");
+var router = express.Router();
+var mortgageAdvice = require("../models/mortgage-advice");
+var mortgageNews = require("../models/mortgage-news");
+
+bottom line 
+
+module.exports = router;
+
+2. Routes should follow the restful pattern ie put post get
+
+1st route get request - is the index route and will be used to display the home page for that section
+
+router.get("/mortgage-advice", function(req, res){
+    var metatitle = "Mortgage Avice Blog | Mortgages Northern Ireland";
+    var metadescription = "The latest mortgage advice written by mortgage brokers in Northern Ireland";
+    mortgageAdvice.find({}, function(err, mAdvice){
+        if(err){
+            console.log(err);
+        }else{
+    mortgageNews.find({}, function(err, mNews){
+        if(err){
+            console.log(err);
+        }else{
+            res.render("./mortgage-advice/mortgage-advice", {
+                mAdvice: mAdvice,
+                mNews: mNews,
+                metatitle: metatitle,
+                metadescription: metadescription
+            })
+        }
+    })
+        }
+    })
+});
+
+2nd route is the new route also a get request and will be used to display the form for a new post the action of the form will point to the create route and the method on the form will be a post request 
+//Add new Post Route
+router.get("/mortgage-advice-new", function(req, res){
+    var metatitle = "New Mortgage Advice Post";
+    var metadescription = "add a new mortgage advice post";
+    res.render("./mortgage-advice/mortgage-advice-new",
+    {
+        metatitle: metatitle,
+        metadescription: metadescription
+    }
+    );
+});
+
+3rd route is the create and a post request info from the form will be passed to this route and used to create a new document in the data base see the route example below
+
+router.post("/mortgage-advice-post", function(req, res){
+  
+    mortgageAdvice.create(req.body.mAdvicePost, function(err, mAdvicePost){
+        if(err){
+            console.log(err)
+        }else{
+            console.log(mAdvicePost);
+            res.redirect("/mortgage-advice")
+        }
+    });
+ 
+});
+
+4th route is the show route and will use a get request to render a page that is full of variables the page will be indenticle for each product with the only difference being the data populating each page 
+
+//show Route 
+router.get("/mortgage-advice/:id", function(req,res){
+    mortgageAdvice.findById(req.params.id, function(err, foundPost){
+        console.log(req.params.id)
+        if(err){
+            console.log(err)
+        }else{
+            console.log(foundPost);
+            res.render("./mortgage-advice/mortgage-advice-show",
+            {
+                foundPost: foundPost,
+                
+            
+            }
+            )
+        }
+    })
+})
+
+5th Route is the edit route it will use a get request to show the form to edit a post the page that is rendered will have to have access to the documents info and this will prepopulate the form to be editied.
+
+//edit route 
+router.get("/mortgage-advice/:id/edit", function(req, res){
+    console.log(req.params.id)
+    mortgageAdvice.findById(req.params.id, function(err, post){
+        if(err){
+            console.log(err);
+        }else{
+            
+            res.render("./mortgage-advice/mortgage-advice-edit", {
+                post: post
+            })
+        }
+    })
+})
+
+6th Route is the update route the edit route form will send a put request to the update route with the updated information the route will then edit the document in the database 
+
+//update route - grabs the info from the edit form and updates it 
+
+router.put("/mortgage-advice/:id", function (req, res){
+    console.log("xxxxxxxxxxxxxxxxxxx")
+    mortgageAdvice.findByIdAndUpdate(req.params.id, req.body.mAdvicePost, function(err, updatedPost){
+        if(err){
+            console.log(err);
+            res.redirect("/mortgage-advice");
+        }else{
+            res.redirect("/mortgage-advice/" + req.params.id );
+        }
+    })
+})
+
+
+//Is Logged in function / middleware can be added here and dropped into each route where it is required alternatively there must be a better way ie by creating a middleware folder and exporting the function
+
+
+//Delete Route

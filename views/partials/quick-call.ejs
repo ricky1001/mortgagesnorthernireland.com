@@ -1,0 +1,63 @@
+<div class="call-us-icon-box">
+    <i class="fas fa-phone-square"></i>
+  </div>
+</div>
+
+<div id="quick-call" class="quick-call-down">
+    <div id="quick-call-head" class="hidden">
+        <h4>Mortgage Enquires</h4>
+        <p class="text-center">Talk to an Expert today</p>
+    </div>
+    <div id="quick-call-body" class="hidden">
+        <p>
+            Call us today for <strong>Free on <a class="callUsNum" href="tel:08009756476">0800 975 6476</a></strong> or enter your number below then schedule a call back at a time that suits you.
+        </p>
+    </div>
+   
+        <div id="quick-call-input" class="hidden">
+            <div class="quick-call-contact-box">
+                <span>+44</span> 
+                <input type="tel" placeholder="Enter Your Number" id="quickCallNum">
+            </div>
+        </div>
+
+        <div id="quick-call-btn" class="hidden">
+            <button class="scheduleBtn" id="schedule-btn">
+                Schedule a Call Back
+            </button>
+        </div>
+
+        <div id="quick-call-form-box" class="hidden">
+            <form class="pt-2" action="/quick-call-enquiry" method="POST">
+
+                <div class="form-group">
+                    <select id="quickCallIconDayPicker" class="form-control form-control-sm" name="preferredDay">
+                        <option value="<%=quickCallHelpers.dayStrings.todayString%>">
+                            <%=quickCallHelpers.dayStrings.todayString%>
+                        </option>
+                        <option value="<%=quickCallHelpers.dayStrings.tomorrowString%>">
+                            <%=quickCallHelpers.dayStrings.tomorrowString%>
+                        </option>
+                        <option value="<%=quickCallHelpers.dayStrings.nextDayString%>">
+                            <%=quickCallHelpers.dayStrings.nextDayString%>
+                        </option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <select name="preferredTime" id="quickCallIconTimePicker" class="form-control form-control-sm" onfocus='this.size=5;' onblur='this.size=1;' onchange='this.size=1; this.blur();'>
+                      <%  quickCallHelpers.adjustedTimes.forEach(function(item){ %>
+                            <option class="pickTimeIconOption" value="<%=item%>"><%=item%></option>
+                      <%  }); %>
+                    </select>
+                </div>
+
+                <input type="hidden" id="clientContactNum" name="clientContactNum">
+
+                <button type="submit" class="btn btn-success btn-block">
+                    Schedule a Call Back
+                </button>
+            </form>
+        </div>
+    
+</div>

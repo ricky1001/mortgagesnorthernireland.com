@@ -1,0 +1,90 @@
+h1 {
+  width: 100%;
+  margin-bottom: 2rem;
+  margin-top:2rem;
+  font-size: 1.8rem;
+}
+
+p{
+  text-align: justify;
+}
+
+.addSecondApp{
+  font-size: 1.2rem;
+}
+
+.secondAppInput{
+  display: none;
+  margin-bottom: 2rem;
+}
+
+.secondAppInputDisplay{
+  display: block;
+  margin-bottom: 1rem;
+
+}
+
+.youCouldBorrow{
+  display: none;
+}
+
+.youCouldBorrowShow{
+  display: block;
+
+}
+
+#secondAppHidden{
+  margin-top: 1rem;
+}
+
+.totalBorrow{
+  float: right;
+  margin-bottom: 1rem;
+}
+
+#maxBorrow{
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  padding-top: .8rem;
+  padding-bottom: .8rem;
+  background-color: $primary-purple-dark;
+  width: 100%;
+  color: $color-white;
+
+  & .maxBorrowP{
+    font-size: 1.7rem;
+    font-weight: 500;
+    width: 100%;
+    text-align: center;
+
+    & span{
+      color: $tertiary-orange-dark;
+
+      & a{
+        color: $tertiary-orange;
+
+        &:hover{
+            color: $tertiary-orange-dark;
+            text-decoration: none;
+        }
+    }
+    }
+  }
+
+  & #totLoan{
+    font-size: 3rem;
+    font-weight: 700;
+    width: 100%;
+    text-align: center;
+    color: $tertiary-orange-dark;
+
+  }
+}
+
+.calculator-warning-box-head{
+  background-color: $primary-purple-dark;
+  font-size: 1.1rem;
+  color: $color-white;
+  padding: 2rem;
+  text-align: center;
+}

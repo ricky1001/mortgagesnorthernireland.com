@@ -1,0 +1,14 @@
+The steps to adding a new section are as follows
+
+Create a model for the section and export it to mongoose 
+
+Require the routes for the section in the app.js file 
+
+Create a new file in the routes folder and add all of the necessesary routes  
+
+Create a new folder in the views section and add the edit / new / showand index page 
+
+Add the new url to the switch statement in the dashboard javascript file 
+
+ensure the you can easily edit / remove / add a post from the dashboard 
+

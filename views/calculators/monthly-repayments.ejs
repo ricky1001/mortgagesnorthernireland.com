@@ -1,0 +1,180 @@
+<% include ../partials/head-tags %>
+<% include ../partials/main-menu %>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 col-lg-8">
+      <div class="row">
+        <div class="col-12">
+            <h1>How much will your monthly Repayments be ?</h1>
+        </div>
+      </div>
+      <div class="row">
+   
+            <div class="col-md-6">
+                <label for="MRloanAmountID">Loan Amount</label>
+              <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">£</span>
+                </div>
+                <input type="text" class="form-control" class="MRloanAmount" id="MRloanAmountID" aria-label="Amount (to the nearest dollar)">
+              </div>
+             </div>
+             <div class="col-md-6">
+                <label for="MRinterestRateID">Interest Rate</label>
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" class="MRinterestRate" id="MRinterestRateID">
+                    <div class="input-group-append">
+                      <span class="input-group-text">%</span>
+                    </div>
+                  </div>
+             </div>
+        
+      </div>
+
+      <div class="row">
+          <div class="col-md-6">
+             <label for="MRtermID">Mortgage Term</label>
+             <div class="input-group mb-3">
+                 <input type="text" class="form-control" class="MRterm" id="MRtermID">
+                 <div class="input-group-append">
+                   <span class="input-group-text">Years</span>
+                 </div>
+               </div>
+          </div>
+          <div class="col-md-6">
+             <label for="MRmortgageTypeID">Mortgage Type</label>
+             <div class="form-group">
+                 <select class="form-control" id="MRmortgageTypeID" class="MRmortgageType">
+                   <option>Repayment</option>
+                   <option>Interest Only</option>
+                 </select>
+               </div>
+          </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+               <button class="MRbutton btn btn-success">Calculate</button>
+            </div>
+          </div>
+     
+           <div class="MRresult" id="MRresultID">
+             <p class="MRresultShow-p"> Your monthly repayments would be </p>
+             <p class="MRresultShow-p-r"><span id="MRcalc"></span> </p> 
+             <p class="MRresultShow-p">Want to know more call <span><a href="tel:08009756476">0800 975 6476</a></span> <br> or <br> <a href="" class="btn btn-success" data-toggle="modal" data-target="#modal-enquire">Enquire Now</a></p>
+             <p class="MRresultShow-s"> This information is a guide only and should not be relied upon as a recommendation or advice, that any particular mortgage is suitable for you. </p>
+             <p class="MRresultShow-s">All mortgages are subject to the applicants meeting the eligibility criteria of the specific lender</p>
+             <p class="MRresultShow-s">You should make an appointment to receive mortgage advice which will be based on your needs and circumstances</p>
+     
+     
+           </div>
+           <p class="monthly-payment-info">
+              Our UK mortgage repayment calculator gives you an estimate of what your monthly mortgage payments might be based on the interest rate, so you can calculate how much mortgage you can afford.
+        <br> <br>
+              Enter the amount you want to borrow, the interest rate and select a mortgage type to find out how much you will have to repay each month. 
+        </p>
+
+    </div>
+
+    <div class="col-md-12 col-lg-4 side-bar">
+        <div class="side-bar-list">
+          <div class="side-bar-list-title">
+              Other Catagories
+          </div>
+          <div class="side-bar-list-item">
+              <a href="/first-time-buyer-mortgages">First Time Buyer Mortgages</a>
+          </div>
+          <div class="side-bar-list-item">
+              <a href="/buy-to-let-mortgages">Buy to Let Mortgages</a>
+          </div>
+          <div class="side-bar-list-item">
+              <a href="/re-mortgage-advice">Re-mortgages</a>
+          </div>
+          <div class="side-bar-list-item">
+              <a href="/government-schemes">Government Schemes</a>
+          </div>
+          <div class="side-bar-list-item">
+              <a href="/self-employed-mortgages">Self-employed Advice</a>
+          </div>
+          <div class="side-bar-list-item">
+              <a href="/mortgage-advice">General Mortgage Advice</a>
+          </div>
+          <div class="side-bar-list-item">
+            <a href="/mortgage-news">Mortgage News</a>
+          </div>
+      </div>
+      <div id="carousel-widget"></div>
+      <div class="side-bar-infograph">
+          <div class="side-bar-infograph-top">
+             <div class="side-bar-infograph-item">
+                <div class="side-bar-infograph-item-icon-box">
+                   <i class="far fa-thumbs-up"></i>
+                </div>
+                <div class="side-bar-infograph-item-title">
+                  Fee Free
+                </div>
+                <div class="side-bar-infograph-item-content">
+                  We will never charge you a fee for our services !
+                </div>
+             </div>
+             <div class="side-bar-infograph-item">
+                  <div class="side-bar-infograph-item-icon-box">
+                      <i class="fas fa-lock"></i>
+                  </div>
+                  <div class="side-bar-infograph-item-title">
+                    Safe & Secure
+                  </div>
+                  <div class="side-bar-infograph-item-content">
+                    GDPR ready your data is encrpted so you can relax !
+                  </div>
+               </div>
+          </div>
+          <div class="side-bar-infograph-bottom">
+                  <div class="side-bar-infograph-item">
+                          <div class="side-bar-infograph-item-icon-box">
+                              <i class="far fa-check-circle"></i>
+                          </div>
+                          <div class="side-bar-infograph-item-title">
+                            Range of Lenders
+                          </div>
+                          <div class="side-bar-infograph-item-content">
+                            Competitive rates from across the market !
+                          </div>
+                       </div>
+                       <div class="side-bar-infograph-item">
+                              <div class="side-bar-infograph-item-icon-box">
+                                  <i class="fas fa-balance-scale"></i>
+                              </div>
+                              <div class="side-bar-infograph-item-title">
+                                Unbiased Service
+                              </div>
+                              <div class="side-bar-infograph-item-content">
+                                We are not tied to any lender and aim to find the best deal for you !
+                              </div>
+                           </div>
+          </div>
+      </div>
+    
+      <div class="side-bar-contact">
+          <div class="side-bar-contact">
+            <div class="side-bar-contact-title">
+                Speak to an Adviser today <br>
+                <P class="number">Call <a onclick="return gtag_report_conversion('tel:08009756476');" id="contactNumber" href="tel:08009756476">0800 975 6476</a></P>
+                <div class="side-bar-contact-title-or">or</div>
+                <a href="" class="btn btn-success" id="contactButton" data-toggle="modal" data-target="#modal-enquire">Enquire Now</a>
+            </div>
+          </div>
+        </div>
+    </div>
+
+    </div>
+    </div>
+  
+
+
+
+<script src="/js/src/calculators-monthly-repayment.js"></script>
+<script src="/js/dist/calculators-monthly-repayment.js"></script>
+
+<% include ../partials/footer %>
