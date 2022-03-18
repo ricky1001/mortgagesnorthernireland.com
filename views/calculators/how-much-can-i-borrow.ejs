@@ -1,0 +1,182 @@
+<% include ../partials/head-tags %>
+<% include ../partials/main-menu %>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 col-lg-8">
+      <div class="row">
+        <div class="col-12">
+         <h1>How much can you Borrow Mortgage Calculator !</h1>
+        </div>
+      </div>
+        <div class="row">
+            <div class="col">
+              <h3>First Applicant</h3>
+            </div>
+          </div>
+          <div class="row">
+           <div class="col-6">
+               <label for="firstIncome">Basic Salary Annual Gross</label>
+             <input type="text" class="form-control" id="firstIncome">
+           </div>
+           <div class="col-6">
+               <label for="firstBonus">Bonus Annual Gross</label>
+             <input type="text" class="form-control" id="firstBonus">
+           </div>
+         </div>
+          <div class="row">
+            <div class="col">
+              <div class="addSecondApp"><i class="fas fa-plus"></i> Add a second Applicant</div>
+            </div>
+          </div>
+    
+        <div class="secondAppInput" id="secondAppHidden">
+          <div class="row">
+              <div class="col">
+                <h3>Second Applicant Income</h3>
+              </div>
+          </div>
+          <div class="row">
+           <div class="col-6">
+               <label for="secondIncome">Basic Salary Annual Gross</label>
+             <input type="text" class="form-control" id="secondIncome">
+           </div>
+           <div class="col-6">
+               <label for="secondBonus">Bonus Annual Gross</label>
+             <input type="text" class="form-control" id="secondBonus">
+           </div>
+         </div>
+        </div>
+         <div class="row">
+           <div class="col">
+             <button class="btn btn-success totalBorrow">Submit</button>
+           </div>
+         </div>
+    
+        <div id="maxBorrow" class="youCouldBorrow"> <p class="maxBorrowP">As a guide you could roughly Borrow up to </p>
+                                                    <p id="totLoan"></p>
+                                                     <p class="maxBorrowP">Want to know more call <span><a href="tel:08009756476">0800 975 6476</a></span> <br> or <br> <a href="" class="btn btn-success" data-toggle="modal" data-target="#modal-enquire">Enquire Now</a></p>
+                                                     <p class="MRresultShow-s"> This information is a guide only and should not be relied upon as a recommendation or advice, that any particular mortgage is suitable for you. </p>
+                                                     <p class="MRresultShow-s">All mortgages are subject to the applicants meeting the eligibility criteria of the specific lender</p>
+                                                     <p class="MRresultShow-s">You should make an appointment to receive mortgage advice which will be based on your needs and circumstances</p>
+    
+        </div>
+    
+    
+    
+        <div class="calculator-warning-box">
+          <div class="calculator-warning-box-head">
+             <strong>This is not a quotation under the Consumer Credit Act. Figures are subject to validation of income, credit checks and a property valuation.</strong>
+          </div>
+            <p>
+              Our how much could you borrow mortgage calculator is a great starting place for anybody trying to buy a new property but it is by no means a definitive answer. 
+             <br><br> Your choosen lender will take many additional factors into consideration before offering a loan for example committed expenditure such as loans and outstanding credit card debt.
+             <br><br> Every lender has their own unique criteria and their own way of calulating your maximum loan amount. Our mortgage brokers have a wealth of experience when it comes to criteria and will instinctively know who is most likely to accept your application. 
+             <br><br> If you have been turned down by a another lender or just want to chat about a potential purchase <a href="/contact-us">contact us today</a>.
+            </p>
+          </div>
+
+    </div>
+    <div class="col-md-12 col-lg-4 side-bar">
+        <div class="side-bar-list">
+          <div class="side-bar-list-title">
+              Other Catagories
+          </div>
+          <div class="side-bar-list-item">
+              <a href="/first-time-buyer-mortgages">First Time Buyer Mortgages</a>
+          </div>
+          <div class="side-bar-list-item">
+              <a href="/buy-to-let-mortgages">Buy to Let Mortgages</a>
+          </div>
+          <div class="side-bar-list-item">
+              <a href="/re-mortgage-advice">Re-mortgages</a>
+          </div>
+          <div class="side-bar-list-item">
+              <a href="/government-schemes">Government Schemes</a>
+          </div>
+          <div class="side-bar-list-item">
+              <a href="/self-employed-mortgages">Self-employed Advice</a>
+          </div>
+          <div class="side-bar-list-item">
+              <a href="/mortgage-advice">General Mortgage Advice</a>
+          </div>
+          <div class="side-bar-list-item">
+            <a href="/mortgage-news">Mortgage News</a>
+          </div>
+      </div>
+      <div id="carousel-widget"></div>
+      <div class="side-bar-infograph">
+          <div class="side-bar-infograph-top">
+             <div class="side-bar-infograph-item">
+                <div class="side-bar-infograph-item-icon-box">
+                   <i class="far fa-thumbs-up"></i>
+                </div>
+                <div class="side-bar-infograph-item-title">
+                  Fee Free
+                </div>
+                <div class="side-bar-infograph-item-content">
+                  We will never charge you a fee for our services !
+                </div>
+             </div>
+             <div class="side-bar-infograph-item">
+                  <div class="side-bar-infograph-item-icon-box">
+                      <i class="fas fa-lock"></i>
+                  </div>
+                  <div class="side-bar-infograph-item-title">
+                    Safe & Secure
+                  </div>
+                  <div class="side-bar-infograph-item-content">
+                    GDPR ready your data is encrpted so you can relax !
+                  </div>
+               </div>
+          </div>
+          <div class="side-bar-infograph-bottom">
+                  <div class="side-bar-infograph-item">
+                          <div class="side-bar-infograph-item-icon-box">
+                              <i class="far fa-check-circle"></i>
+                          </div>
+                          <div class="side-bar-infograph-item-title">
+                            Range of Lenders
+                          </div>
+                          <div class="side-bar-infograph-item-content">
+                            Competitive rates from across the market !
+                          </div>
+                       </div>
+                       <div class="side-bar-infograph-item">
+                              <div class="side-bar-infograph-item-icon-box">
+                                  <i class="fas fa-balance-scale"></i>
+                              </div>
+                              <div class="side-bar-infograph-item-title">
+                                Unbiased Service
+                              </div>
+                              <div class="side-bar-infograph-item-content">
+                                We are not tied to any lender and aim to find the best deal for you !
+                              </div>
+                           </div>
+          </div>
+      </div>
+    
+      <div class="side-bar-contact">
+          <div class="side-bar-contact">
+            <div class="side-bar-contact-title">
+                Speak to an Adviser today <br>
+                <P class="number">Call <a onclick="return gtag_report_conversion('tel:08009756476');" id="contactNumber" href="tel:08009756476">0800 975 6476</a></P>
+                <div class="side-bar-contact-title-or">or</div>
+                <a href="" class="btn btn-success" id="contactButton" data-toggle="modal" data-target="#modal-enquire">Enquire Now</a>
+            </div>
+          </div>
+        </div>
+    </div>
+    
+  </div>
+</div>
+
+
+
+
+
+<!--Calculators -->
+<script src="/js/src/calculators-how-much-can-i-borrow.js"></script>
+<script src="/js/dist/calculators-how-much-can-i-borrow.js"></script>
+
+<% include ../partials/footer %>

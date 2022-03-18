@@ -1,0 +1,10 @@
+Express Sanitizer:- Useful to stop scripts being entered into your app by a user
+Express-Session :- 
+Method-Override:- Allows us to override a post request as a put request 
+Body-Parser :- Allows you to wrap form inputs into an object when passing them to a route
+mongoose:- allows us to work with model data and communicate with the mlab server
+
+passport:-
+passport-local:-
+passport-local-mongoose:-
+

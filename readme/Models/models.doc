@@ -1,0 +1,22 @@
+Models
+
+1. Set up the models in their own seperate folder we do not need to add these to the app.js file because they will be required by the routes 
+2. We will need to require mongoose at the top of each model file and then export the schema at the bottom of each file learn a bit more about data associations.
+
+var mongoose = require("mongoose");
+
+var mortgageAdviceSchema = new mongoose.Schema({
+    image: String,
+    title: String,
+    content: String,
+    metatitle: String,
+    metadescription: String,
+    categorie: String,
+    author: String,
+    authorPic: String,
+    _id: String
+});
+
+module.exports = mongoose.model("mortgageAdvice", mortgageAdviceSchema);
+
+//Buy to Let, First Time Buyer, self-build, capital raising, self-employed, fixed rate mortgages, moving home, debt consolidation, product transfers

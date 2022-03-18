@@ -1,0 +1,165 @@
+<% include ../partials/head-tags %>
+<% include ../partials/main-menu %>
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 col-lg-8">
+
+        <div class="row">
+            <div class="col-12">
+              <h1>Stamp Duty Calculator!</h1>
+            </div>
+          </div>
+
+              <div class="row">
+                <div class="col-12">
+                    <label for="SDbuyerStatusID">Your Status</label>
+                    <div class="form-group">
+                        <select class="form-control" id="SDbuyerStatusID" class="SDbuyerStatus">
+                          <option>First Time Buyer</option>
+                          <option>Home Mover</option>
+                          <option>Further Properties ( You will own more than 1 property upon completion )</option>
+                        </select>
+                      </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-12">
+                    <label for="SDloanAmountID">Loan Amount</label>
+                    <div class="input-group mb-3">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text">£</span>
+                      </div>
+                      <input type="text" class="form-control" class="SDloanAmount" id="SDloanAmountID" aria-label="Amount (to the nearest dollar)">
+                    </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-12">
+                  <button class="btn btn-success calculateSD">Calculate</button>
+              
+        
+                <div class="SDresult" id="SDresultID">
+                  <p class="MRresultShow-p">Your stamp Duty would be</p>
+                  <p id="SDcalc"></p> 
+                  <p class="MRresultShow-p">Want to know more call <span><a href="tel:08009756476">0800 975 6476</a></span> <br> or <br> <a href="" class="btn btn-success" data-toggle="modal" data-target="#modal-enquire">Enquire Now</a></p>
+                  <p class="MRresultShow-s"> This information is a guide only and should not be relied upon as a recommendation or advice, that any particular mortgage is suitable for you. </p>
+                  <p class="MRresultShow-s">All mortgages are subject to the applicants meeting the eligibility criteria of the specific lender</p>
+                  <p class="MRresultShow-s">You should make an appointment to receive mortgage advice which will be based on your needs and circumstances</p>
+                </div>
+                <p class="mt-4">
+                    First-time buyers don’t pay any stamp duty on properties priced up to £300,000 and will only pay 5% on any amount paid between £300,001 and £500,000.
+                    <br><br>
+                    Use our stamp duty calculator below to find out exactly how much tax you will pay when buying a main residential or secondary property in England, Wales or Northern Ireland.
+                    <br><br>
+                    This SDLT calculator works whether you’re a first-time buyer, a second home buyer or you are simply looking to move from one property to another. </p>
+          
+              </div>
+        
+            </div>
+
+            </div>
+
+
+  
+    <div class="col-md-12 col-lg-4 side-bar">
+        <div class="side-bar-list">
+            <div class="side-bar-list-title">
+                Other Catagories
+            </div>
+            <div class="side-bar-list-item">
+                <a href="/first-time-buyer-mortgages">First Time Buyer Mortgages</a>
+            </div>
+            <div class="side-bar-list-item">
+                <a href="/buy-to-let-mortgages">Buy to Let Mortgages</a>
+            </div>
+            <div class="side-bar-list-item">
+                <a href="/re-mortgage-advice">Re-mortgages</a>
+            </div>
+            <div class="side-bar-list-item">
+                <a href="/government-schemes">Government Schemes</a>
+            </div>
+            <div class="side-bar-list-item">
+                <a href="/self-employed-mortgages">Self-employed Advice</a>
+            </div>
+            <div class="side-bar-list-item">
+                <a href="/mortgage-advice">General Mortgage Advice</a>
+            </div>
+            <div class="side-bar-list-item">
+              <a href="/mortgage-news">Mortgage News</a>
+            </div>
+        </div>
+        <div id="carousel-widget"></div>     
+        <div class="side-bar-infograph">
+            <div class="side-bar-infograph-top">
+               <div class="side-bar-infograph-item">
+                  <div class="side-bar-infograph-item-icon-box">
+                     <i class="far fa-thumbs-up"></i>
+                  </div>
+                  <div class="side-bar-infograph-item-title">
+                    Fee Free
+                  </div>
+                  <div class="side-bar-infograph-item-content">
+                    We will never charge you a fee for our services !
+                  </div>
+               </div>
+               <div class="side-bar-infograph-item">
+                    <div class="side-bar-infograph-item-icon-box">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <div class="side-bar-infograph-item-title">
+                      Safe & Secure
+                    </div>
+                    <div class="side-bar-infograph-item-content">
+                      GDPR ready your data is encrpted so you can relax !
+                    </div>
+                 </div>
+            </div>
+            <div class="side-bar-infograph-bottom">
+                    <div class="side-bar-infograph-item">
+                            <div class="side-bar-infograph-item-icon-box">
+                                <i class="far fa-check-circle"></i>
+                            </div>
+                            <div class="side-bar-infograph-item-title">
+                              Range of Lenders
+                            </div>
+                            <div class="side-bar-infograph-item-content">
+                              Competitive rates from across the market !
+                            </div>
+                         </div>
+                         <div class="side-bar-infograph-item">
+                                <div class="side-bar-infograph-item-icon-box">
+                                    <i class="fas fa-balance-scale"></i>
+                                </div>
+                                <div class="side-bar-infograph-item-title">
+                                  Unbiased Service
+                                </div>
+                                <div class="side-bar-infograph-item-content">
+                                  We are not tied to any lender and aim to find the best deal for you !
+                                </div>
+                             </div>
+            </div>
+        </div>
+      
+        <div class="side-bar-contact">
+            <div class="side-bar-contact">
+              <div class="side-bar-contact-title">
+                  Speak to an Adviser today <br>
+                  <P class="number">Call <a onclick="return gtag_report_conversion('tel:08009756476');" id="contactNumber" href="tel:08009756476">0800 975 6476</a></P>
+                  <div class="side-bar-contact-title-or">or</div>
+                  <a href="" class="btn btn-success" id="contactButton" data-toggle="modal" data-target="#modal-enquire">Enquire Now</a>
+              </div>
+            </div>
+          </div>
+      </div>
+  </div>
+</div>
+
+
+
+
+<script src="/js/src/stamp-duty.js"></script>
+<script src="/js/dist/stamp-duty.js"></script>
+
+<% include ../partials/footer %>

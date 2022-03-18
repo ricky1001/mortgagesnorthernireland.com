@@ -1,0 +1,22 @@
+.SDresult{
+    display: none;
+}
+
+.SDresultshow{
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    display: block;
+    background-color: $primary-purple-dark;
+    color: white;
+    padding: 1rem;
+
+    & p {
+        text-align: center;
+    }
+
+    & #SDcalc{
+        color: $tertiary-orange-dark;
+        font-size: 3rem;
+        font-weight: 700;
+    }
+}

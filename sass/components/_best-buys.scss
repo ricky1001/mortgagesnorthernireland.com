@@ -1,0 +1,175 @@
+.best-buys{
+    display:none;
+    
+    width: 100%;
+    position: relative;
+    background-color: $primary-purple-dark;
+    margin-bottom: 2.5rem;
+    padding-bottom: 4rem;
+
+    & .row{
+        margin-right: 0px;
+    }
+
+    & .column{
+        @include media-breakpoint-down(md){
+            margin-bottom: 2rem;
+        }
+    }
+
+    &-title{
+        text-align: center;
+        font-weight: 500;
+        font-size: 2.4rem;
+        color: $color-white;
+
+        @include media-breakpoint-down(xs){
+            font-size: 1.5rem;
+        }
+    }
+
+    &-outter{
+        position: relative;
+        width: 95%;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: $color-white;
+        padding-top: 1rem;
+        padding-bottom: 3rem;
+        border-radius: 3px;
+    }
+
+    &-inner{
+        width: 100%;
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+
+        &-title{
+            font-weight: 500;
+            color: $primary-purple-dark;
+            font-size: 1.4rem;
+        }
+       
+        
+
+        & p{
+            position: relative;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 90%;
+        }
+
+
+    }
+
+    &-table{
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 90%;
+
+        &-resi{
+            background-image: linear-gradient(
+                              to right bottom,
+                              rgba($primary-purple, 0.3),
+                              rgba($primary-purple, 0.3));
+        }
+
+        &-btl{
+            background-image: linear-gradient(
+                              to right bottom,
+                              rgba($tertiary-red-light, 0.3),
+                              rgba($tertiary-red-light, 0.3));
+        }
+    }
+
+
+    
+
+        & .head-row{
+            border-bottom: 1px solid $background-grey;
+            border-right: 1px solid $color-white;
+            border-left: 1px solid $color-white;
+
+        }
+
+        & th{
+            padding-top: .6rem;
+            padding-bottom: .6rem;
+        }
+
+        & .cell{
+            border:1px solid $color-white;
+            text-align: center;
+            height: 4rem;
+        }
+
+        & .lender{
+         width: 40%;
+         padding-left: .3rem;
+         
+         & img{
+             height: 1rem;
+             background-color: $color-white;
+             padding: .5rem;
+         }
+        }
+
+        & .rate{
+        width: 20%;
+        padding-left: .3rem;
+        }
+
+        & .aprc{
+         width: 40%;
+         padding-left: .3rem;
+        }
+
+        //main table body
+
+        & .lender-cell{  
+
+            & img{
+                height:3rem;
+                padding: .5rem;
+                background-color: $color-white;
+            }
+        }
+
+        & .aprc-cell{
+            position: relative;
+
+
+           & span{
+               position: relative;
+               float: left;
+               padding-left: .5rem;
+
+               @include media-breakpoint-down(xs){
+                   display: block;
+                   position: relative;
+                   top: 0rem;
+                   left: 50%;
+                   transform: translateX(-50%);
+                   padding-bottom: .2rem; 
+                   width: 100%;
+               }
+           }
+
+           & a{
+               @include media-breakpoint-down(xs){
+                  
+                  text-align: center;
+
+
+               }
+           }
+
+  
+        }
+
+
+    }
+
+

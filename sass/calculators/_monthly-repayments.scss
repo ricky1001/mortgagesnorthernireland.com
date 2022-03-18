@@ -1,0 +1,48 @@
+.MRresult{
+    display: none;
+}
+
+.MRresultShow{
+    padding: .6rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    display: block;
+    background-color: $primary-purple-dark;
+  
+
+    &-p{
+        text-align: center;
+        font-size: 1.7rem;
+        font-weight: 500;
+        color: $color-white;
+
+        & span{
+            & a{
+                color: $tertiary-orange;
+        
+                &:hover{
+                    color: $tertiary-orange-dark;
+                    text-decoration: none;
+                }
+            }
+        }
+
+        &-r{
+            color: $tertiary-orange-dark;
+            text-align: center;
+            font-size: 3rem;
+            font-weight: 700;
+        }
+    }
+    &-s{
+        text-align: center;
+        font-size: .8rem;
+        font-weight: 400;
+        color: $color-white;
+    }
+   
+}
+
+.monthly-payment-info{
+    margin-top: 2rem;
+}

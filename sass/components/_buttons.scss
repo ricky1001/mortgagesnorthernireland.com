@@ -1,0 +1,24 @@
+.cusbutton-orange{
+    padding: .5rem;
+    background-color: $tertiary-orange-dark;
+    color: $color-white;
+    display: inline-block;
+    border-radius: 8px;
+    text-decoration: none;
+
+    & a{
+        text-decoration: none;
+        color: $color-white;
+    }
+
+}
+
+.cusbutton-green{
+    padding: .5rem;
+    background-color: $tertiary-yellow-dark;
+    color: $color-white;
+    display: inline-block;
+    border-radius: 8px;
+    margin-right:1rem;
+
+}

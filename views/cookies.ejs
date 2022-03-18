@@ -1,0 +1,68 @@
+<% include ./partials/head-tags %>
+<% include ./partials/main-menu %>
+
+<div class="section">
+   <div class="container">
+     <div class="row">  
+       <div class="col-lg-8 col-md-12">   
+         <h3 class="display-6">Cookies</h3>
+         <p class="text-justify"> 
+            Cookies are small files which are stored on a users computer. They are designed to hold small amounts of data specific to a particular client and website, they can be accessed either by the web server or the clients computer. This allows the server to deliver a page tailored to a particular user, or the page itself can contain some script which is aware of the data in the cookie and so is able to carry information from one visit to the website ( or related site ) to the next.
+             <br><br>
+            Any cookies which are not used to make your experience of using the website better oonly provide us with statistics about the way users in general navigate the site. We do not use any information derived from cookies to identify any individual users.
+             <br><br>
+            Some of the cookies we use.
+            <ul>
+             <li>Google analytics</li>
+             <li>Wufoo Forms</li>
+             <li>Snackbanner</li>
+            </ul>
+           
+             How to stop or delete these cookies
+              <br><br>
+             To stop cookies being stored in the future, you’ll need to alter the setting of your internet browser. You can find instructions on how to do this by clicking “Help” in the menu bar, or following these Instructions on www.allaboutcookies.org
+         </p>
+       </div>
+       <div class="col-lg-4 col-md-12">
+         
+            <div class="card text-center mt-3  card-form ftbForm mb-3">
+    <h5 class="quick-enquiry"><strong>Quick Enquiry</strong></h5>
+    <div class="container form-container">
+      
+       <div class="form enquiry-form">
+         <div class="container pt-2 pb-2">
+           <form action="enquiry-new" method="POST">
+               <div class="form-group">
+                 <input type="text" class="form-control" placeholder="Your Name" name="enquiry[name]">
+               </div>
+             
+               <div class="form-group">
+                 <input type="text" class="form-control" placeholder="Post Code" name="enquiry[postcode]">
+               </div> 
+
+               <div class="form-group">
+                 <input type="text" class="form-control" placeholder="Your e-mail" name="enquiry[email]">
+               </div>              
+       
+              <div class="form-group">
+                 <input type="text" class="form-control" placeholder="Contact Number" name="enquiry[contactNumber]">
+               </div>
+
+               <div class="form-group">
+              <textarea rows="5" class="form-control" placeholder="Your Message" name="enquiry[content]"></textarea>
+               </div>
+               <input type="submit" value="submit" class="btn btn-block enquiry-form-button">
+             </form>
+          </div>
+         </div>
+    </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+<% include ./partials/footer %>

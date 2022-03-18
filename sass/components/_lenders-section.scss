@@ -1,0 +1,140 @@
+.lenders{
+    position: relative;
+
+    &-section{
+      background-color: $background-grey;
+      height: 30rem;
+      width: 100%;
+
+      @include media-breakpoint-down(md){
+        display: none;
+    }
+
+      & .row{
+          margin-right: 0rem;
+      }
+    }
+
+    &-outter{
+        padding:2.5rem;
+        position: relative;
+        width: 90%;
+        left: 50%;
+        transform: translateX(-50%);
+        height: 30rem;
+        margin-right: 0rem;
+
+        & p{
+            position: absolute;
+            left: 50%;
+            top:5%;
+            transform: translateX(-50%);
+            width: 55%;
+            text-align: center;
+            font-size: 2rem;
+            font-weight: 500;
+            color: $primary-purple-dark;
+
+            @include media-breakpoint-down(lg){
+                font-size: 1.6rem;
+                font-weight: 700;
+            }
+
+        } 
+
+        & .img{
+            @include media-breakpoint-down(lg){
+                width: 20%;
+                height: auto;
+            }
+        }
+        
+        &-img{
+       //top row
+            &-halifax{
+             position: absolute;
+
+             right:0rem;
+
+            }
+    
+            &-kensington{
+                position: absolute;
+                right: 15rem;
+                top: 10rem;
+            }
+
+            &-bluestone{
+                position: absolute;
+                left: 50%;
+                transform: translateX(-50%);
+                top: 15rem;
+            }
+
+            &-natwest{
+                position: absolute;
+                left: 15rem;
+                top: 10rem;
+            }
+            &-precise{
+                position: absolute;
+                left:0rem;
+      
+            }
+
+     //middle row
+            &-principality{
+                position: absolute;
+                top: 13rem;
+                left: 0rem;
+            }
+
+            &-securetrustbank{
+                position: absolute;
+                width: 15%;
+                height: auto;
+                top: 20rem;
+                left: 15rem;
+            }
+
+            &-barclays{
+                position: absolute;
+                right:15rem;
+                top: 18rem;
+              }
+
+
+      //Bottom Row
+
+
+              &-santander{
+                position: absolute;
+                top: 23rem;
+                left: 0rem;
+            }
+
+            &-tesco-bank{
+                position: absolute;
+                left:50%;
+                transform: translateX(-50%);
+                bottom: 2rem;
+            }
+
+            &-virgin{
+                position: absolute;
+                top: 50%;
+                right: 0rem;
+                transform: translateY(-50%);
+            }
+
+            &-accord{
+                position: absolute;
+                right: 0rem;
+                bottom: 2rem;
+            }
+        }
+    }
+
+
+
+}

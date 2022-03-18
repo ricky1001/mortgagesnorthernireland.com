@@ -1,0 +1,7 @@
+How the site will be updated!
+
+The site is hosted on Heroku under the app name mortgagesnorthernirelandcom
+The Heroku app is connected to github ricky1001/mortgagesnorthernireland.com
+When working on the site 
+
+This is new TEXT THAT CANNOT BE SEN ON THE MASTER / MAIN BRANCH

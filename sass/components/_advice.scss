@@ -1,0 +1,112 @@
+.advice{
+    width:100%;
+    
+    &-main-title{
+        
+        & h3{
+            text-align: center;
+            font-weight: 500;
+            font-size: 2rem;
+            color: $primary-purple-dark;
+            padding-bottom: 2rem;
+        }
+    }
+
+
+    &-item{
+        position: relative;
+        height: 32rem;
+        background-image: linear-gradient(
+            to right bottom,
+            rgba($tertiary-red-light, 0.1),
+            rgba($tertiary-red-light, 0.1));
+        border-bottom: .4rem solid $primary-purple-dark;
+        box-shadow: 0 10px 10px 3px rgba(0, 0, 0, 0.17);
+
+        @include media-breakpoint-down(md){
+            margin-bottom: 1.5rem;
+        }
+ 
+        &-img{
+        height: 8rem;
+        @include media-breakpoint-down(xs){
+            height:12rem
+        }
+
+            & img{
+                position: relative;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 100%;
+                height: 8rem;
+
+
+
+                @include media-breakpoint-down(sm){
+                    height:14rem
+                }
+
+                @include media-breakpoint-down(xs){
+                    height:12rem
+                }
+            }
+        }
+
+        &-title{
+            height: 5rem;
+
+            @include media-breakpoint-down(xs){
+                height:3rem
+            }
+
+            & p{
+                padding: .7rem;
+                font-weight: 500;
+                font-size: 1.2rem;
+            }
+        }
+
+        &-content{
+             height: 13rem;
+             @include media-breakpoint-down(xs){
+                height:11rem
+            }
+
+
+            &-a{
+                color: $primary-purple-dark;
+        
+                &:hover{
+                    color: $tertiary-orange-dark;
+                    text-decoration: none;
+                }
+            }
+
+
+            & p{
+            padding: .7rem;
+            text-align: justify;
+            }
+
+        }
+
+        &-date{
+            position: relative;
+            height: 6rem;
+            font-weight: 500;
+            color: $tertiary-orange;
+
+            & p{
+                position: absolute;
+                bottom: 0rem;
+                padding-left: .7rem;
+            }
+        }
+    }
+
+    &-footer{
+        text-align: center;
+        height: 7rem;
+        padding-top: 3rem;
+    }
+}

@@ -1,0 +1,55 @@
+.guide{
+
+    &-head{
+        background-color: $background-grey;
+
+
+        font-size: 1.8rem;
+
+        & .in-this-guide{
+            padding: 2rem;
+            
+          
+                color: $vibrant-purple;
+        
+
+            @media (max-width: 768px) {
+                padding-left: 0rem;
+                padding-right: 0rem;
+                padding-top: 0rem;
+              }
+
+              @media (max-width: 768px) {
+                font-size: 1.4rem;
+              }
+           
+            & .key-point-head{
+                font-weight: 500;
+            }
+        }
+    }
+}
+
+.key-point{
+    padding-left: 3rem;
+    padding-right: 3rem;
+    padding-top: 3rem;
+
+    @media (max-width: 768px) {
+        padding-left: .8rem;
+        padding-right: .8rem;
+        padding-top: .8rem;
+      }
+
+    & h3{
+        
+    }
+
+    & p{
+        font-size: 1.1rem;
+    }
+}
+
+.alt-color{
+   background-color: $background-grey;
+}
