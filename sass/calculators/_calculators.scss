@@ -35,7 +35,7 @@
     border-top: 1px solid grey;
     background-color: $vibrant-purple;
     color: white;
-    height: 45vh;
+    height: 50vh;
     border-radius: 10px;
     background-color:$footer-dark;
     text-align: center;
@@ -48,7 +48,7 @@
 
     &-middle{
         padding-top: .5rem;
-        height:33%;
+        height:40%;
         border-top: 4px solid $footer-light;
     }
 
@@ -84,6 +84,10 @@
 #nav-tab-item{
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
+}
+
+.ltv-para{
+    text-align: center;
 }
 
 

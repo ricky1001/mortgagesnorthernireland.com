@@ -68,16 +68,12 @@
                       <input type="number" class="form-control maxLoanInput" id="monthlyOutgoings" value="0" placeholder="0">
                     </div>
 
-                    <div class="risk-warning">
-                      <div class="risk-warning-inner">
                         This information is a guide only and should not be relied on as a recommendation or advice, that any particular mortgage is suitable for you.
 
                         All mortgages are subject to the applicant(s) meeting the eligibility criteria of the specific lender.
 
                         You should make an appointment to receive mortgage advice which will based on your needs and circumstances.
-                      </div>
-                    </div>
-
+                
                 </form>
 
             </div>
@@ -139,9 +135,7 @@
                 <span id="maxLoan" class="bold-output">£000,000</span>
               </div>
               <div class="calcResponseOutter-middle">
-               <p>
-                Loan to Value (LTV): <span id="LTV" class="bold-white-background bold-output"> 0</span> %
-               </p> 
+               <p class="ltv-para">Loan to Value (LTV): <span id="LTV" class="bold-white-background bold-output"> 0</span> %</p> 
                 Including your deposit you could afford a house price up to <br>
                 <span id="maxPurchasePrice" class="bold-white-background bold-output">£000</span>
               </div>
@@ -220,7 +214,7 @@
 <script>
   var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
 var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
-  return new bootstrap.Tooltip(tooltipTriggerEl)
+  //return new bootstrap.Tooltip(tooltipTriggerEl)
 })
 </script>
 
