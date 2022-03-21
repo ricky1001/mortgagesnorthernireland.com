@@ -15,8 +15,23 @@
      <div class="row">
         <div class="col-lg-6">
 
+<!--New version to test straight from Bootstrap-->
+          <nav>
+            <div class="nav nav-tabs" id="nav-tab" role="tablist">
+              <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">Home</button>
+              <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">Profile</button>
+            </div>
+          </nav>
+          <div class="tab-content" id="nav-tabContent">
+            <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">This</div>
+            <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">That</div>
+          </div>
+
+
+
+<!---My current version not working-->
         <nav>
-            <div id="nav-tab-item" class="nav nav-tabs" id="nav-tab" role="tablist">
+            <div id="nav-tab-item" class="nav nav-tabs" role="tablist">
 
               <button class="nav-link active nav-link-button" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">How much can I Borrow?</button>
 
@@ -261,6 +276,7 @@ var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
 
 </script>
 
+<!--Script below is listening for a click on the nav tabs and switching the content of each accordingly -->
 <script>
   var maxLoanDiv = document.getElementById("nav-home-tab");
   var monthlyPayDiv = document.getElementById("nav-profile-tab");
@@ -268,7 +284,7 @@ var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
   var maxLoanOutPut = document.getElementById("calResponseMaxLoan");
   var monthlyCostOutPut = document.getElementById("calcResponseMonthlyCost");
 
-  document.getElementById("nav-tab-item").addEventListener("click", function(){
+  document.getElementById("nav-tab-item").addEventListener("click", function(e){
     if(maxLoanDiv.classList.contains("active")){
        maxLoanOutPut.style.display = "block";
        monthlyCostOutPut.style.display = "none";
@@ -278,6 +294,25 @@ var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
      }
   })
 
+</script>
 
+<script>
+    var maxLoanDiv = document.getElementById("nav-home-tab");
+    var monthlyPayDiv = document.getElementById("nav-profile-tab");
+
+  var maxLoanOutPut = document.getElementById("calResponseMaxLoan");
+  var monthlyCostOutPut = document.getElementById("calcResponseMonthlyCost");
+
+  document.getElementById("nav-tab-item").addEventListener("click", function(e){
+    if(e.target.id === "nav-profile-tab"){
+      console.log("click")
+      monthlyCostOutPut.style.display = "block";
+      maxLoanOutPut.style.display = "none";
+
+      maxLoanDiv.style.display = "none"
+    }else{
+
+    }
+  })
 
 </script>
