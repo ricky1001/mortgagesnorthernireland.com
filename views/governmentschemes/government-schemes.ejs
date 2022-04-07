@@ -1,5 +1,5 @@
-<% include ../partials/head-tags %>
-<% include ../partials/main-menu %>
+<%- include('../partials/head-tags') %>
+<%- include('../partials/main-menu') %>
 
 <div class="container">
   <div class="row">
@@ -133,7 +133,7 @@
               <div class="side-bar-contact">
                 <div class="side-bar-contact-title">
                     Speak to an Adviser today <br>
-                    <P class="number">Call <a onclick="return gtag_report_conversion('tel:08009756476');" id="contactNumber" href="tel:08009756476">0800 975 6476</a></P>
+                    <P class="number">Call <a  id="contactNumber" href="tel:08009756476">0800 975 6476</a></P>
                     <div class="side-bar-contact-title-or">or</div>
                     <a href="" class="btn btn-success" id="contactButton" data-toggle="modal" data-target="#modal-enquire">Enquire Now</a>
                 </div>
@@ -144,7 +144,7 @@
  </div>
 </div>
 
-  <% include ../partials/footer %>
+<%- include('../partials/footer') %>
 
 
 
