@@ -1,12 +1,319 @@
 <%- include('../partials/head-tags') %>
 <%- include('../partials/main-menu') %>
 
-<div class="container">
-    <div class="row">
-      <div class="col-12">
-        Put some calculators here 
-      </div>
+<div class="container pt-5">
+  <div class="row">
+    <div class="col-12">
+      <h1>Mortgage Calculators</h1>
+      <p>
+          Work out how much you could borrow or how much your monthly repayments would be with our <span class="strong">Mortgage Affordability Calculators</span>
+      </p>
     </div>
+  </div>
+     <div class="row">
+        <div class="col-lg-6">
+
+
+
+          <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item">
+              <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">How much can I borrow?</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">How much does it cost?</a>
+            </li>
+          </ul>
+          <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+              <form class="calc-form">
+
+                <div class="mb-3">
+                  <label for="grossAnnualApp1" class="form-label">
+                    Your gross annual Salary
+                  </label> 
+                  <span data-bs-toggle="tooltip" data-bs-placement="right" title="Here you can include your gross annual salary combined with the gross annualised figure for all benefits received including child benefit. For self-employed applicants an average of your last 2 years pre tax profits. For Ltd company traders you should speak to an adviser to ensure you are using accurate figures." >
+                    <i class="fas fa-question-circle"></i>
+                  </span>
+                  <input type="number" class="form-control maxLoanInput maxLoanInput" id="grossAnnualApp1" value="0">
+                </div>
+
+                <div class="mb-3">
+                  <label for="grossAnnualApp2" class="form-label">
+                    Your gross annual Salary
+                  </label> 
+                  <span data-bs-toggle="tooltip" data-bs-placement="right" title="Here you can include your partners gross annual salary. For self-employed applicants an average of your last 2 years pre tax profits. For Ltd company traders you should speak to an adviser to ensure you are using accurate figures." >
+                    <i class="fas fa-question-circle"></i>
+                  </span>
+                  <input type="number" class="form-control maxLoanInput" id="grossAnnualApp2" value="0">
+                </div>
+
+                <div class="mb-3">
+                  <label for="deposit" class="form-label">
+                    Deposit Amount
+                  </label> 
+                  <span data-bs-toggle="tooltip" data-bs-placement="right" title="Please enter the maximum deposit that you have available." >
+                    <i class="fas fa-question-circle"></i>
+                  </span>
+                  <input type="number" class="form-control maxLoanInput" id="deposit" value="0" placeholder="0">
+                </div>
+
+                <div class="mb-3">
+                  <label for="monthlyOutgoings" class="form-label">
+                    Monthly Outgoings 
+                  </label> 
+                  <span data-bs-toggle="tooltip" data-bs-placement="right" title="Lenders take regular monthly spending into account when deciding how much to lend. This includes loan repayments, credit cards, childcare fees, pension payments, etc." >
+                    <i class="fas fa-question-circle"></i>
+                  </span>
+                  <input type="number" class="form-control maxLoanInput" id="monthlyOutgoings" value="0" placeholder="0">
+                </div>
+
+                <div class="risk-warning">
+                  <div class="risk-warning-inner">
+                    This information is a guide only and should not be relied on as a recommendation or advice, that any particular mortgage is suitable for you.
+
+                    All mortgages are subject to the applicant(s) meeting the eligibility criteria of the specific lender.
+
+                    You should make an appointment to receive mortgage advice which will based on your needs and circumstances.
+                  </div>
+                </div>
+
+            </form>
+            </div>
+            <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+              <form class="calc-form" action="">
+
+                <div class="mb-3">
+                  <label for="loanAmount" class="form-label">
+                    Mortgage Amount
+                  </label> 
+                  <span data-bs-toggle="tooltip" data-bs-placement="right" title="How much money would you like to borrow?" >
+                    <i class="fas fa-question-circle"></i>
+                  </span>
+                  <input type="number" class="form-control repaymentInput" id="loanAmount" value="150000">
+                </div>
+
+                <div class="mb-3">
+                  <label for="term" class="form-label">
+                    Mortgage Term
+                  </label> 
+                  <span data-bs-toggle="tooltip" data-bs-placement="right" title="Over hw many years would you like the mortgage?" >
+                    <i class="fas fa-question-circle"></i>
+                  </span>
+                  <input type="number" class="form-control repaymentInput" id="term" value="30">
+                </div>
+
+                <div class="mb-3">
+                  <label for="interestRate" class="form-label">
+                    Interest Rate
+                  </label> 
+                  <span data-bs-toggle="tooltip" data-bs-placement="right" title="What is the interest rate on the proposed loan?" >
+                    <i class="fas fa-question-circle"></i>
+                  </span>
+                  <input type="number" class="form-control repaymentInput" id="interestRate" value="2.5">
+                </div>
+
+                <div class="mb-3">
+                  <label for="depositMR" class="form-label">
+                    Deposit ( Optional )
+                  </label> 
+                  <span data-bs-toggle="tooltip" data-bs-placement="right" title="How much of a deposit would you like  to put towards the loan this will help us to show you relevant products?" >
+                    <i class="fas fa-question-circle"></i>
+                  </span>
+                  <input type="number" class="form-control repaymentInput" id="depositMR" value="0">
+                </div>
+
+              </form>
+            </div>
+          </div>
+
+
+
+        </div>
+        <div class="col-lg-6">
+
+          <div id="calcResponseMaxLoan" class="">
+            <div class="calcResponseOutter">
+              <div class="calcResponseOutter-top">
+               <span class="bold-white-background">You could borrow up to:</span> <br>
+                <span id="maxLoan" class="bold-output">£000,000</span>
+              </div>
+              <div class="calcResponseOutter-middle">
+               <p id="LTVOutput">
+                Loan to Value (LTV): <span id="LTV" class="bold-white-background bold-output"> 0</span> %
+               </p> 
+                Including your deposit you could afford a house price up to <br>
+                <span id="maxPurchasePrice" class="bold-white-background bold-output">£000</span>
+              </div>
+              <div class="calcResponseOutter-bottom">
+                Other fees you may have to pay: <br>
+                Broker Fee <strong>( Free with Mortgages Northern Ireland )</strong> <br>
+                Legal Fees
+              </div>
+  
+            </div>
+          </div>
+
+          <div id="calcResponseMonthlyCost">
+            <div class="calcResponseOutter">
+              <div class="calcResponseOutter-top">
+               <span class="bold-white-background">Your monthly mortgage repayment:</span> <br>
+                <span id="monthlyRepayment" class="bold-output">£592</span>
+              </div>
+              <div class="calcResponseOutter-bottom">
+                Other fees you may have to pay: <br>
+                Broker Fee: <strong>( Free with Mortgages Northern Ireland )</strong> <br>
+                Legal Fees: Conveyancing fees usually paid to a solicitor to complete the sale. 
+              </div>
+  
+            </div>
+          </div>
+
+        </div>
+     </div>
 </div>
+
+<!--Calculates the outputs for the monthly payment-->
+<script>
+  var la = document.getElementById("loanAmount");
+  var t = document.getElementById("term");
+  var ir = document.getElementById("interestRate");
+  var d = document.getElementById("depositMR");
+  var monthlyPaymentSpan = document.getElementById("monthlyRepayment");
+
+
+  var allElements = document.getElementsByClassName("repaymentInput");
+
+ for (let i = 0; i < allElements.length; i++){
+   allElements[i].addEventListener("keyup", function(e){
+
+     var P = la.value;
+     var Y = t.value;
+     var I = ir.value;
+     var deposit = d.value;
+
+     P = parseInt(P, 10);
+     I = parseFloat(I, 10).toFixed(2);
+     Y = parseInt(Y, 10);
+
+     I = I /100 /12;
+     Y = Y * 12;
+
+     toThePowerOfRate = Math.pow(I + 1, Y);
+     topNum = I * toThePowerOfRate;
+     bottomNum = toThePowerOfRate - 1;
+ 
+     var monthlyPayment = topNum /bottomNum * P;
+ 
+     monthlyPayment = monthlyPayment.toFixed(2);
+
+     monthlyPaymentSpan.textContent = monthlyPayment;
+      
+   })
+ }           
+
+
+</script>
+
+
+<!--Bootstrap tooltip trigger-->
+<script>
+  var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+  return new bootstrap.Tooltip(tooltipTriggerEl)
+})
+</script>
+
+
+<!--Calculates the max laon output-->
+<script>
+  var grossAnnualApp1 = document.getElementById("grossAnnualApp1");
+  var grossAnnualApp2 = document.getElementById("grossAnnualApp2");
+  var deposit = document.getElementById("deposit");
+  var monthlyOutgoings = document.getElementById("monthlyOutgoings")
+  var maxLoanText = document.getElementById("maxLoan");
+  var maxPurchasePrice = document.getElementById("maxPurchasePrice");
+  var maxLoan = "";
+  var LTV = document.getElementById("LTV");
+
+  var allElements = document.getElementsByClassName("maxLoanInput");
+  console.log(allElements)
+ 
+
+  for (let i = 0; i < allElements.length; i++){
+    allElements[i].addEventListener("keyup", function(e){
+
+    var totalIncome =  (parseInt(grossAnnualApp1.value) + parseInt(grossAnnualApp2.value)) - (parseInt(monthlyOutgoings.value) * 12);
+
+    if(totalIncome < 50000){
+      maxLoan = totalIncome * 4.5;
+    }else if(totalIncome >= 50000  && totalIncome < 100000){
+      maxLoan = totalIncome * 4.75;
+    }else{
+      maxLoan = totalIncome * 5.5;
+    }
+
+    maxLoanText.textContent = "£" + maxLoan;
+
+    var PP = maxLoan + parseInt(deposit.value);
+
+    maxPurchasePrice.textContent = "£" + PP;
+
+    LTV.textContent = Math.round(maxLoan / (maxLoan + parseInt(deposit.value)) * 100);
+
+
+
+    })
+  }
+
+</script>
+
+<!--Switches from max loan to monthly cost-->
+<script>
+
+  var maxLoanTab = document.getElementById("home-tab");
+  var monthlyCostTab = document.getElementById("profile-tab");
+
+document.getElementById("myTab").addEventListener("click", function(e){
+
+
+
+ const displayUpdate = setTimeout(changeDisplay, 100)
+
+  function changeDisplay(){
+    if(maxLoanTab.classList.contains("active")){
+    document.getElementById("calcResponseMaxLoan").style.display = "block";
+    document.getElementById("calcResponseMonthlyCost").style.display = "none";
+  }else if(monthlyCostTab.classList.contains("active")){
+    console.log("monthlyCost")
+    document.getElementById("calcResponseMaxLoan").style.display = "none";
+    document.getElementById("calcResponseMonthlyCost").style.display = "block";
+   }
+  }
+
+  displayUpdate()
+
+});
+
+
+
+  // var maxLoanDiv = document.getElementById("nav-home-tab");
+  // var monthlyPayDiv = document.getElementById("nav-profile-tab");
+
+  // var maxLoanOutPut = document.getElementById("calResponseMaxLoan");
+  // var monthlyCostOutPut = document.getElementById("calcResponseMonthlyCost");
+
+  // document.getElementById("nav-tab-item").addEventListener("click", function(){
+  //   if(maxLoanDiv.classList.contains("active")){
+  //      maxLoanOutPut.style.display = "block";
+  //      monthlyCostOutPut.style.display = "none";
+  //    }else{
+  //      maxLoanOutPut.style.display = "none";
+  //      monthlyCostOutPut.style.display = "block";
+  //    }
+  // })
+
+
+
+</script>
 
 <%- include('../partials/footer') %>
