@@ -1,171 +1,170 @@
 <%- include('../partials/head-tags') %>
 <%- include('../partials/main-menu') %>
-
-<div class="container pt-5 pb-5">
-  <div class="row">
-    <div class="col-12">
-      <h1>Mortgage Calculators</h1>
-      <p>
-          Work out how much you could borrow or how much your monthly repayments would be with our <span class="strong">Mortgage Affordability Calculators</span>
-      </p>
+<div class="width-restrict">
+  <div class="container pt-5 pb-5">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-12">
+          <h1>Mortgage Calculators</h1>
+          <p>
+            Mortgage calculators are a great way for you to work out how much you could potentially borrow. It's important to note that not all Banks calculate affordability in the same way and you won't always meet a specfic lenders criteria. In order to get an accurate idea of how much you could actually borrow you would be best advised to speak to one of our mortgage brokers. 
+            <a href="" class="" id="contactButton" data-toggle="modal" data-target="#modal-enquire">Enquire Now</a>
+          </p>
+        </div>
+      </div>
+         <div class="row">
+            <div class="col-lg-6">
+              <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item">
+                  <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">How much can I borrow?</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">How much does it cost?</a>
+                </li>
+              </ul>
+              <div class="tab-content" id="myTabContent">
+                <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                  <form class="calc-form">
+    
+                    <div class="mb-3">
+                      <label for="grossAnnualApp1" class="form-label">
+                        Your gross annual Salary
+                      </label> 
+                      <span data-bs-toggle="tooltip" data-bs-placement="right" title="Here you can include your gross annual salary combined with the gross annualised figure for all benefits received including child benefit. For self-employed applicants an average of your last 2 years pre tax profits. For Ltd company traders you should speak to an adviser to ensure you are using accurate figures." >
+                        <i class="fas fa-question-circle"></i>
+                      </span>
+                      <input type="number" class="form-control maxLoanInput maxLoanInput" id="grossAnnualApp1" value="0">
+                    </div>
+    
+                    <div class="mb-3">
+                      <label for="grossAnnualApp2" class="form-label">
+                        Your gross annual Salary
+                      </label> 
+                      <span data-bs-toggle="tooltip" data-bs-placement="right" title="Here you can include your partners gross annual salary. For self-employed applicants an average of your last 2 years pre tax profits. For Ltd company traders you should speak to an adviser to ensure you are using accurate figures." >
+                        <i class="fas fa-question-circle"></i>
+                      </span>
+                      <input type="number" class="form-control maxLoanInput" id="grossAnnualApp2" value="0">
+                    </div>
+    
+                    <div class="mb-3">
+                      <label for="deposit" class="form-label">
+                        Deposit Amount
+                      </label> 
+                      <span data-bs-toggle="tooltip" data-bs-placement="right" title="Please enter the maximum deposit that you have available." >
+                        <i class="fas fa-question-circle"></i>
+                      </span>
+                      <input type="number" class="form-control maxLoanInput" id="deposit" value="0" placeholder="0">
+                    </div>
+    
+                    <div class="mb-3">
+                      <label for="monthlyOutgoings" class="form-label">
+                        Monthly Outgoings 
+                      </label> 
+                      <span data-bs-toggle="tooltip" data-bs-placement="right" title="Lenders take regular monthly spending into account when deciding how much to lend. This includes loan repayments, credit cards, childcare fees, pension payments, etc." >
+                        <i class="fas fa-question-circle"></i>
+                      </span>
+                      <input type="number" class="form-control maxLoanInput" id="monthlyOutgoings" value="0" placeholder="0">
+                    </div>
+    
+                </form>
+                </div>
+                <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                  <form class="calc-form" action="">
+    
+                    <div class="mb-3">
+                      <label for="loanAmount" class="form-label">
+                        Mortgage Amount
+                      </label> 
+                      <span data-bs-toggle="tooltip" data-bs-placement="right" title="How much money would you like to borrow?" >
+                        <i class="fas fa-question-circle"></i>
+                      </span>
+                      <input type="number" class="form-control repaymentInput" id="loanAmount" value="150000">
+                    </div>
+    
+                    <div class="mb-3">
+                      <label for="term" class="form-label">
+                        Mortgage Term
+                      </label> 
+                      <span data-bs-toggle="tooltip" data-bs-placement="right" title="Over hw many years would you like the mortgage?" >
+                        <i class="fas fa-question-circle"></i>
+                      </span>
+                      <input type="number" class="form-control repaymentInput" id="term" value="30">
+                    </div>
+    
+                    <div class="mb-3">
+                      <label for="interestRate" class="form-label">
+                        Interest Rate
+                      </label> 
+                      <span data-bs-toggle="tooltip" data-bs-placement="right" title="What is the interest rate on the proposed loan?" >
+                        <i class="fas fa-question-circle"></i>
+                      </span>
+                      <input type="number" class="form-control repaymentInput" id="interestRate" value="2.5">
+                    </div>
+    
+                    <div class="mb-3">
+                      <label for="depositMR" class="form-label">
+                        Deposit ( Optional )
+                      </label> 
+                      <span data-bs-toggle="tooltip" data-bs-placement="right" title="How much of a deposit would you like  to put towards the loan this will help us to show you relevant products?" >
+                        <i class="fas fa-question-circle"></i>
+                      </span>
+                      <input type="number" class="form-control repaymentInput" id="depositMR" value="0">
+                    </div>
+    
+                  </form>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6">
+    
+              <div id="calcResponseMaxLoan" class="">
+                <div class="calcResponseOutter">
+                  <div class="calcResponseOutter-top">
+                   <span class="bold-white-background">You could borrow up to:</span> <br>
+                    <span id="maxLoan" class="bold-output">£000,000</span>
+                  </div>
+                  <div class="calcResponseOutter-middle">
+                   <p id="LTVOutput">
+                    Loan to Value (LTV): <span id="LTV" class="bold-white-background bold-output"> 0</span> %
+                   </p> 
+                    Including your deposit you could afford a house price up to <br>
+                    <span id="maxPurchasePrice" class="bold-white-background bold-output">£000</span>
+                  </div>
+                  <div class="calcResponseOutter-bottom">
+                    This information is a guide only and should not be relied on as a recommendation or advice, that any particular mortgage is suitable for you.
+    
+                    All mortgages are subject to the applicant(s) meeting the eligibility criteria of the specific lender.
+    
+                    You should make an appointment to receive mortgage advice which will based on your needs and circumstances.
+                 
+                  </div>
+      
+                </div>
+              </div>
+    
+              <div id="calcResponseMonthlyCost">
+                <div class="calcResponseOutter">
+                  <div class="calcResponseOutter-top">
+                   <span class="bold-white-background">Your monthly mortgage repayment:</span> <br>
+                    <span id="monthlyRepayment" class="bold-output">£592</span>
+                  </div>
+                  <div class="calcResponseOutter-bottom">
+                    This information is a guide only and should not be relied on as a recommendation or advice, that any particular mortgage is suitable for you.
+    
+                    All mortgages are subject to the applicant(s) meeting the eligibility criteria of the specific lender.
+    
+                    You should make an appointment to receive mortgage advice which will based on your needs and circumstances.
+                  </div>
+      
+                </div>
+              </div>
+    
+            </div>
+         </div>
     </div>
   </div>
-     <div class="row">
-        <div class="col-lg-6">
-
-
-
-          <ul class="nav nav-tabs" id="myTab" role="tablist">
-            <li class="nav-item">
-              <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">How much can I borrow?</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">How much does it cost?</a>
-            </li>
-          </ul>
-          <div class="tab-content" id="myTabContent">
-            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-              <form class="calc-form">
-
-                <div class="mb-3">
-                  <label for="grossAnnualApp1" class="form-label">
-                    Your gross annual Salary
-                  </label> 
-                  <span data-bs-toggle="tooltip" data-bs-placement="right" title="Here you can include your gross annual salary combined with the gross annualised figure for all benefits received including child benefit. For self-employed applicants an average of your last 2 years pre tax profits. For Ltd company traders you should speak to an adviser to ensure you are using accurate figures." >
-                    <i class="fas fa-question-circle"></i>
-                  </span>
-                  <input type="number" class="form-control maxLoanInput maxLoanInput" id="grossAnnualApp1" value="0">
-                </div>
-
-                <div class="mb-3">
-                  <label for="grossAnnualApp2" class="form-label">
-                    Your gross annual Salary
-                  </label> 
-                  <span data-bs-toggle="tooltip" data-bs-placement="right" title="Here you can include your partners gross annual salary. For self-employed applicants an average of your last 2 years pre tax profits. For Ltd company traders you should speak to an adviser to ensure you are using accurate figures." >
-                    <i class="fas fa-question-circle"></i>
-                  </span>
-                  <input type="number" class="form-control maxLoanInput" id="grossAnnualApp2" value="0">
-                </div>
-
-                <div class="mb-3">
-                  <label for="deposit" class="form-label">
-                    Deposit Amount
-                  </label> 
-                  <span data-bs-toggle="tooltip" data-bs-placement="right" title="Please enter the maximum deposit that you have available." >
-                    <i class="fas fa-question-circle"></i>
-                  </span>
-                  <input type="number" class="form-control maxLoanInput" id="deposit" value="0" placeholder="0">
-                </div>
-
-                <div class="mb-3">
-                  <label for="monthlyOutgoings" class="form-label">
-                    Monthly Outgoings 
-                  </label> 
-                  <span data-bs-toggle="tooltip" data-bs-placement="right" title="Lenders take regular monthly spending into account when deciding how much to lend. This includes loan repayments, credit cards, childcare fees, pension payments, etc." >
-                    <i class="fas fa-question-circle"></i>
-                  </span>
-                  <input type="number" class="form-control maxLoanInput" id="monthlyOutgoings" value="0" placeholder="0">
-                </div>
-
-            </form>
-            </div>
-            <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-              <form class="calc-form" action="">
-
-                <div class="mb-3">
-                  <label for="loanAmount" class="form-label">
-                    Mortgage Amount
-                  </label> 
-                  <span data-bs-toggle="tooltip" data-bs-placement="right" title="How much money would you like to borrow?" >
-                    <i class="fas fa-question-circle"></i>
-                  </span>
-                  <input type="number" class="form-control repaymentInput" id="loanAmount" value="150000">
-                </div>
-
-                <div class="mb-3">
-                  <label for="term" class="form-label">
-                    Mortgage Term
-                  </label> 
-                  <span data-bs-toggle="tooltip" data-bs-placement="right" title="Over hw many years would you like the mortgage?" >
-                    <i class="fas fa-question-circle"></i>
-                  </span>
-                  <input type="number" class="form-control repaymentInput" id="term" value="30">
-                </div>
-
-                <div class="mb-3">
-                  <label for="interestRate" class="form-label">
-                    Interest Rate
-                  </label> 
-                  <span data-bs-toggle="tooltip" data-bs-placement="right" title="What is the interest rate on the proposed loan?" >
-                    <i class="fas fa-question-circle"></i>
-                  </span>
-                  <input type="number" class="form-control repaymentInput" id="interestRate" value="2.5">
-                </div>
-
-                <div class="mb-3">
-                  <label for="depositMR" class="form-label">
-                    Deposit ( Optional )
-                  </label> 
-                  <span data-bs-toggle="tooltip" data-bs-placement="right" title="How much of a deposit would you like  to put towards the loan this will help us to show you relevant products?" >
-                    <i class="fas fa-question-circle"></i>
-                  </span>
-                  <input type="number" class="form-control repaymentInput" id="depositMR" value="0">
-                </div>
-
-              </form>
-            </div>
-          </div>
-
-
-
-        </div>
-        <div class="col-lg-6">
-
-          <div id="calcResponseMaxLoan" class="">
-            <div class="calcResponseOutter">
-              <div class="calcResponseOutter-top">
-               <span class="bold-white-background">You could borrow up to:</span> <br>
-                <span id="maxLoan" class="bold-output">£000,000</span>
-              </div>
-              <div class="calcResponseOutter-middle">
-               <p id="LTVOutput">
-                Loan to Value (LTV): <span id="LTV" class="bold-white-background bold-output"> 0</span> %
-               </p> 
-                Including your deposit you could afford a house price up to <br>
-                <span id="maxPurchasePrice" class="bold-white-background bold-output">£000</span>
-              </div>
-              <div class="calcResponseOutter-bottom">
-                This information is a guide only and should not be relied on as a recommendation or advice, that any particular mortgage is suitable for you.
-
-                All mortgages are subject to the applicant(s) meeting the eligibility criteria of the specific lender.
-
-                You should make an appointment to receive mortgage advice which will based on your needs and circumstances.
-             
-              </div>
-  
-            </div>
-          </div>
-
-          <div id="calcResponseMonthlyCost">
-            <div class="calcResponseOutter">
-              <div class="calcResponseOutter-top">
-               <span class="bold-white-background">Your monthly mortgage repayment:</span> <br>
-                <span id="monthlyRepayment" class="bold-output">£592</span>
-              </div>
-              <div class="calcResponseOutter-bottom">
-                This information is a guide only and should not be relied on as a recommendation or advice, that any particular mortgage is suitable for you.
-
-                All mortgages are subject to the applicant(s) meeting the eligibility criteria of the specific lender.
-
-                You should make an appointment to receive mortgage advice which will based on your needs and circumstances.
-              </div>
-  
-            </div>
-          </div>
-
-        </div>
-     </div>
 </div>
+
 
 <!--Calculates the outputs for the monthly payment-->
 <script>
