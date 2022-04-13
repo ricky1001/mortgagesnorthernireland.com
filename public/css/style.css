@@ -7831,10 +7831,12 @@ textarea.form-control-lg {
     background-color: #ffffff;
     border-radius: 50%;
     z-index: 0;
-    overflow: hidden;
-    height: 100%;
-    width: 100%;
-    border-radius: 0%; }
+    overflow: hidden; }
+    @media (max-width: 575.98px) {
+      .jumbo-home-content {
+        height: 100%;
+        width: 100%;
+        border-radius: 0%; } }
     .jumbo-home-content-circle-1 {
       position: absolute;
       left: -9rem;
