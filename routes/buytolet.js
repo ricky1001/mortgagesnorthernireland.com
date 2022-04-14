@@ -17,7 +17,8 @@ router.get("/buy-to-let-mortgages", function(req, res){
                                                  btlPost: btlPost,
                                                  metatitle: "Buy to Let Mortgages | Free Buy to Let Mortgage Advice",
                                                  metadescription: "Mortgage Adviser NI has access to all the best buy to let mortgage NI deals. Give us a call about any Buy to Let Mortgage Enquiry you may in Northern Ireland .",
-                                                 quickCallHelpers: req.quickCallHelpers
+                                                 quickCallHelpers: req.quickCallHelpers,
+                                                 riskWarning: "Most Buy-to-Let Mortgages are not regulated by the Financial Conduct Authority"
                                                  });
     }
   })
@@ -63,7 +64,8 @@ router.get("/buy-to-let-mortgages/:id", function(req, res){
       res.render("./buytolet/buy-to-let-mortgages-show", {foundbtlPost: foundbtlPost,                                                     
                                                       metatitle: foundbtlPost.metatitle,
                                                       metadescription: foundbtlPost.metadescription,
-                                                      quickCallHelpers: req.quickCallHelpers
+                                                      quickCallHelpers: req.quickCallHelpers,
+                                                      riskWarning: "Most Buy-to-Let Mortgages are not regulated by the Financial Conduct Authority"
                                                       });
     }
   })

@@ -1,0 +1,641 @@
+<html>
+  <head>
+    <title>Trussle</title>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/spinner.css" />
+    <link rel="stylesheet" href="/css/spinnerMessage.css" />
+    <link rel="stylesheet" href="/css/noProductMessage.css" />
+   
+  </head>
+  <!-- //done -->
+  <body>
+    <div id="___gatsby">
+      <script src="https://widget.reviews.co.uk/carousel-inline-iframeless/dist.js?_t=2021061815"></script>
+      <link rel="stylesheet" href="https://assets.reviews.io/css/widgets/carousel-widget.css?_t=2021061815">
+      <link rel="stylesheet" href="https://assets.reviews.io/iconfont/reviewsio-icons/style.css?_t=2021061815">
+      <div id="reviewsio-carousel-widget"></div>
+      <script>
+      
+      new carouselInlineWidget('reviewsio-carousel-widget',{
+            //Your REVIEWS.io account ID:
+            store: 'mortgagesnorthernireland-com',
+            sku: '',
+            lang: 'en',
+            carousel_type: 'bulky',
+            styles_carousel: 'CarouselWidget--sideHeader--withcards CarouselWidget--scrollButtons-coloured',
+  
+            //Widget settings:
+            options:{
+              general:{
+                //What reviews should the widget display? Available options: company, product, third_party. You can choose one type or multiple separated by comma.
+                review_type: 'company',
+                //Minimum number of reviews required for widget to be displayed
+                min_reviews: '1',
+                //Maximum number of reviews to include in the carousel widget.
+                max_reviews: '20',
+                address_format: 'CITY, COUNTRY',
+                //Carousel auto-scrolling speed. 3000 = 3 seconds. If you want to disable auto-scroll, set this value to false. 
+                enable_auto_scroll: 10000,
+              },
+              header:{
+                //Show overall rating stars
+                enable_overall_stars: true,
+              },
+              reviews: {
+                //Show customer name
+                enable_customer_name: true,
+                //Show customer location
+                enable_customer_location: true,
+                //Show "verified review" badge
+                enable_verified_badge: true,
+                //Show "I recommend this product" badge (Only for product reviews)
+                enable_recommends_badge: true,
+                //Show photos attached to reviews
+                enable_photos: true,
+                //Show videos attached to reviews
+                enable_videos: true,
+                //Show when review was written
+                enable_review_date: true,
+                //Hide reviews written by the same customer (This may occur when customer reviews multiple products)
+                disable_same_customer: true,
+                //Minimum star rating
+                min_review_percent: 4,
+                //Show 3rd party review source
+                third_party_source: true,
+                //Hide reviews without comments (still shows if review has a photo)
+                hide_empty_reviews: true,
+                //Show product name
+                enable_product_name: true,
+                //Show only reviews which have specific tags (multiple comma separated tags allowed)
+                tags: "",
+                //Show branch, only one input
+                branch: "",
+                enable_branch_name: false,
+              },
+              popups: {
+                //Make review items clickable (When they are clicked, a popup appears with more information about a customer and review)
+                enable_review_popups:  true,
+                //Show "was this review helpful" buttons
+                enable_helpful_buttons: true,
+                //Show how many times review was upvoted as helpful 
+                enable_helpful_count: true,
+                //Show share buttons
+                enable_share_buttons: true,
+              },
+            },
+            styles:{
+              //Base font size is a reference size for all text elements. When base value gets changed, all TextHeading and TexBody elements get proportionally adjusted.
+              '--base-font-size': '18px',
+              '--base-maxwidth':'768px',
+  
+              //Logo styles:
+              '--reviewsio-logo-style':'var(--logo-normal)',
+  
+              //Star styles:
+              '--common-star-color':'#FFD700',
+              '--common-star-disabled-color':' rgba(0,0,0,0.25)',
+              '--medium-star-size':'28px',
+              '--small-star-size':'19px', //Modal
+              '--x-small-star-size':'22px',
+              '--x-small-star-display':'inline-flex',
+  
+              //Header styles:
+              '--header-order':'1',
+              '--header-width':'160px',
+              '--header-bg-start-color':'transparent',
+              '--header-bg-end-color':'transparent',
+              '--header-gradient-direction':'135deg',
+              '--header-padding':'0.5em',
+              '--header-border-width':'0px',
+              '--header-border-color':'rgba(0,0,0,0.1)',
+              '--header-border-radius':'0px',
+              '--header-shadow-size':'0px',
+              '--header-shadow-color':'rgba(0, 0, 0, 0.1)',
+  
+              //Header content styles:
+              '--header-star-color':'inherit',
+              '--header-disabled-star-color':'inherit',
+              '--header-heading-text-color':'#000000',
+              '--header-heading-font-size':'1.3em',
+              '--header-heading-font-weight':'inherit',
+              '--header-heading-line-height':'inherit',
+              '--header-heading-text-transform':'inherit',
+              '--header-subheading-text-color':'inherit',
+              '--header-subheading-font-size':'inherit',
+              '--header-subheading-font-weight':'inherit',
+              '--header-subheading-line-height':'inherit',
+              '--header-subheading-text-transform':'inherit',
+  
+              //Review item styles:
+              '--item-maximum-columns':'1',//Must be 1
+              '--item-background-start-color':'transparent',
+              '--item-background-end-color':'transparent',
+              '--item-gradient-direction':'135deg',
+              '--item-padding':'0.5em',
+              '--item-border-width':'0px',
+              '--item-border-color':'rgba(0,0,0,0.1)',
+              '--item-border-radius':'0px',
+              '--item-shadow-size':'0px',
+              '--item-shadow-color':'rgba(0,0,0,0.1)',
+  
+              //Heading styles:
+              '--heading-text-color':'#39373B',
+              '--heading-text-font-weight':' 600',
+              '--heading-text-font-family':' inherit',
+              '--heading-text-line-height':' 1.4',
+              '--heading-text-letter-spacing':'0',
+              '--heading-text-transform':'none',
+  
+              //Body text styles:
+              '--body-text-color':' #0E1311',
+              '--body-text-font-weight':'400',
+              '--body-text-font-family':' inherit',
+              '--body-text-line-height':' 1.4',
+              '--body-text-letter-spacing':'0',
+              '--body-text-transform':'none',
+  
+              //Scroll button styles:
+              '--scroll-button-icon-color':'#0E1311',
+              '--scroll-button-icon-size':'24px',
+              '--scroll-button-bg-color':'transparent',
+  
+              '--scroll-button-border-width':'0px',
+              '--scroll-button-border-color':'rgba(0,0,0,0.1)',
+  
+              '--scroll-button-border-radius':'60px',
+              '--scroll-button-shadow-size':'0px',
+              '--scroll-button-shadow-color':'rgba(0,0,0,0.1)',
+              '--scroll-button-horizontal-position':'0px',
+              '--scroll-button-vertical-position':'0px',
+  
+              //Badge styles:
+              '--badge-icon-color':'#3CBB91',
+              '--badge-icon-font-size':'20px',
+              '--badge-text-color':'#0E1311',
+              '--badge-text-font-size':'1.2em',
+              '--badge-text-letter-spacing':'inherit',
+              '--badge-text-transform':'inherit',
+  
+              //Author styles:
+              '--author-font-size':'1.2em',
+              '--author-font-weight':'inherit',
+              '--author-text-transform':'inherit',
+  
+              //Product photo or review photo styles:
+              '--photo-video-thumbnail-size':'60px',
+              '--photo-video-thumbnail-border-radius':'0px',
+  
+              //Popup styles:
+              '--popup-backdrop-color':'rgba(0,0,0,0.75)',
+              '--popup-color':'#ffffff',
+              '--popup-star-color':'inherit',
+              '--popup-disabled-star-color':'inherit',
+              '--popup-heading-text-color':'inherit',
+              '--popup-body-text-color':'inherit',
+              '--popup-badge-icon-color':'inherit',
+              '--popup-badge-icon-font-size':'19px',
+              '--popup-badge-text-color':'inherit',
+              '--popup-badge-text-font-size':'14px',
+              '--popup-border-width':'0px',
+              '--popup-border-color':'rgba(0,0,0,0.1)',
+              '--popup-border-radius':'0px',
+              '--popup-shadow-size':'0px',
+              '--popup-shadow-color':'rgba(0,0,0,0.1)',
+              '--popup-icon-color':'#0E1311',
+  
+              //Tooltip styles:
+              '--tooltip-bg-color':'#0E1311',
+              '--tooltip-text-color':'#ffffff',
+            },
+          });
+  
+      </script>
+      <div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper">
+       
+        <main class="main">
+          <div class="modular-content_container">      
+              <div class="filter-menu" role="region" aria-label="Filter menu">
+                    <div class="filter-menu__type-selector">
+                      <%console.log(reqObj.ReasonForMortgage)%>
+                      <div 
+                      id="purSelect" 
+                      class="<%= reqObj.ReasonForMortgage === 'Purchase' ? 'filter-menu__type-selector-option filter-menu__type-selector-option--active' : 'filter-menu__type-selector-option'%>" 
+                      role="button" 
+                      tabindex="0"
+                      onclick="document.getElementById('purSelect').classList.add('filter-menu__type-selector-option--active')
+                      document.getElementById('remoSelect').classList.remove('filter-menu__type-selector-option--active')"
+                      >
+                        New mortgage
+                      </div>
+                      
+                      <div  
+                        class="<%= reqObj.ReasonForMortgage === 'Remortgage' ? 'filter-menu__type-selector-option filter-menu__type-selector-option--active' : 'filter-menu__type-selector-option'%>"
+                        role="button" 
+                        tabindex="0" 
+                        id="remoSelect"
+                      onclick="document.getElementById('remoSelect').classList.add('filter-menu__type-selector-option--active')
+                      document.getElementById('purSelect').classList.remove('filter-menu__type-selector-option--active')
+                      "
+                      >
+                        Remortgage
+                      </div>
+
+
+
+                    </div><form class="filter-menu__form" id="filter-form">
+                      <div class="filter-menu__primary-options">
+                        <div class="filter-menu__form-item">
+                          <label for="propertyValue" class="filter-menu__label">Property value</label>
+                          <div class="main_propertyValue-Container" data-testid="propertyValue-container">
+                            <div class="filter-currency-icon filter-menu__currency-input-icon" data-testid="propertyValue-icon" role="presentation">£</div>
+                            <input type="text" class="filter-input filter-menu__input filter-menu__input--currency" data-testid="propertyValue-input" id="propertyValue" required="" inputmode="numeric" pattern="^(\d{1,3})(,\d{3})*(\.\d{1,2})?$" value="<%=args.input.ExpectedValuation%>" placeholder="<%=args.input.ExpectedValuation%>">
+                          </div>
+                        </div>
+                        <div class="filter-menu__form-item">
+                          <label for="mortgageAmount" class="filter-menu__label">I want to borrow</label>
+                          <div class="main_propertyValue-Container" data-testid="mortgageAmount-container">
+                            <div class="filter-currency-icon filter-menu__currency-input-icon" data-testid="mortgageAmount-icon" role="presentation">£</div>
+                            <input type="text" class="filter-input filter-menu__input filter-menu__input--currency" data-testid="mortgageAmount-input" id="loanAmount" required="" inputmode="numeric" pattern="^(\d{1,3})(,\d{3})*(\.\d{1,2})?$" value="<%=args.input.LoanRequired%>" placeholder="<%=args.input.LoanRequired%>">
+                          </div>
+                        </div>
+                        <div class="filter-menu__form-item">
+                          <label for="initialPeriod" class="filter-menu__label">Initial period</label>
+                          <div class="filter-menu__select-wrapper">
+                            <select id="initialPeriod" class="filter-menu__input filter-menu__input--select">
+                              <option selected="" value="2">2 years</option>
+                              <option value="3">3 years</option>
+                              <option value="5">5 years</option>
+                              <option value="5+">
+                                5 years +
+                              </option>
+                              <option value="allProducts">All Products</option>
+                            </select>
+                          </div>
+                        </div>
+                        <div class="filter-menu__form-item">
+                          <label for="rateType" class="filter-menu__label">Rate type</label>
+                          <div class="filter-menu__select-wrapper">
+                            <select id="rateType" class="filter-menu__input filter-menu__input--select">
+                              <% if(args.input.MortgageClass.Fixed === "No_Filter") { %>
+                                <option selected="" value="Fixed">Fixed</option>
+                              <% }else{ %>
+                                <option value="Fixed">Fixed</option>
+                              <% } %>
+
+                              <% if(args.input.MortgageClass.Tracker === "No_Filter") { %>
+                                <option selected="" value="Tracker">Tracker</option>
+                              <% }else{ %>
+                                <option value="Tracker">Tracker</option>
+                              <% } %>
+
+                              <% if(args.input.MortgageClass.Discount === "No_Filter") { %>
+                                <option selected="" value="Discount">Discount</option>
+                              <% }else{ %>
+                                <option value="Discount">Discount</option>
+                              <% } %>
+
+                              <% if(args.input.MortgageClass.Variable === "No_Filter") { %>
+                                <option selected="" value="Variable">Variable</option>
+                              <% }else{ %>
+                                <option  value="Variable">Variable</option>
+                              <% } %>
+                            </select>
+                          </div>
+                        </div>
+                        <div class="filter-menu__form-item">
+                          <label for="repaymentPeriod" class="filter-menu__label" id="pay_back_mortgage_over">Pay back mortgage over</label>
+                          <div class="filter-menu__repayment-wrapper">
+                            <div class="repayment-container" data-testid="repaymentPeriod-container">
+                              <input type="text" class="repayment-input filter-menu__input" data-testid="repaymentPeriod-input" placeholder="<%=args.input.Term%>" value="<%=args.input.Term%>" aria-labelledby="years repaymentPeriod-suffixText" inputmode="numeric" id="term" pattern="^([1-9]|[1-4]\d|50)$">
+                              <label class="repayment-label" data-testid="repaymentPeriod-suffixText" id="repaymentPeriod-suffixText">years</label>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="filter-menu__form-item">
+                          <div class="filter-menu__checkbox-wrapper mobile">
+                            <label for="interestOnly" class="filter-menu__label">
+                              <input type="checkbox" class="filter-menu__checkbox interestOnly">
+                              <p class="filter-menu__label-text">Interest Only<div class="mortgage-comparison-tooltip-container" data-testid="Tooltip-container">
+                                <div class="main__questionMark questionMark mortgage-comparison-tooltip interest__only" data-testid="Tooltip-button" role="button" aria-expanded="false" tabindex="0">
+                                  <img class="questionMark-img mortgage-comparison-tooltip-close" data-testid="Tooltip-iconClose" alt="open tooltip information" src="images/info.svg">
+                                </div>
+                                <div class="mortgage-comparison mortgage-comparison-tooltip-outer" data-testid="Tooltip-tipOuterContainer" hidden="">
+                                  <div class="mortgage-comparison-InnerContainer" data-testid="Tooltip-tipInnerContainer">
+                                    <div class="martgage-comparison-TextContainer mortgage-comparison-tooltip-textContainer" data-testid="Tooltip-textContainer">
+                                      <p class="mortgage-comparison-tooltip-p">With an interest only mortgage you only pay the interest each month. You must repay the amount you borrowed at the end of the mortgage</p>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </p>
+                          </label>
+                        </div>
+                        <div class="filter-menu__checkbox-wrapper mobile">
+                          <label for="buyToLet" class="filter-menu__label buy-to-let">
+                            <input type="checkbox"  class="filter-menu__checkbox buyToLet" checked>
+                            <p class="filter-menu__label-text">Buy to let</p>
+                          </label>
+                        </div>
+                        <div class="filter-menu__checkbox-wrapper mobile">
+                          <label for="noFees" class="filter-menu__label">
+                            <input type="checkbox" class="filter-menu__checkbox">
+                            <p class="filter-menu__label-text">No Fees</p>
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="filter-menu__secondary-options">
+                      <div class="filter-menu__loan-to-value-calculation">
+                        <span>Your loan to value is<strong> <span id="filter-ltv">70.00</span></strong>%</span>
+                      </div>
+
+                      <div class="filter-menu__checkbox-wrapper desktop">
+                        <label for="interestOnly" class="filter-menu__label">
+
+                          <% if(args.input.PaymentMethod === "Interest_Only"){ %>
+                            <input type="checkbox" id="interest-only" class="filter-menu__checkbox interestOnly" checked>
+                          <% } else { %>
+                            <input type="checkbox" id="interest-only" class="filter-menu__checkbox interestOnly">
+                          <% } %>
+
+                          <p class="filter-menu__label-text">Interest only<div class="mortgage-comparison-tooltip-container" data-testid="Tooltip-container">
+                            <div class="main__questionMark questionMark mortgage-comparison-tooltip interest__only" data-testid="Tooltip-button" role="button" aria-expanded="false" tabindex="0">
+                              <img class="questionMark-img mortgage-comparison-tooltip-close" data-testid="Tooltip-iconClose" alt="open tooltip information" src="images/info.svg">
+                            </div>
+                            <div class="mortgage-comparison mortgage-comparison-tooltip-outer" data-testid="Tooltip-tipOuterContainer" hidden="">
+                              <div class="mortgage-comparison-InnerContainer" data-testid="Tooltip-tipInnerContainer">
+                                <div class="martgage-comparison-TextContainer mortgage-comparison-tooltip-textContainer" data-testid="Tooltip-textContainer">
+                                  <p class="mortgage-comparison-tooltip-p">With an interest only mortgage you only pay the interest each month. You must repay the amount you borrowed at the end of the mortgage
+
+                                  </p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </p>
+                      </label>
+                    </div>
+
+                    <div class="filter-menu__checkbox-wrapper desktop">
+                      <label for="buyToLet" class="filter-menu__label">
+                        <% if(args.input.MortgageType === "Buy_To_Let"){ %>
+                          <input type="checkbox" class="filter-menu__checkbox buyToLet" id="buy-to-let" checked>
+                        <% } else{ %>
+                          <input type="checkbox" class="filter-menu__checkbox buyToLet" id="buy-to-let">
+                          <% } %>
+
+                        <p class="filter-menu__label-text">Buy to let</p></label>
+                      </div>
+
+                        <div class="filter-menu__checkbox-wrapper desktop">
+                          <label for="noFees" class="filter-menu__label">
+                            <input type="checkbox" class="filter-menu__checkbox" id="noFees">
+                            <p class="filter-menu__label-text">No Fees</p>
+                          </label>
+                        </div>
+                      </div>
+
+                      <div class="">
+                        <button class="run-search-button" type="submit" id="submit-form" class="">Search Products</button>
+                      </div>
+                    </form>
+
+              </div>
+              <div class="table__container" role="region" aria-label="List of products">
+                    <div class="table__header">
+                      <div class="table__header__result"><span id="numberOfProducts"><%=products.length%></span> results found</div>
+                      <div class="table__header__sortBy">
+                        <div class="table__header__select__wrapper">
+                          <label for="sortBy__options">Sorted by</label>
+                          <strong  style="padding: 6px;">
+                            <select id="sortBy__options">
+                              <option value="normalisedTrueCost">Initial period cost</option>
+                              <option value="initialPeriodMonthlyPayment">Monthly repayment</option>
+                              <option value="totalFees">Total fees</option>
+                              <option value="initialPeriodRate">Initial rate</option>
+                              <option value="svrPeriodRate">Follow on rate</option>
+                              <option value="apr">APRC</option>
+                            </select>
+                          </strong>
+                        </div>
+                      </div>
+                    </div>
+                    <div id="products-container" class="table__body">
+
+                    </div>
+    <div class="table__footer">
+      <button class="table__footer__loadMore" type="button">Load more deals</button>
+    </div>
+              </div>
+
+              <!--Page content partial start -->
+              <%- include('./includes/page-content.ejs') %>
+              <!--Page content partial end-->
+
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+  
+  $('.accordion-item').click( function(){
+    
+  if ( $(this).hasClass('accordion-item--closed') ) {
+      $(this).removeClass('accordion-item--closed');
+      $(this).addClass('accordion-item--opened');
+  } else {
+    $(this).removeClass('accordion-item--opened');
+     
+      $(this).addClass('accordion-item--closed');    
+  }
+});
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+<script>
+    
+     $(document).ready(function(){
+      
+        // Add the first request whent he page loads
+
+
+        const productHTML = `<%- productHTML %>`;
+        
+
+        
+       
+        setHTMLProductsString(productHTML);
+
+
+        document.getElementById("submit-form").addEventListener("click", function(e){
+      e.preventDefault();
+      let spinner = `<%- include('./includes/spinner.ejs') %>`;
+      setHTMLProductsString(spinner);
+      
+      // Add spinning icon / loader here when we have worked out the logic
+
+      // Set Variables for the api call --- Start
+      const filterForm = document.getElementById("filter-form");
+
+      const expectedValuation = parseInt(document.getElementById("propertyValue").value)
+      const loanAmount = parseInt(document.getElementById("loanAmount").value);
+      const depositAmount = expectedValuation - loanAmount;
+      const initialPeriod = document.getElementById("initialPeriod").value;
+      const rateType = document.getElementById("rateType").value;
+      const term = parseInt(document.getElementById("term").value);
+
+      //Setting mortgage request ie remortgage or purchase
+      var purchase = document.getElementById("purSelect").className;
+      if(purchase.includes("filter-menu__type-selector-option--active")){
+        var mortgageR = "Purchase"
+      }else{
+        var mortgageR = "Remortgage"
+      }
+      const ReasonForMortgage = mortgageR;
+
+      //Setting Repayment method
+      if(document.getElementById("interest-only").checked){
+        var repaymentMethod = "Interest_Only"
+      }else{
+        var repaymentMethod = "Repayment"
+      }
+      const paymentMethod = repaymentMethod;
+
+      //Setting mortgage type ie Standard = residential, Buy _To_Let, Shared_Ownership, Self-Build - we are currently only using Buy_To_Let and Standard 
+      if(document.getElementById("buy-to-let").checked){
+        console.log("checked")
+        var mortgageTypeSelected = "Buy_To_Let";
+      }else{
+        console.log("not checked")
+        var mortgageTypeSelected = "Standard";
+      }
+      const mortgageType = mortgageTypeSelected;
+
+  
+      //Setting the variable to work out if the client only wants to see products with no fees 
+      if(document.getElementById("noFees").checked){
+        console.log("checked")
+        var noFeesLoop = true;
+      }else{
+       var noFeesLoop = false;
+      }
+      const noFees = noFeesLoop;
+
+      //Setting the mortgage class object
+      const mortgageClass = {
+        Fixed: "Ignore",
+        Discount: "Ignore",
+        Tracker: "Ignore",
+        Variable: "Ignore"
+      }
+
+      if(rateType === "Fixed"){
+        mortgageClass.Fixed = "No_Filter"
+      }else if(rateType === "Tracker"){
+        mortgageClass.Tracker = "No_Filter"
+      }else if(rateType === "Discount"){
+        mortgageClass.Discount = "No_Filter"
+      }else if(rateType === "Variable"){  
+        mortgageClass.Variable = "No_Filter"
+      }
+
+      //Setting the sortby filter
+     const sortBy =  document.getElementById("sortBy__options").value;
+
+
+      //Set variables for the api call --- end 
+
+      //The fetch api send the data and the request to our own route and recieves a response it  then updates the dom
+
+      fetch("/update-products", {
+            method: "POST",
+            body: JSON.stringify({
+              SiteId: "USSCB2",
+              CompanyId: "IMOU85",
+              MortgageClass: mortgageClass,
+              ExpectedValuation: expectedValuation,
+              DepositAmount: depositAmount,
+              LoanRequired: loanAmount,
+              Term: term,
+              PaymentMethod: paymentMethod,
+              ReasonForMortgage: ReasonForMortgage,
+              sortBy: sortBy,
+              InitialTermLength: initialPeriod,
+              MortgageType: mortgageType,
+              noFeesCheck: noFees
+             
+            }),
+            headers: {
+              "Content-Type": "application/json",
+            },
+          }).then(function (response) {
+              return response.json();
+            })
+            .then((data) => {
+              if(data.noProductMessage){
+                setHTMLProductsString(data.noProductMessage)
+              }else{
+                document.getElementById("numberOfProducts").textContent = data.numberOfProducts;
+                setHTMLProductsString(data.products)
+              }
+            })
+            .catch(function (error) {
+              console.log(error);
+            });
+        
+    })
+  
+  }) 
+     
+    function setHTMLProductsString(str){
+              
+                $("#products-container").empty();
+                $("#products-container").html($.parseHTML(str));
+              }
+ 
+</script>
+
+            
+            <script>
+              //Deals with LTV box in different scenarios 
+
+              //Variables Required
+              var pp = document.getElementById("propertyValue");
+              var la = document.getElementById("loanAmount");
+              var ltvBox = document.getElementById("filter-ltv");
+
+              //On page load grabs the value from the purchase price and the loan amount and automatically fills the ltv box
+              function loadLTV(purchasePrice, loanAmount){
+                let ltvText = loanAmount.value / purchasePrice.value * 100;
+                ltvText = Math.ceil(ltvText)
+                ltvBox.textContent = ltvText;
+              }
+
+              window.onload = function(){
+                loadLTV(pp, la)
+              }
+
+              //On Key Down amends ltv box 
+              pp.addEventListener("keyup", function(){
+                console.log(pp.value)
+                console.log(la.value)
+                let ltvText = la.value / pp.value * 100;
+                ltvText = Math.ceil(ltvText)
+                ltvBox.textContent = ltvText;
+              })
+
+              la.addEventListener("keyup", function(){
+                console.log(pp.value)
+                console.log(la.value)
+                let ltvText = la.value / pp.value * 100;
+                ltvText = Math.ceil(ltvText)
+                ltvBox.textContent = ltvText;
+              })
+
+            </script>
+
+
+</body>
+</html>

@@ -1,12 +1,22 @@
 .risk-warning{
     width: 100%;
+    height: 2rem;
     border: 3px solid $tertiary-orange-logo;
     margin-bottom: 2rem;
 
+    @media only screen and (max-width: 992px) {
+        height: 3.5rem;
+    }
+
+    @media only screen and (max-width: 992px) {
+        height: 4.5rem;
+    }
+    
+
     &-inner{
         position: relative;
-        top: -50%;
-        transform: translateY(50%);
+        top: 50%;
+        transform: translateY(-50%);
         width: 100%;
         text-align: center !important; 
         font-weight: 700;

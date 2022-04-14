@@ -20,11 +20,7 @@
                  <%- foundbtlPost.content %>
               
 
-                 <div class="risk-warning">
-                  <p class="risk-warning-inner">
-                    Most Buy-to-Let Mortgages are not regulated by the Financial Conduct Authority
-                  </p>
-                </div>
+                 <%- include('../partials/risk-warning', {riskWarning: riskWarning}) %>
         </div>
 
             <div class="col-md-4 col-sm-12 side-bar">
