@@ -1,8 +1,42 @@
 var express = require("express");
 var router = express.Router();
-var Rate = require("../models/rates");
 
-var mortgageAdvice =        require("../models/mortgageAdvice");
+//Required for Best Buy Start
+const ejs = require("ejs");
+var read = require("fs").readFileSync;
+var join = require("path").join;
+var path = join( "views/includes/item.ejs");
+
+const jsonData = require("../staticProducts/pageLoad.json");
+
+
+let args = {
+    licenseKey: "89a6a144-2cde-46b0-b396-b1363d883fe1",
+    input: {
+      CompanyId: "IMOU85",
+      SiteId: "USSCB2",
+      Term: 30,
+      ExpectedValuation: 150000,
+      LoanRequired: 100000,
+      DepositAmount: 50000,
+      MortgageType: "Standard",
+      PaymentMethod: "Repayment",
+      MortgageClass: {
+        Fixed: "No_Filter",
+        Variable: "Ignore",
+        Discount: "Ignore",
+        Tracker: "Ignore",
+        Capped: "Ignore",
+        LiborLinked: "Ignore",
+      },
+      ReasonForMortgage: "Purchase",
+      PostCode: "XI",
+      NumberOfItems: 20,
+  
+      Filters: {}
+    },
+  };
+//Required for Best Buy End
 
 //message received
 router.get("/testing-index", function(req, res){
@@ -36,33 +70,44 @@ res.render("map", {
 router.get("/", function(req, res){
   var metatitle = "Mortgages Northern Ireland | Fee Free Mortgage Broker | Mortgage Advice | NI"
   var metadescription = "Mortgages Nothern Ireland offer free mortgage advice on all mortgages in northern Ireland. Contact mortgages Northern Ireland for a free appointment."
-  mortgageAdvice.find({}, function(err, mAdvice){
-    if(err){
-      console.log(err)
-    }else{
-      Rate.find({}, function(err, rate){
-        if(err){
-          console.log(err);
-        }else{
 
-          
-          var filteredRate = Rate.aggregate([
-            {$sort : {rate: 1}}])
-            .then(function(filteredRate){
-              res.render("home",
+          products = jsonData.slice(0, 3);
+          console.log(products)
+          addDetailsToProducts(products, args);
+     
+
+            return  res.render("home",
               {
                 metatitle, metatitle,
                 metadescription: metadescription,
-                rate: filteredRate,
-                mAdvice: mAdvice,
+                products: products,
+                args: args,
+                reqObj: args,
+                productHTML: compileEJS(products, args),
                 quickCallHelpers: req.quickCallHelpers
               })
             })
-        }
-      })
-    }
+//Function that adds additional data fields to each element of the products final array before being rendered this will make it easier to automatically write the required text on the rendered screen we are currently adding Property Value, TotalInterestPayable by subtracting and an LoanRequired field 
+const addDetailsToProducts = function(arr, obj){
+  arr.forEach(function(item){
+   
+    item.PropertyValue = obj.input.ExpectedValuation;
+    item.TotalInterestPayable = item.TrueCostFullTerm - obj.input.LoanRequired;
+    item.TotalInterestPayable = parseInt(item.TotalInterestPayable.toFixed(2));
+    item.LoanRequired = obj.input.LoanRequired;
+    let initialRatePeriodInWholeYears = item.InitialRatePeriodMonths / 12;
+    initialRatePeriodInWholeYears = initialRatePeriodInWholeYears.toFixed(0);
+    item.InitialRatePeriodInWholeYears = initialRatePeriodInWholeYears;
+
+    item.ltv = (obj.input.LoanRequired / obj.input.ExpectedValuation) * 100;
+    item.ltv = item.ltv.toFixed();
   })
-})
+}
+    //Function to compile a url string 
+    const compileEJS = (arr = [], args = {}) => {
+      const data = arr.map((pd) => ejs.compile(read(path, "utf8"))({ pd, args}));
+      return data.join(" ");
+    };
 
 
 //Self-Build Pages
@@ -157,9 +202,7 @@ router.get("/test", function(req, res){
        var filteredRate =  Rate.aggregate([          
                 { $sort : { rate : 1 } } ])       
        .then(function(filteredRate) {
-           // console.log(filteredRate); // "normalReturn"
-          // filteredRate.forEach(function(filteredRate){
-            // console.log(filteredRate)
+
       res.render("test",
                 {metatitle:metatitle, 
                  metadescription: metadescription,

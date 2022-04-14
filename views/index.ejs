@@ -219,7 +219,7 @@
           <div class="modular-content_container">      
               <div class="filter-menu" role="region" aria-label="Filter menu">
                     <div class="filter-menu__type-selector">
-                      <%console.log(reqObj.ReasonForMortgage)%>
+                     
                       <div 
                       id="purSelect" 
                       class="<%= reqObj.ReasonForMortgage === 'Purchase' ? 'filter-menu__type-selector-option filter-menu__type-selector-option--active' : 'filter-menu__type-selector-option'%>" 
@@ -462,9 +462,6 @@
 
 
         const productHTML = `<%- productHTML %>`;
-        
-
-        
        
         setHTMLProductsString(productHTML);
 

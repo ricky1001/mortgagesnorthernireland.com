@@ -1,13 +1,12 @@
 var express = require("express");
 var router = express.Router();
-var latestRates = require("../models/latestRates");
 const ejs = require("ejs");
 var read = require("fs").readFileSync;
 var join = require("path").join;
 var path = join( "views/includes/item.ejs");
 
 const jsonData = require("../staticProducts/pageLoad.json");
-console.log(jsonData);
+
 
 let args = {
     licenseKey: "89a6a144-2cde-46b0-b396-b1363d883fe1",
@@ -48,6 +47,22 @@ router.get("/best-buys", function(req, res){
       productHTML: compileEJS(products, args),
     });
 });
+
+//Best Buys Partial Test Start
+router.get("/partial-test", function(req, res){
+    products = jsonData;
+    addDetailsToProducts(products, args)
+        
+    return res.render("partial-test", {
+      metatitle: "Best Mortgage Deals - Search the market with Mortgages Northern Ireland",
+      metadescription: "Use our sourcing software to search the market for the best deals available in  Northern Ireland",
+      products,
+      args: args,
+      reqObj: args,
+      productHTML: compileEJS(products, args),
+    });
+});
+//Best Buys Partial test end
 
 //Function that adds additional data fields to each element of the products final array before being rendered this will make it easier to automatically write the required text on the rendered screen we are currently adding Property Value, TotalInterestPayable by subtracting and an LoanRequired field 
 const addDetailsToProducts = function(arr, obj){
