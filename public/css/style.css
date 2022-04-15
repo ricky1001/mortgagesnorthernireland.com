@@ -10602,6 +10602,25 @@ img {
   color: white;
   z-index: 10000; }
 
+.latestRates {
+  background-color: white; }
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  border: 1px solid #00414c;
+  border-radius: 10px; }
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px; }
+
+tr:nth-child(even) {
+  background-color: #c1ccf8;
+  color: white; }
+
 @media only screen and (max-width: 1250px) {
   .menu {
     display: none; } }
@@ -11913,19 +11932,31 @@ p {
   background-color: #1f253d;
   text-align: center;
   font-size: 1rem; }
+  @media only screen and (max-width: 300px) {
+    .calcResponseOutter {
+      height: 55vh; } }
   .calcResponseOutter-top {
     padding-top: .5rem;
     height: 33%; }
+    @media only screen and (max-width: 300px) {
+      .calcResponseOutter-top {
+        height: 30%; } }
   .calcResponseOutter-middle {
     padding-top: .5rem;
     height: 33%;
     border-top: 4px solid #293151; }
+    @media only screen and (max-width: 300px) {
+      .calcResponseOutter-middle {
+        height: 26%; } }
   .calcResponseOutter-bottom {
     padding-left: 1rem;
     text-align: left;
     padding-top: 1rem;
     height: 32%;
     border-top: 4px solid #293151; }
+    @media only screen and (max-width: 300px) {
+      .calcResponseOutter-bottom {
+        height: 43%; } }
 
 .calc-form {
   background-color: #f5f5f2;

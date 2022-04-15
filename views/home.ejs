@@ -63,7 +63,10 @@
                   Consultation
                 </div>
                 <div class="process-icon-box-content">
+                  <p class="text-center">
                     During our initial consultation we will gather all the necessesary information to complete your mortgage application. This appointment can be carried out in our office or at location more convenient to you. Home visits are available on request.
+           
+                  </p>
                 </div>
           
         </div>
@@ -76,8 +79,10 @@
                 Decision in Principle
               </div>
               <div class="process-icon-box-content">
-                Once we have carried out your affordability assessment we can proceed with an initial decision in principle with your selected lender this will provide you with a certificate that you can give to your estate agent to show that you can get a mortgage.
-              </div>
+                <p class="text-center">
+                  Once we have carried out your affordability assessment we can proceed with an initial decision in principle with your selected lender this will provide you with a certificate that you can give to your estate agent to show that you can get a mortgage.
+                </p>
+               </div>
         </div>
         <div class="col-sm-6 col-lg-3">
             <div class="process-icon-box-circle process-icon-box-circle-3">
@@ -88,7 +93,9 @@
                 Apply with us
               </div>
               <div class="process-icon-box-content">
-               Once you have made a successful bid on a property you can proceed with a full mortgage application. We will require payslips, bank statements and proof of ID at this stage, most lenders can produce a full mortgage offer within roughly 10 days from the date of application.
+                <p class="text-center">
+                  Once you have made a successful bid on a property you can proceed with a full mortgage application. We will require payslips, bank statements and proof of ID at this stage, most lenders can produce a full mortgage offer within roughly 10 days from the date of application.
+                </p>
               </div>
         </div>
         <div class="col-sm-6 col-lg-3">
@@ -100,7 +107,9 @@
                 Track and Chase
               </div>
               <div class="process-icon-box-content">
-                Our service doesn't stop when your offer is produced we will liase with your estate agent and your solicitor to make sure that your purchase or re-mortgage completes without a hitch.
+                <p class="text-center">
+                  Our service doesn't stop when your offer is produced we will liase with your estate agent and your solicitor to make sure that your purchase or re-mortgage completes without a hitch.
+                </p>
               </div>
         </div>
       </div>
@@ -130,124 +139,174 @@
                   </div>
             </div>
             <div class="col-sm-6">
+              <p>
                 Mortgages Northern Ireland operate a fee free mortgage advice service across all of Northern Ireland. We search through a comprehensive range of Mortgage products in order to find the most suitable deal for you. <br>
                 <br>We belong to the First Complete network and are fully regulated and compliant with the Financial Conduct Authority.
                 Our Mortgage Advisers have a wealth of knowledge and experience working with customers just like you and are waiting to assist with any mortgage related enquiry that you may have.
                 <br><br>Choosing a mortgage is one of the biggest financial decisions you're ever likely to make. There are thousands of mortgage deals out there and we are here to help you choose the right one.
-            </div>
+              </p>
+           </div>
           </div>
         </div>
       </div>
       
       </section>
-  
-  <section id="best-buys mt-5">
-    <h3 class="text-center">Latest Mortgage Best Buys</h3>
-    <div class="modular-content_container">      
-      <div class="table__container" role="region" aria-label="List of products">
-            <div id="products-container" class="table__body">
-
-            </div>
-            <button class="run-search-button" type="submit" id="submit-form">
-              <a class="search-mortgages-button" href="/best-buys">Search Mortgages</a>
-            </button>
-      </div>
-    </div>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script>
-
-$('.accordion-item').click( function(){
-
-if ( $(this).hasClass('accordion-item--closed') ) {
-$(this).removeClass('accordion-item--closed');
-$(this).addClass('accordion-item--opened');
-} else {
-$(this).removeClass('accordion-item--opened');
-
-$(this).addClass('accordion-item--closed');    
-}
-});
-</script>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-
-<script>
-
-$(document).ready(function(){    
-// Add the first request whent he page loads
-const productHTML = `<%- productHTML %>`;      
-setHTMLProductsString(productHTML);
-}) 
-function setHTMLProductsString(str){
-      
-        $("#products-container").empty();
-        $("#products-container").html($.parseHTML(str));
-      }
-
-</script>
-  </section>
-  
-  <section class="mtype">
+<!--
+<div class="latestRates mt-5">
+  <div class="container">
     <div class="container-fluid">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-3 col-md-6">
-            <div class="mtype-item">
-              <div class="mtype-item-upper-ftb">
-                  <h6>First Time <br> Buyer</h6>  <i class="fas fa-door-open"></i>
+      <div class="row">
+        <div class="col-6">
+            <h3>Latest 2 Year Fixed Rates</h3>
+          <table>
+            <tr>
+              <th>Lender</th>
+              <th>Interest Rate</th>
+              <th>LTV</th>
+              <th>Fees</th>
+              <th>APRC</th>
+            </tr>
+            <tr>
+              <td>Danske Bank</td>
+              <td>2.49%</td>
+              <td>75%</td>
+              <td>£999</td>
+              <td>3.38%</td>
+            </tr>
+            <tr>
+              <td>Barclays</td>
+              <td>Francisco Chang</td>
+              <td>Mexico</td>
+              <td>£999</td>
+              <td>3.38%</td>
+            </tr>
+            <tr>
+              <td>Santander</td>
+              <td>Francisco Chang</td>
+              <td>Mexico</td>
+              <td>£999</td>
+              <td>3.38%</td>
+            </tr>
+          </table>
+          <button class="run-search-button" type="submit" id="submit-form">
+            <a class="search-mortgages-button" href="/best-buys">Search 2 Year Fixed Rates</a>
+          </button>
+        </div>
+        <div class="col-6">
+          <h3>Latest 5 Year Fixed Rates</h3>
+          <table>
+            <tr>
+              <th>Lender</th>
+              <th>Interest Rate</th>
+              <th>LTV</th>
+              <th>Fees</th>
+              <th>APRC</th>
+            </tr>
+            <tr>
+              <td>Danske Bank</td>
+              <td>2.49%</td>
+              <td>75%</td>
+              <td>£999</td>
+              <td>3.38%</td>
+            </tr>
+            <tr>
+              <td>Barclays</td>
+              <td>Francisco Chang</td>
+              <td>Mexico</td>
+              <td>£999</td>
+              <td>3.38%</td>
+            </tr>
+            <tr>
+              <td>Santander</td>
+              <td>Francisco Chang</td>
+              <td>Mexico</td>
+              <td>£999</td>
+              <td>3.38%</td>
+            </tr>
+          </table>
+          <button class="run-search-button" type="submit" id="submit-form">
+            <a class="search-mortgages-button" href="/best-buys">Search 5 Year Fixed Rates</a>
+          </button>
+        </div>
+    </div>
+  </div>
+</div>
+-->
+
+
+  
+      <section class="mtype">
+        <div class="container-fluid">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-3 col-md-6">
+                <div class="mtype-item">
+                  <div class="mtype-item-upper-ftb">
+                      <h6>First Time <br> Buyer</h6>  <i class="fas fa-door-open"></i>
+                  </div>
+                  <div class="mtype-item-middle">
+                      <p>Our experts can help you get your foot on the property ladder</p>
+                  </div>
+                  <div class="mtype-item-bottom">
+                      <a href="/first-time-buyer-mortgages">Read More</a>
+                  </div>
+                </div>
               </div>
-              <div class="mtype-item-middle">
-                  <p>Our experts can help you get your foot on the property ladder</p>
+              <div class="col-lg-3 col-md-6">
+                  <div class="mtype-item">
+                      <div class="mtype-upper mtype-item-upper-selfBuild">
+                          <h6>Self <br> Build</h6> <i class="fas fa-truck-moving"></i>
+                      </div>
+                      <div class="mtype-item-middle">
+                          <p>Building your own home but don't know where to start! We can help.</p>
+                      </div>
+                      <div class="mtype-item-bottom">
+                          <a href="/self-build-mortgages">Read More</a>
+                      </div>
+                    </div>         
               </div>
-              <div class="mtype-item-bottom">
-                  <a href="/first-time-buyer-mortgages">Read More</a>
+              <div class="col-lg-3 col-md-6">
+                  <div class="mtype-item">
+                      <div class="mtype-upper mtype-item-upper-remortgage">
+                          <h6>Re-mortgage <br> Your Home</h6>   <i class="far fa-edit"></i>
+                      </div>
+                      <div class="mtype-item-middle">
+                          <p>We could save you money we will search the market for a better deal</p>
+                      </div>
+                      <div class="mtype-item-bottom">
+                          <a href="/re-mortgage-advice">Read More</a>
+                      </div>
+                    </div>          
+              </div>
+              <div class="col-lg-3 col-md-6">
+                  <div class="mtype-item">
+                      <div class="mtype-upper mtype-item-upper-btl">
+                          <h6>Buy to <br> Let</h6>  <i class="fas fa-address-book"></i>
+                      </div>
+                      <div class="mtype-item-middle">
+                          <p>Weather you are buying your first investment property or expanding your portfolio we can help.</p>
+                      </div>
+                      <div class="mtype-item-bottom">
+                          <a href="/buy-to-let-mortgages">Read More</a>
+                      </div>
+                    </div>          
               </div>
             </div>
-          </div>
-          <div class="col-lg-3 col-md-6">
-              <div class="mtype-item">
-                  <div class="mtype-upper mtype-item-upper-selfBuild">
-                      <h6>Self <br> Build</h6> <i class="fas fa-truck-moving"></i>
-                  </div>
-                  <div class="mtype-item-middle">
-                      <p>Building your own home but don't know where to start! We can help.</p>
-                  </div>
-                  <div class="mtype-item-bottom">
-                      <a href="/self-build-mortgages">Read More</a>
-                  </div>
-                </div>         
-          </div>
-          <div class="col-lg-3 col-md-6">
-              <div class="mtype-item">
-                  <div class="mtype-upper mtype-item-upper-remortgage">
-                      <h6>Re-mortgage <br> Your Home</h6>   <i class="far fa-edit"></i>
-                  </div>
-                  <div class="mtype-item-middle">
-                      <p>We could save you money we will search the market for a better deal</p>
-                  </div>
-                  <div class="mtype-item-bottom">
-                      <a href="/re-mortgage-advice">Read More</a>
-                  </div>
-                </div>          
-          </div>
-          <div class="col-lg-3 col-md-6">
-              <div class="mtype-item">
-                  <div class="mtype-upper mtype-item-upper-btl">
-                      <h6>Buy to <br> Let</h6>  <i class="fas fa-address-book"></i>
-                  </div>
-                  <div class="mtype-item-middle">
-                      <p>Weather you are buying your first investment property or expanding your portfolio we can help.</p>
-                  </div>
-                  <div class="mtype-item-bottom">
-                      <a href="/buy-to-let-mortgages">Read More</a>
-                  </div>
-                </div>          
           </div>
         </div>
-      </div>
-    </div>
+      
+      </section>
+
+
+
+
+
+
+
   
-  </section>
+
+  
+
   
 
   <%- include('./partials/footer') %>
