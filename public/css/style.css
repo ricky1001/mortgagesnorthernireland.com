@@ -11940,14 +11940,14 @@ p {
     height: 33%; }
     @media only screen and (max-width: 500px) {
       .calcResponseOutter-top {
-        height: 30%; } }
+        height: 27%; } }
   .calcResponseOutter-middle {
     padding-top: .5rem;
     height: 33%;
     border-top: 4px solid #293151; }
     @media only screen and (max-width: 500px) {
       .calcResponseOutter-middle {
-        height: 26%; } }
+        height: 29%; } }
   .calcResponseOutter-bottom {
     padding-left: 1rem;
     text-align: left;
