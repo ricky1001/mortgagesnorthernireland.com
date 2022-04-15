@@ -11932,20 +11932,20 @@ p {
   background-color: #1f253d;
   text-align: center;
   font-size: 1rem; }
-  @media only screen and (max-width: 300px) {
+  @media only screen and (max-width: 500px) {
     .calcResponseOutter {
       height: 55vh; } }
   .calcResponseOutter-top {
     padding-top: .5rem;
     height: 33%; }
-    @media only screen and (max-width: 300px) {
+    @media only screen and (max-width: 500px) {
       .calcResponseOutter-top {
         height: 30%; } }
   .calcResponseOutter-middle {
     padding-top: .5rem;
     height: 33%;
     border-top: 4px solid #293151; }
-    @media only screen and (max-width: 300px) {
+    @media only screen and (max-width: 500px) {
       .calcResponseOutter-middle {
         height: 26%; } }
   .calcResponseOutter-bottom {
