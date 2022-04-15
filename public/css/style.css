@@ -8703,6 +8703,9 @@ body {
   color: #00414c !important;
   font-size: 1rem !important; }
 
+p {
+  font-size: 1.2rem; }
+
 button,
 input,
 select,
@@ -10594,6 +10597,11 @@ img {
   border-radius: 5px;
   cursor: pointer; }
 
+.search-mortgages-button {
+  text-decoration: none;
+  color: white;
+  z-index: 10000; }
+
 @media only screen and (max-width: 1250px) {
   .menu {
     display: none; } }
@@ -11406,7 +11414,7 @@ img {
           color: #9f31e8; }
 
 .orangeHighlight {
-  color: #ff7f27; }
+  color: #00414c; }
 
 .contact-us-page-form {
   background-color: #2d0845;

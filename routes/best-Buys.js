@@ -41,6 +41,8 @@ router.get("/best-buys", function(req, res){
     addDetailsToProducts(products, args)
         
     return res.render("index", {
+      metatitle: "Best Mortgage Deals - Search the market with Mortgages Northern Ireland",
+      metadescription: "Use our sourcing software to search the market for the best deals available in  Northern Ireland",  
       products,
       args: args,
       reqObj: args,
