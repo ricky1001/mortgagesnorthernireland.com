@@ -7813,6 +7813,9 @@ textarea.form-control-lg {
   margin-left: 0rem;
   margin-right: 0rem; }
 
+.nav-tabs {
+  border-color: solid 1px blue; }
+
 .jumbo-home {
   overflow: hidden;
   position: relative;
