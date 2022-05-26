@@ -70,6 +70,19 @@
                 </div>
                 <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
                   <form class="calc-form" action="">
+
+                    <div class="form-check inlineDiv">
+                      <input class="form-check-input" type="radio" name="repayOrIoCalc" id="repayCalcRadio" checked>
+                      <label class="form-check-label" for="repayCalcRadio">
+                        Repayment
+                      </label>
+                    </div>
+                    <div class="form-check inlineDiv">
+                      <input class="form-check-input" type="radio" name="repayOrIoCalc" id="IoCalcRadio">
+                      <label class="form-check-label" for="IoCalcRadio">
+                        Interest Only
+                      </label>
+                    </div>
     
                     <div class="mb-3">
                       <label for="loanAmount" class="form-label">
@@ -173,37 +186,41 @@
   var ir = document.getElementById("interestRate");
   var d = document.getElementById("depositMR");
   var monthlyPaymentSpan = document.getElementById("monthlyRepayment");
+  var ioOrRepayment = document.getElementsByName("repayOrIoCalc");
+  var allElements = document.getElementsByTagName("repaymentInput");
+
+  if(item.checked === true && item.id === "repayCalcRadio"){
+
+for (let i = 0; i < allElements.length; i++){
+allElements[i].addEventListener("keyup", function(e){
+
+var P = la.value;
+var Y = t.value;
+var I = ir.value;
+var deposit = d.value;
+
+P = parseInt(P, 10);
+I = parseFloat(I, 10).toFixed(2);
+Y = parseInt(Y, 10);
+
+I = I /100 /12;
+Y = Y * 12;
+
+toThePowerOfRate = Math.pow(I + 1, Y);
+topNum = I * toThePowerOfRate;
+bottomNum = toThePowerOfRate - 1;
+
+var monthlyPayment = topNum /bottomNum * P;
+
+monthlyPayment = monthlyPayment.toFixed(2);
+
+monthlyPaymentSpan.textContent = monthlyPayment;
+
+})
+} 
 
 
-  var allElements = document.getElementsByClassName("repaymentInput");
-
- for (let i = 0; i < allElements.length; i++){
-   allElements[i].addEventListener("keyup", function(e){
-
-     var P = la.value;
-     var Y = t.value;
-     var I = ir.value;
-     var deposit = d.value;
-
-     P = parseInt(P, 10);
-     I = parseFloat(I, 10).toFixed(2);
-     Y = parseInt(Y, 10);
-
-     I = I /100 /12;
-     Y = Y * 12;
-
-     toThePowerOfRate = Math.pow(I + 1, Y);
-     topNum = I * toThePowerOfRate;
-     bottomNum = toThePowerOfRate - 1;
- 
-     var monthlyPayment = topNum /bottomNum * P;
- 
-     monthlyPayment = monthlyPayment.toFixed(2);
-
-     monthlyPaymentSpan.textContent = monthlyPayment;
-      
-   })
- }           
+         
 
 
 </script>
