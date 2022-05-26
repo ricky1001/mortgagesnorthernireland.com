@@ -70,19 +70,6 @@
                 </div>
                 <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
                   <form class="calc-form" action="">
-
-                    <div class="form-check inlineDiv">
-                      <input class="form-check-input" type="radio" name="repayOrIoCalc" id="repayCalcRadio" checked>
-                      <label class="form-check-label" for="repayCalcRadio">
-                        Repayment
-                      </label>
-                    </div>
-                    <div class="form-check inlineDiv">
-                      <input class="form-check-input" type="radio" name="repayOrIoCalc" id="IoCalcRadio">
-                      <label class="form-check-label" for="IoCalcRadio">
-                        Interest Only
-                      </label>
-                    </div>
     
                     <div class="mb-3">
                       <label for="loanAmount" class="form-label">
@@ -186,40 +173,29 @@
   var ir = document.getElementById("interestRate");
   var d = document.getElementById("depositMR");
   var monthlyPaymentSpan = document.getElementById("monthlyRepayment");
-  var ioOrRepayment = document.getElementsByName("repayOrIoCalc");
-  var allElements = document.getElementsByTagName("repaymentInput");
-
-  console.log(allElements)
-
-for (let i = 0; i < allElements.length; i++){
-allElements[i].addEventListener("keyup", function(e){
-  console.log("Hello")
-
-var P = la.value;
-var Y = t.value;
-var I = ir.value;
-var deposit = d.value;
-
-P = parseInt(P, 10);
-I = parseFloat(I, 10).toFixed(2);
-Y = parseInt(Y, 10);
-
-I = I /100 /12;
-Y = Y * 12;
-
-toThePowerOfRate = Math.pow(I + 1, Y);
-topNum = I * toThePowerOfRate;
-bottomNum = toThePowerOfRate - 1;
-
-var monthlyPayment = topNum /bottomNum * P;
-
-monthlyPayment = monthlyPayment.toFixed(2);
-
-monthlyPaymentSpan.textContent = monthlyPayment;
-
-})
-} 
-
+  var allElements = document.getElementsByClassName("repaymentInput");
+ for (let i = 0; i < allElements.length; i++){
+   allElements[i].addEventListener("keyup", function(e){
+     var P = la.value;
+     var Y = t.value;
+     var I = ir.value;
+     var deposit = d.value;
+     P = parseInt(P, 10);
+     I = parseFloat(I, 10).toFixed(2);
+     Y = parseInt(Y, 10);
+     I = I /100 /12;
+     Y = Y * 12;
+     toThePowerOfRate = Math.pow(I + 1, Y);
+     topNum = I * toThePowerOfRate;
+     bottomNum = toThePowerOfRate - 1;
+ 
+     var monthlyPayment = topNum /bottomNum * P;
+ 
+     monthlyPayment = monthlyPayment.toFixed(2);
+     monthlyPaymentSpan.textContent = monthlyPayment;
+      
+   })
+ }           
 </script>
 
 
@@ -242,16 +218,12 @@ var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
   var maxPurchasePrice = document.getElementById("maxPurchasePrice");
   var maxLoan = "";
   var LTV = document.getElementById("LTV");
-
   var allElements = document.getElementsByClassName("maxLoanInput");
   console.log(allElements)
  
-
   for (let i = 0; i < allElements.length; i++){
     allElements[i].addEventListener("keyup", function(e){
-
     var totalIncome =  (parseInt(grossAnnualApp1.value) + parseInt(grossAnnualApp2.value)) - (parseInt(monthlyOutgoings.value) * 12);
-
     if(totalIncome < 50000){
       maxLoan = totalIncome * 4.5;
     }else if(totalIncome >= 50000  && totalIncome < 100000){
@@ -259,34 +231,20 @@ var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
     }else{
       maxLoan = totalIncome * 5.5;
     }
-
     maxLoanText.textContent = "£" + maxLoan;
-
     var PP = maxLoan + parseInt(deposit.value);
-
     maxPurchasePrice.textContent = "£" + PP;
-
     LTV.textContent = Math.round(maxLoan / (maxLoan + parseInt(deposit.value)) * 100);
-
-
-
     })
   }
-
 </script>
 
 <!--Switches from max loan to monthly cost-->
 <script>
-
   var maxLoanTab = document.getElementById("home-tab");
   var monthlyCostTab = document.getElementById("profile-tab");
-
 document.getElementById("myTab").addEventListener("click", function(e){
-
-
-
  const displayUpdate = setTimeout(changeDisplay, 100)
-
   function changeDisplay(){
     if(maxLoanTab.classList.contains("active")){
     document.getElementById("calcResponseMaxLoan").style.display = "block";
@@ -297,19 +255,12 @@ document.getElementById("myTab").addEventListener("click", function(e){
     document.getElementById("calcResponseMonthlyCost").style.display = "block";
    }
   }
-
   displayUpdate()
-
 });
-
-
-
   // var maxLoanDiv = document.getElementById("nav-home-tab");
   // var monthlyPayDiv = document.getElementById("nav-profile-tab");
-
   // var maxLoanOutPut = document.getElementById("calResponseMaxLoan");
   // var monthlyCostOutPut = document.getElementById("calcResponseMonthlyCost");
-
   // document.getElementById("nav-tab-item").addEventListener("click", function(){
   //   if(maxLoanDiv.classList.contains("active")){
   //      maxLoanOutPut.style.display = "block";
@@ -319,9 +270,6 @@ document.getElementById("myTab").addEventListener("click", function(e){
   //      monthlyCostOutPut.style.display = "block";
   //    }
   // })
-
-
-
 </script>
 
 <%- include('../partials/footer') %>
