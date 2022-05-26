@@ -189,10 +189,11 @@
   var ioOrRepayment = document.getElementsByName("repayOrIoCalc");
   var allElements = document.getElementsByTagName("repaymentInput");
 
-  if(item.checked === true && item.id === "repayCalcRadio"){
+  console.log(allElements)
 
 for (let i = 0; i < allElements.length; i++){
 allElements[i].addEventListener("keyup", function(e){
+  console.log("Hello")
 
 var P = la.value;
 var Y = t.value;
@@ -218,10 +219,6 @@ monthlyPaymentSpan.textContent = monthlyPayment;
 
 })
 } 
-
-
-         
-
 
 </script>
 
