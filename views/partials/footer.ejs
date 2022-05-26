@@ -269,32 +269,12 @@
 <%- include('quick-call') %>
 
 
- <!--Converting the quickCallHelpers to variables and passing them to the javascript files below -->
-<% var hoursPastNine = JSON.stringify(quickCallHelpers.hoursPastNine) %>
-<% var dayStrings = JSON.stringify(quickCallHelpers.dayStrings) %>
-<% var adjustedTimes = JSON.stringify(quickCallHelpers.adjustedTimes) %>
-<% var times = JSON.stringify(quickCallHelpers.times) %>
-
-<p id="hoursPastNine" style="display:none"><%= hoursPastNine %></p>
-<p id="dayStrings" style="display:none"><%= dayStrings %></p>
-<p id="adjustedTimes" style="display:none"><%= adjustedTimes %></p>
-<p id="times" style="display:none"><%= times %></p>
-
-<script type="text/javascript">
-  var hoursPastNine = document.getElementById("hoursPastNine").innerText;
-  var dayStrings = document.getElementById("dayStrings").innerText;
-  var adjustedTimes = document.getElementById("adjustedTimes").innerText;
-  var times = document.getElementById("times").innerText;
-</script>
-
 
 <!--IMPORTANT - when adding scripts you must add both versions for es6 and older browsers via babelrc file -->
 <!--sliding-side-bar-->
 <script src="/js/src/side-bar-menu/side-bar-menu.js"></script>
 <!--JS file that listens for a change on the aip booking page and alters the content of the inputs this file passes the parsed variables ie hoursPastNine etc to js/bookingCalendar/bookCallBackIcon.js below-->
 <script src="/js/src/bookingCalendar/bookCallBackAdvert.js"></script>
-<!--JS file that controls the appearance of the quick call Icon Box-->
-<script src="/js/src/quickCall/quickCall.js"></script>
 <!--JS File that alters the content of the call back icon inputs etc-->
 <script src="/js/src/bookingCalendar/bookCallBackIcon.js"></script>
 
@@ -304,8 +284,6 @@
 <script src="/js/dist/side-bar-menu/side-bar-menu.js"></script>
 <!--JS file that listens for a change on the aip booking page and alters the content of the inputs this file passes the parsed variables ie hoursPastNine etc to js/bookingCalendar/bookCallBackIcon.js below-->
 <script src="/js/dist/bookingCalendar/bookCallBackAdvert.js"></script>
-<!--JS file that controls the appearance of the quick call Icon Box-->
-<script src="/js/dist/quickCall/quickCall.js"></script>
 <!--JS File that alters the content of the call back icon inputs etc-->
 <script src="/js/dist/bookingCalendar/bookCallBackIcon.js"></script>
 
