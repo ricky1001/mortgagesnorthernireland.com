@@ -108,7 +108,7 @@
                       <span data-bs-toggle="tooltip" data-bs-placement="right" title="How much of a deposit would you like  to put towards the loan this will help us to show you relevant products?" >
                         <i class="fas fa-question-circle"></i>
                       </span>
-                      <input type="number" class="form-control repaymentInput" id="depositMR" value="0">
+                      <input type="number" class="form-control repaymentInput" id="depositMR" placeholder="0">
                     </div>
     
                   </form>
@@ -170,6 +170,11 @@
 
 
 <!--Calculates the outputs for the monthly payment-->
+
+<!--
+  Change all of the inputs from values to placeholders 
+  Run the convert empty to 0 function on each individual element
+-->
 <script>
   var la = document.getElementById("loanAmount");
   var t = document.getElementById("term");
