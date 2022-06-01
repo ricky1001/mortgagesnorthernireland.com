@@ -33,17 +33,17 @@
                       <span data-bs-toggle="tooltip" data-bs-placement="right" title="Here you can include your gross annual salary combined with the gross annualised figure for all benefits received including child benefit. For self-employed applicants an average of your last 2 years pre tax profits. For Ltd company traders you should speak to an adviser to ensure you are using accurate figures." >
                         <i class="fas fa-question-circle"></i>
                       </span>
-                      <input type="number" class="form-control maxLoanInput maxLoanInput" id="grossAnnualApp1" value="0">
+                      <input type="number" class="form-control maxLoanInput maxLoanInput" id="grossAnnualApp1" placeholder="0">
                     </div>
     
                     <div class="mb-3">
                       <label for="grossAnnualApp2" class="form-label">
-                        Your gross annual Salary
+                        Your partners gross annual Salary
                       </label> 
                       <span data-bs-toggle="tooltip" data-bs-placement="right" title="Here you can include your partners gross annual salary. For self-employed applicants an average of your last 2 years pre tax profits. For Ltd company traders you should speak to an adviser to ensure you are using accurate figures." >
                         <i class="fas fa-question-circle"></i>
                       </span>
-                      <input type="number" class="form-control maxLoanInput" id="grossAnnualApp2" value="0">
+                      <input type="number" class="form-control maxLoanInput" id="grossAnnualApp2" placeholder="0">
                     </div>
     
                     <div class="mb-3">
@@ -53,7 +53,7 @@
                       <span data-bs-toggle="tooltip" data-bs-placement="right" title="Please enter the maximum deposit that you have available." >
                         <i class="fas fa-question-circle"></i>
                       </span>
-                      <input type="number" class="form-control maxLoanInput" id="deposit" value="0" placeholder="0">
+                      <input type="number" class="form-control maxLoanInput" id="deposit" placeholder="0">
                     </div>
     
                     <div class="mb-3">
@@ -63,7 +63,7 @@
                       <span data-bs-toggle="tooltip" data-bs-placement="right" title="Lenders take regular monthly spending into account when deciding how much to lend. This includes loan repayments, credit cards, childcare fees, pension payments, etc." >
                         <i class="fas fa-question-circle"></i>
                       </span>
-                      <input type="number" class="form-control maxLoanInput" id="monthlyOutgoings" value="0" placeholder="0">
+                      <input type="number" class="form-control maxLoanInput" id="monthlyOutgoings" placeholder="0">
                     </div>
     
                 </form>
@@ -108,7 +108,7 @@
                       <span data-bs-toggle="tooltip" data-bs-placement="right" title="How much of a deposit would you like  to put towards the loan this will help us to show you relevant products?" >
                         <i class="fas fa-question-circle"></i>
                       </span>
-                      <input type="number" class="form-control repaymentInput" id="depositMR" value="0">
+                      <input type="number" class="form-control repaymentInput" id="depositMR" placeholder="0">
                     </div>
     
                   </form>
@@ -170,6 +170,11 @@
 
 
 <!--Calculates the outputs for the monthly payment-->
+
+<!--
+  Change all of the inputs from values to placeholders 
+  Run the convert empty to 0 function on each individual element
+-->
 <script>
   var la = document.getElementById("loanAmount");
   var t = document.getElementById("term");
@@ -179,10 +184,11 @@
   var allElements = document.getElementsByClassName("repaymentInput");
  for (let i = 0; i < allElements.length; i++){
    allElements[i].addEventListener("keyup", function(e){
-     var P = la.value;
-     var Y = t.value;
-     var I = ir.value;
-     var deposit = d.value;
+     var P = convertEmptyFieldsTo0(la);
+     var Y = convertEmptyFieldsTo0(t);
+     var I = convertEmptyFieldsTo0(ir);
+     console.log(I)
+     var deposit = convertEmptyFieldsTo0(d);
      P = parseInt(P, 10);
      I = parseFloat(I, 10).toFixed(2);
      Y = parseInt(Y, 10);
@@ -216,17 +222,24 @@ var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
   var grossAnnualApp1 = document.getElementById("grossAnnualApp1");
   var grossAnnualApp2 = document.getElementById("grossAnnualApp2");
   var deposit = document.getElementById("deposit");
-  var monthlyOutgoings = document.getElementById("monthlyOutgoings")
+  var monthlyOutgoings = document.getElementById("monthlyOutgoings");
   var maxLoanText = document.getElementById("maxLoan");
   var maxPurchasePrice = document.getElementById("maxPurchasePrice");
   var maxLoan = "";
   var LTV = document.getElementById("LTV");
   var allElements = document.getElementsByClassName("maxLoanInput");
   console.log(allElements)
- 
+
   for (let i = 0; i < allElements.length; i++){
     allElements[i].addEventListener("keyup", function(e){
-    var totalIncome =  (parseInt(grossAnnualApp1.value) + parseInt(grossAnnualApp2.value)) - (parseInt(monthlyOutgoings.value) * 12);
+
+      annualApp1 = convertEmptyFieldsTo0(grossAnnualApp1);
+      annualApp2 = convertEmptyFieldsTo0(grossAnnualApp2);
+      depositConvert         = convertEmptyFieldsTo0(deposit);
+      monthlyOutgoingsConvert = convertEmptyFieldsTo0(monthlyOutgoings);
+
+    
+    var totalIncome =  (annualApp1 + annualApp2) - (monthlyOutgoingsConvert * 12);
     if(totalIncome < 50000){
       maxLoan = totalIncome * 4.5;
     }else if(totalIncome >= 50000  && totalIncome < 100000){
@@ -235,11 +248,21 @@ var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
       maxLoan = totalIncome * 5.5;
     }
     maxLoanText.textContent = "£" + maxLoan;
-    var PP = maxLoan + parseInt(deposit.value);
+    var PP = maxLoan + parseInt(depositConvert);
     maxPurchasePrice.textContent = "£" + PP;
-    LTV.textContent = Math.round(maxLoan / (maxLoan + parseInt(deposit.value)) * 100);
-    })
+    LTV.textContent = Math.round(maxLoan / (maxLoan + depositConvert) * 100);
+    })  
   }
+
+  //Function to convert empty fields to 0 value
+  function convertEmptyFieldsTo0(field){
+    if(field.value.length == 0){
+      return 0;
+    }else{
+      return parseInt(field.value);
+    }
+  }
+
 </script>
 
 <!--Switches from max loan to monthly cost-->
