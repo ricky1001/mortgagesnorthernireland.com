@@ -148,13 +148,13 @@
         <div id="enquiry-modal-container-options" class="">
           <div class="row">
             <div class="col-4">
-             <a id="quick-enquiry" href="" class="">Quick Enquiry</a>
+             <a id="quick-enquiry" href="#" class="">Quick Enquiry</a>
             </div>
             <div class="col-4">
-             <a id="detailed-enquiry" href="" class="">Detailed Enquiry</a>
+             <a id="detailed-enquiry" href="#" class="">Detailed Enquiry</a>
             </div>
             <div class="col-4">
-             <a id="Call us" href="" class="">Call Us</a>
+             <a id="call-us" href="#" class="">Call Us</a>
             </div>
           </div>
         </div>
@@ -171,9 +171,45 @@
 
 <script>
   var container = document.getElementById("enquiry-modal-container");
-  var quickEnquiry = document.getElementById("quick-enquiry");
-  var detailedEnquiry = document.getElementById("detailed-enquiry");
-  var callUs = document.getElementById("call-us");
+  var quickEnquiryLink = document.getElementById("quick-enquiry");
+  var detailedEnquiryLink = document.getElementById("detailed-enquiry");
+  var callUsLink = document.getElementById("call-us");
+  let quickEnquiryElement = `<%- include('./enquiry-modal-options/quick-enquiry.ejs') %>`;
+  let detailedEnquiryElement = `<%- include('./enquiry-modal-options/detailed-enquiry.ejs') %>`;
+  let callUsElement =  `<%- include('./enquiry-modal-options/call-us.ejs') %>`;
+
+  
+         
+          const mainMenu =`<%- include('./enquiry-modal-options/call-us.ejs') %>`;
+          
+          backToMainLink.addEventListener("click", function(e){
+          e.preventDefault();
+          setHTMLProductsString(mainMenu)
+  })
+  
+
+  quickEnquiryLink.addEventListener("click", function(e){
+    e.preventDefault();
+    setHTMLProductsString(quickEnquiryElement)
+  })
+
+  detailedEnquiryLink.addEventListener("click", function(e){
+    e.preventDefault();
+    setHTMLProductsString(detailedEnquiryElement)
+  })
+
+  callUsLink.addEventListener("click", function(e){
+    console.log("fuck")
+    e.preventDefault();
+    setHTMLProductsString(callUsElement)
+  })
+
+
+  function setHTMLProductsString(str){
+              
+              $("#enquiry-modal-container").empty();
+              $("#enquiry-modal-container").html(str);
+            }
 
 
 </script>
