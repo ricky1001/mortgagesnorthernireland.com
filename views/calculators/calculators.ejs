@@ -204,7 +204,7 @@
      var Y = convertEmptyFieldsTo0(t);
      var interestRate = convertEmptyFieldsTo0(ir);
      
-     var deposit = convertEmptyFieldsTo0(d);
+     
      P = parseInt(P, 10);
      interestRate = parseFloat(interestRate);
      Y = parseInt(Y, 10);
@@ -233,7 +233,9 @@
  //Listens for a change from repayment to interest only or vice versa and update the output
 
 $("input:radio").change(function(){
+
   if(document.getElementById("io").checked){
+
       console.log("io checked")
       loanAmount = parseInt(la.value);
       interestRate = parseFloat(ir.value);
@@ -242,13 +244,14 @@ $("input:radio").change(function(){
       monthlyPayment = monthlyPayment / 12;
 
       monthlyPaymentSpan.textContent = monthlyPayment.toFixed(2);
+
   }else{
     console.log("repay is checked ")
      var P = convertEmptyFieldsTo0(la);
      var Y = convertEmptyFieldsTo0(t);
      var interestRate = convertEmptyFieldsTo0(ir);
      
-     var deposit = convertEmptyFieldsTo0(d);
+     //var deposit = convertEmptyFieldsTo0(d);
      P = parseInt(P, 10);
      interestRate = parseFloat(interestRate);
      Y = parseInt(Y, 10);
