@@ -177,22 +177,23 @@
 
 <!--Calculates the outputs for the monthly payment-->
 
-<!--
-  Change all of the inputs from values to placeholders 
-  Run the convert empty to 0 function on each individual element
--->
+
 <script>
   var repayOrIo = document.getElementsByName("repayOrIo");
-  console.log(repayOrIo)
   var la = document.getElementById("loanAmount");
   var t = document.getElementById("term");
   var ir = document.getElementById("interestRate");
   var d = document.getElementById("depositMR");
   var monthlyPaymentSpan = document.getElementById("monthlyRepayment");
   var allElements = document.getElementsByClassName("repaymentInput");
+
+
+
  for (let i = 0; i < allElements.length; i++){
    allElements[i].addEventListener("keyup", function(e){
-     var P = convertEmptyFieldsTo0(la);
+
+    if(document.getElementById("repay").checked){
+      var P = convertEmptyFieldsTo0(la);
      var Y = convertEmptyFieldsTo0(t);
      var I = convertEmptyFieldsTo0(ir);
      console.log(I)
@@ -210,6 +211,11 @@
  
      monthlyPayment = monthlyPayment.toFixed(2);
      monthlyPaymentSpan.textContent = monthlyPayment;
+  }else{
+    console.log("add interest only calculation hear")
+  }
+    
+
       
    })
  }           
