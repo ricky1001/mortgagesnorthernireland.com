@@ -11943,16 +11943,19 @@ p {
     height: 33%; }
     @media only screen and (max-width: 500px) {
       .calcResponseOutter-top {
-        height: 27%; } }
+        height: 26%; } }
     .calcResponseOutter-top-monthly {
-      height: 50%; }
+      height: 40%; }
   .calcResponseOutter-middle {
     padding-top: .5rem;
     height: 33%;
     border-top: 4px solid #293151; }
     @media only screen and (max-width: 500px) {
       .calcResponseOutter-middle {
-        height: 29%; } }
+        height: 35%; } }
+    @media only screen and (max-width: 300px) {
+      .calcResponseOutter-middle {
+        height: 44%; } }
   .calcResponseOutter-bottom {
     padding-left: 1rem;
     text-align: left;
@@ -11961,9 +11964,9 @@ p {
     border-top: 4px solid #293151; }
     @media only screen and (max-width: 300px) {
       .calcResponseOutter-bottom {
-        height: 43%; } }
+        height: 30%; } }
     .calcResponseOutter-bottom-monthly {
-      height: 50%; }
+      height: 60%; }
 
 .calc-form {
   background-color: #f5f5f2;

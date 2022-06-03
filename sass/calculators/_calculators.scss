@@ -84,11 +84,11 @@
         height: 33%;
 
         @media only screen and (max-width: 500px) {
-            height: 27%;
+            height: 26%;
         }
 
         &-monthly{
-            height: 50%;
+            height: 40%;
         }
 
     }
@@ -99,7 +99,11 @@
         border-top: 4px solid $footer-light;
 
         @media only screen and (max-width: 500px) {
-            height: 29%;
+            height: 35%;
+        }
+
+        @media only screen and (max-width: 300px) {
+            height: 44%;
         }
 
 
@@ -113,11 +117,11 @@
         border-top: 4px solid $footer-light;
 
         @media only screen and (max-width: 300px) {
-            height: 43%;
+            height: 30%;
         }
 
         &-monthly{
-            height: 50%;
+            height: 60%;
         }
 
     }
