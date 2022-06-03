@@ -11944,6 +11944,8 @@ p {
     @media only screen and (max-width: 500px) {
       .calcResponseOutter-top {
         height: 27%; } }
+    .calcResponseOutter-top-monthly {
+      height: 50%; }
   .calcResponseOutter-middle {
     padding-top: .5rem;
     height: 33%;
@@ -11960,6 +11962,8 @@ p {
     @media only screen and (max-width: 300px) {
       .calcResponseOutter-bottom {
         height: 43%; } }
+    .calcResponseOutter-bottom-monthly {
+      height: 50%; }
 
 .calc-form {
   background-color: #f5f5f2;
