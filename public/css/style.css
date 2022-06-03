@@ -11991,3 +11991,9 @@ p {
   text-align: center;
   margin-top: 1rem;
   margin-bottom: 1rem; }
+
+.repayOrIoButton {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  background-color: #efbf6e;
+  color: #1f253d; }
