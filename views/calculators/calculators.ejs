@@ -70,7 +70,26 @@
                 </div>
                 <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
                   <form class="calc-form" action="">
-    
+
+                    <input type="radio" class="btn-check" name="repayOrIo" id="repay" autocomplete="off" checked>
+                    <label class="btn repayOrIoButton repayOrIoButton-selected" id="repay-label" for="repay">Repayment</label>
+
+                    <input type="radio" class="btn-check" name="repayOrIo" id="io" autocomplete="off">
+                    <label class="btn repayOrIoButton" for="io" id="io-label">Interest Only</label>
+                    <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
+                    <script>
+
+                      //Changes the style of the button
+                        $('input:radio').change(function(){
+                        $(".repayOrIoButton").removeClass("repayOrIoButton-selected");
+                        if($("#io").is(":checked")) {  
+                        $("#io-label").addClass("repayOrIoButton-selected");
+                       }else{
+                        $("#repay-label").addClass("repayOrIoButton-selected")
+                       }
+                      });
+
+                    </script>
                     <div class="mb-3">
                       <label for="loanAmount" class="form-label">
                         Mortgage Amount
@@ -171,41 +190,91 @@
 
 <!--Calculates the outputs for the monthly payment-->
 
-<!--
-  Change all of the inputs from values to placeholders 
-  Run the convert empty to 0 function on each individual element
--->
+
 <script>
+  var repayOrIo = document.getElementsByName("repayOrIo");
   var la = document.getElementById("loanAmount");
   var t = document.getElementById("term");
   var ir = document.getElementById("interestRate");
   var d = document.getElementById("depositMR");
   var monthlyPaymentSpan = document.getElementById("monthlyRepayment");
   var allElements = document.getElementsByClassName("repaymentInput");
+
+
+
+
  for (let i = 0; i < allElements.length; i++){
    allElements[i].addEventListener("keyup", function(e){
+
+    if(document.getElementById("repay").checked){
      var P = convertEmptyFieldsTo0(la);
      var Y = convertEmptyFieldsTo0(t);
-     var I = convertEmptyFieldsTo0(ir);
-     console.log(I)
+     var interestRate = convertEmptyFieldsTo0(ir);
+     
      var deposit = convertEmptyFieldsTo0(d);
      P = parseInt(P, 10);
-     I = parseFloat(I, 10).toFixed(2);
+     interestRate = parseFloat(interestRate);
      Y = parseInt(Y, 10);
-     I = I /100 /12;
+     interestRate = interestRate /100 /12;
      Y = Y * 12;
-     toThePowerOfRate = Math.pow(I + 1, Y);
-     topNum = I * toThePowerOfRate;
+     toThePowerOfRate = Math.pow(interestRate + 1, Y);
+     topNum = interestRate * toThePowerOfRate;
      bottomNum = toThePowerOfRate - 1;
  
      var monthlyPayment = topNum /bottomNum * P;
  
      monthlyPayment = monthlyPayment.toFixed(2);
      monthlyPaymentSpan.textContent = monthlyPayment;
-      
+  }else{
+      loanAmount = parseInt(la.value);
+      interestRate = parseFloat(ir.value);
+
+      monthlyPayment = (loanAmount / 100) * interestRate;
+      monthlyPayment = monthlyPayment / 12;
+
+      monthlyPaymentSpan.textContent = monthlyPayment.toFixed(2);
+  }   
    })
- }           
+ }     
+ 
+ //Listens for a change from repayment to interest only or vice versa and update the output
+
+$("input:radio").change(function(){
+  if(document.getElementById("io").checked){
+      console.log("io checked")
+      loanAmount = parseInt(la.value);
+      interestRate = parseFloat(ir.value);
+
+      monthlyPayment = (loanAmount / 100) * interestRate;
+      monthlyPayment = monthlyPayment / 12;
+
+      monthlyPaymentSpan.textContent = monthlyPayment.toFixed(2);
+  }else{
+    console.log("repay is checked ")
+     var P = convertEmptyFieldsTo0(la);
+     var Y = convertEmptyFieldsTo0(t);
+     var interestRate = convertEmptyFieldsTo0(ir);
+     
+     var deposit = convertEmptyFieldsTo0(d);
+     P = parseInt(P, 10);
+     interestRate = parseFloat(interestRate);
+     Y = parseInt(Y, 10);
+     interestRate = interestRate /100 /12;
+     Y = Y * 12;
+     toThePowerOfRate = Math.pow(interestRate + 1, Y);
+     topNum = interestRate * toThePowerOfRate;
+     bottomNum = toThePowerOfRate - 1;
+ 
+     var monthlyPayment = topNum /bottomNum * P;
+ 
+     monthlyPayment = monthlyPayment.toFixed(2);
+     monthlyPaymentSpan.textContent = monthlyPayment;
+
+  }
+})
 </script>
+
+
 
 
 <!--Bootstrap tooltip trigger-->
@@ -228,7 +297,6 @@ var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
   var maxLoan = "";
   var LTV = document.getElementById("LTV");
   var allElements = document.getElementsByClassName("maxLoanInput");
-  console.log(allElements)
 
   for (let i = 0; i < allElements.length; i++){
     allElements[i].addEventListener("keyup", function(e){
@@ -259,7 +327,7 @@ var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
     if(field.value.length == 0){
       return 0;
     }else{
-      return parseInt(field.value);
+      return parseFloat(field.value);
     }
   }
 
@@ -276,12 +344,12 @@ document.getElementById("myTab").addEventListener("click", function(e){
     document.getElementById("calcResponseMaxLoan").style.display = "block";
     document.getElementById("calcResponseMonthlyCost").style.display = "none";
   }else if(monthlyCostTab.classList.contains("active")){
-    console.log("monthlyCost")
+   
     document.getElementById("calcResponseMaxLoan").style.display = "none";
     document.getElementById("calcResponseMonthlyCost").style.display = "block";
    }
   }
-  displayUpdate()
+
 });
   // var maxLoanDiv = document.getElementById("nav-home-tab");
   // var monthlyPayDiv = document.getElementById("nav-profile-tab");
