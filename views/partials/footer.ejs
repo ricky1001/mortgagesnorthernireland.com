@@ -177,31 +177,49 @@
   let quickEnquiryElement = `<%- include('./enquiry-modal-options/quick-enquiry.ejs') %>`;
   let detailedEnquiryElement = `<%- include('./enquiry-modal-options/detailed-enquiry.ejs') %>`;
   let callUsElement =  `<%- include('./enquiry-modal-options/call-us.ejs') %>`;
+  let backToMainLink = document.getElementById("back-to-main");
+
+
 
   
          
-          const mainMenu =`<%- include('./enquiry-modal-options/call-us.ejs') %>`;
+          const mainMenu =`<%- include('./enquiry-modal-options/options.ejs') %>`;
           
-          backToMainLink.addEventListener("click", function(e){
-          e.preventDefault();
-          setHTMLProductsString(mainMenu)
+    document.addEventListener("click", function(e){
+      e.preventDefault();
+      console.log(e.target)
+      console.log(e.target.id)
+    if(e.target && e.target.id === "back-to-main"){
+    setHTMLProductsString(mainMenu);
+    }
   })
   
 
-  quickEnquiryLink.addEventListener("click", function(e){
-    e.preventDefault();
-    setHTMLProductsString(quickEnquiryElement)
+  document.addEventListener("click", function(e){
+      e.preventDefault();
+      console.log(e.target)
+      console.log(e.target.id)
+    if(e.target && e.target.id === "quick-enquiry"){
+    setHTMLProductsString(mainMenu);
+    }
   })
 
-  detailedEnquiryLink.addEventListener("click", function(e){
-    e.preventDefault();
-    setHTMLProductsString(detailedEnquiryElement)
+  document.addEventListener("click", function(e){
+      e.preventDefault();
+      console.log(e.target)
+      console.log(e.target.id)
+    if(e.target.id == "detailed-enquiry"){
+    setHTMLProductsString(mainMenu);
+    }
   })
 
-  callUsLink.addEventListener("click", function(e){
-    console.log("fuck")
-    e.preventDefault();
-    setHTMLProductsString(callUsElement)
+  document.addEventListener("click", function(e){
+      e.preventDefault();
+      console.log(e.target)
+      console.log(e.target.id)
+    if(e.target && e.target.id === "call-us"){
+    setHTMLProductsString(mainMenu);
+    }
   })
 
 
