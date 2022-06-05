@@ -171,56 +171,70 @@
 
 <script>
   var container = document.getElementById("enquiry-modal-container");
+
   var quickEnquiryLink = document.getElementById("quick-enquiry");
   var detailedEnquiryLink = document.getElementById("detailed-enquiry");
   var callUsLink = document.getElementById("call-us");
+
+
+  const mainMenu =`<%- include('./enquiry-modal-options/options.ejs') %>`;
   let quickEnquiryElement = `<%- include('./enquiry-modal-options/quick-enquiry.ejs') %>`;
   let detailedEnquiryElement = `<%- include('./enquiry-modal-options/detailed-enquiry.ejs') %>`;
   let callUsElement =  `<%- include('./enquiry-modal-options/call-us.ejs') %>`;
   let backToMainLink = document.getElementById("back-to-main");
 
+  //Fucntion takes in 2 variables the link and the element 
+  //loop through the link elements 
+  //Add click listener
+  //check the id
+  //Displays the element 
 
+   function addListeners(link, element){
+     document.addEventListener("click", function(e){
+      if(e.target.id === link.id){
+        console.log("match")
+        e.preventDefault();
+        setHTMLProductsString(element)
+       }
+     })
+  }
 
+  addListeners(quickEnquiryLink, quickEnquiryElement);
+  addListeners(detailedEnquiryLink, detailedEnquiryElement);
+  addListeners(callUsLink, callUsElement);
+/*
+  document.addEventListener("click", function(e){
+    if(e.target.id === "quick-enquiry"){
+      e.preventDefault();
+      console.log(e.target.id)
+      setHTMLProductsString(quickEnquiryElement);
+    }
+  })
+
+  document.addEventListener("click", function(e){
+    if(e.target.id == "detailed-enquiry"){
+      e.preventDefault();
+      setHTMLProductsString(detailedEnquiryElement);
+    }
+  })
+
+  document.addEventListener("click", function(e){
+    if(e.target.id == "call-us"){
+      e.preventDefault();
+      setHTMLProductsString(callUsElement);
+    }
+  })
+*/
   
          
-          const mainMenu =`<%- include('./enquiry-modal-options/options.ejs') %>`;
-          
-    document.addEventListener("click", function(e){
-      e.preventDefault();
-      console.log(e.target)
-      console.log(e.target.id)
+    
+  document.addEventListener("click", function(e){
     if(e.target && e.target.id === "back-to-main"){
-    setHTMLProductsString(mainMenu);
-    }
-  })
-  
-
-  document.addEventListener("click", function(e){
       e.preventDefault();
-      console.log(e.target)
-      console.log(e.target.id)
-    if(e.target && e.target.id === "quick-enquiry"){
     setHTMLProductsString(mainMenu);
     }
   })
 
-  document.addEventListener("click", function(e){
-      e.preventDefault();
-      console.log(e.target)
-      console.log(e.target.id)
-    if(e.target.id == "detailed-enquiry"){
-    setHTMLProductsString(mainMenu);
-    }
-  })
-
-  document.addEventListener("click", function(e){
-      e.preventDefault();
-      console.log(e.target)
-      console.log(e.target.id)
-    if(e.target && e.target.id === "call-us"){
-    setHTMLProductsString(mainMenu);
-    }
-  })
 
 
   function setHTMLProductsString(str){
