@@ -167,7 +167,7 @@
 
   const mainMenu =`<%- include('./enquiry-modal-options/options.ejs') %>`;
   let quickEnquiryElement = `<%- include('./enquiry-modal-options/quick-enquiry.ejs') %>`;
-  let detailedEnquiryElement = `<%- include('./enquiry-modal-options/detailed-enquiry.ejs') %>`;
+  let detailedEnquiryElement = `<%- include('./enquiry-modal-options/new-form-attempt.ejs') %>`;
   let callUsElement =  `<%- include('./enquiry-modal-options/call-us.ejs') %>`;
   let backToMainLink = document.getElementById("back-to-main");
 
@@ -190,31 +190,7 @@
   addListeners(quickEnquiryLink, quickEnquiryElement);
   addListeners(detailedEnquiryLink, detailedEnquiryElement);
   addListeners(callUsLink, callUsElement);
-/*
-  document.addEventListener("click", function(e){
-    if(e.target.id === "quick-enquiry"){
-      e.preventDefault();
-      console.log(e.target.id)
-      setHTMLProductsString(quickEnquiryElement);
-    }
-  })
-
-  document.addEventListener("click", function(e){
-    if(e.target.id == "detailed-enquiry"){
-      e.preventDefault();
-      setHTMLProductsString(detailedEnquiryElement);
-    }
-  })
-
-  document.addEventListener("click", function(e){
-    if(e.target.id == "call-us"){
-      e.preventDefault();
-      setHTMLProductsString(callUsElement);
-    }
-  })
-*/
   
-         
     
   document.addEventListener("click", function(e){
     if(e.target && e.target.id === "back-to-main"){
@@ -233,6 +209,7 @@
 
 
 </script>
+<script src="js/new-form-attempt.js"></script>
   <!--New Modal - Testing - This is a fresh modal and will contain enquiry options  -- End  -->
 
 
@@ -330,7 +307,7 @@
 
 <!--Facebook Pixel Event Contact Number Tracker End -->
 
-<%- include('quick-call') %>
+
 
 
 
