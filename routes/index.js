@@ -39,8 +39,9 @@ let args = {
 //Required for Best Buy End
 
 //message received
-router.get("/testing-index", function(req, res){
-  res.render("testing-index", {
+router.get("/testing", function(req, res){
+  console.log("here")
+  res.render("testing", {
                           metatitle: "Testing Index",
                           metadescription: "Testing Index"
   })
