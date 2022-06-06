@@ -56,6 +56,34 @@ function validateForm() {
       // and set the current valid status to false:
       valid = false;
     }
+    //New Code Start
+    if(y[i].type == "email"){
+        function ValidateEmail(input) {
+
+            var validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+          
+            if (input.value.match(validRegex)) {
+          
+              alert("Valid email address!");
+          
+              document.form1.text1.focus();
+          
+              return true;
+          
+            } else {
+          
+              alert("Invalid email address!");
+          
+              document.form1.text1.focus();
+          
+              return false;
+          
+            }
+          
+          }
+          ValidateEmail(y[i])
+    }
+    //New Code End
   }
   // If the valid status is true, mark the step as finished and valid:
   if (valid) {
