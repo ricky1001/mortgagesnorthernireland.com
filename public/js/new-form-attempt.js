@@ -1,5 +1,3 @@
-
-
 var currentTab = 0; // Current tab is set to be the first tab (0)
 showTab(currentTab); // Display the current tab
 
@@ -59,24 +57,12 @@ function validateForm() {
   y = x[currentTab].getElementsByTagName("input");
   // A loop that checks every input field in the current tab:
   for (i = 0; i < y.length; i++) {
-<<<<<<< Updated upstream
     //Check if the field is of type email
         //New Code Start
         if(y[i].type == "email"){
           valid = ValidateEmail(y[i])
      }
      //New Code End
-=======
-
-    //If field is of type email
-        //Check the email field is valid
-        if(y[i].type == "email"){
-
-            ValidateEmail(y[i], valid)
-      }
-      //Check email field is valid end
-    
->>>>>>> Stashed changes
     // If a field is empty...
     if (y[i].value == "") {
       // add an "invalid" class to the field:
@@ -86,9 +72,6 @@ function validateForm() {
     }
   }
   // If the valid status is true, mark the step as finished and valid:
-  console.log("valid")
-  console.log(valid)
-  console.log("valid")
   if (valid) {
     document.getElementsByClassName("step")[currentTab].className += " finish";
   }
@@ -107,7 +90,6 @@ function fixStepIndicator(n) {
   x[n].className += " active";
 }
 
-<<<<<<< Updated upstream
 //Function to check if an email is valid
 
 function ValidateEmail(input) {
@@ -117,22 +99,5 @@ function ValidateEmail(input) {
   } else {
     input.className += " invalid"
     return false;
-=======
-//Function to validate email addresses
-function ValidateEmail(input, valid) {
-  
-  var validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/; 
-  if (input.value.match(validRegex)) { 
-    valid = true  
-    console.log("valid should be true")   
-    console.log("valid is " + true)  
-    console.log("valid should be true")
-     return valid = true;
-  } else {  
-    valid = "false"
-    console.log("valid should be false")
-    input.className += " invalid";
-      return valid = false;
->>>>>>> Stashed changes
   }
 }
