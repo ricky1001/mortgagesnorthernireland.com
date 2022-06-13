@@ -1,17 +1,27 @@
 
 const submit = document.getElementById("submit");
 const form = document.getElementById("quick-enquiry-form");
-submit.addEventListener("click", function(e){
-   e.preventDefault();
-   form.submit();
-   
-   console.log("default prevented")
-   
-})
+var tabs = document.getElementsByClassName("tab");
 var currentTab = 0;
 
 
 showTab(currentTab)
+
+submit.addEventListener("click", function(e){
+   console.log(tabs)
+   console.log(currentTab)
+   console.log(tabs[2])
+   e.preventDefault();
+   inputs = tabs[currentTab].getElementsByTagName("input");
+   var valid = true;
+   valid = validateForm(inputs, valid);
+   console.log(valid)
+   if(valid){
+      form.style.display = "none";
+      document.getElementById("thankyou").style.display = "block"
+   }
+   
+})
 
 
 
