@@ -16,9 +16,21 @@ submit.addEventListener("click", function(e){
    console.log("returned value of valid below")
    console.log(valid)
    if(valid){
-      form.submit();
-      form.style.display = "none";
-      document.getElementById("thankyou").style.display = "block"
+      //Figure out way to submit data
+      console.log("about to fetch")
+      fetch("/testing-fetch", {
+         method: "POST",
+         body: {
+            firstName: "Richard"
+         }
+      }).then((data =>{
+         console.log(data)
+         form.style.display = "none";
+         document.getElementById("thankyou").style.display = "block"
+      })).catch(function (error){
+         console.log(error)
+      })
+      
    }else{
       console.log("not valid")
       tabs[currentTab].className = " invalid";

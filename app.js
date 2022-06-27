@@ -28,6 +28,13 @@ var User =                  require("./models/user");
 
 //requiring routes
 
+app.post("/testing-fetch", function(req, res){
+  return res.status(200).json({
+    status: 200,
+    message: "all good"
+  })
+})
+
 var buytoletRoutes           = require("./routes/buytolet");
 var enquiryRoutes            = require("./routes/enquiry");
 var firstTimeBuyerRoutes     = require("./routes/firstTimeBuyer");
@@ -44,6 +51,7 @@ var latestRatesRoutes        = require("./routes/latestRates");
 var bestBuys                 = require("./routes/best-Buys");
 var adverts                  = require("./routes/adverts");
 var test                     = require("./routes/test");
+var testingFetch             = require("./routes/testing-fetch");
 
 
 //Trying to add Quick Call Back Logic to all routes
@@ -186,6 +194,7 @@ app.use(latestRatesRoutes);
 app.use(bestBuys);
 app.use(adverts);
 app.use(test);
+app.use(testingFetch);
 
 
 
