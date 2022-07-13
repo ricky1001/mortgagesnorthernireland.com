@@ -4,13 +4,15 @@ const form = document.getElementById("quick-enquiry-form");
 var tabs = document.getElementsByClassName("tab");
 var currentTab = 0;
 
-
 showTab(currentTab)
 
 submit.addEventListener("click", function(e){
-
+   console.log("currentab below")
+    console.log(currentTab)
    e.preventDefault();
-   inputs = tabs[currentTab-1].getElementsByTagName("textarea");
+   inputs = tabs[currentTab].getElementsByTagName("textarea");
+   console.log("inputs below")
+   console.log(inputs)
    var valid = true;
    valid = validateForm(inputs, valid);
    console.log("returned value of valid below")
@@ -31,9 +33,6 @@ submit.addEventListener("click", function(e){
          console.log(error)
       })
       
-   }else{
-      console.log("not valid")
-      tabs[currentTab].className = " invalid";
    }
    
 })
@@ -41,9 +40,9 @@ submit.addEventListener("click", function(e){
 
 
 function nextPrev(n){
+   console.log("next prev running")
 
-   var tabs = document.getElementsByClassName("tab");
-   var nextBtn = document.getElementById("nextBtn");
+   
    var valid = true;
 
    // Validate the current tab if n = 1
@@ -55,12 +54,18 @@ function nextPrev(n){
    }
 
    if(valid == true){
+      console.log("currenttab before increment " + currentTab)
+      console.log(tabs)
+      console.log(tabs[2])
    
       tabs[currentTab].style.display = "none";
 
       currentTab = currentTab + n;
+      console.log("currenttab after increment " + currentTab)
+    
   
       tabs[currentTab].style.display = "block";
+      console.log(currentTab )
       showTab(currentTab)
    }
    
@@ -71,6 +76,8 @@ function validateForm(inputsHTMLList, v){
 
    //loop through the inputs and set invalid class to any applicable fields if any field changes the value of valid to false it will never change back 
    for(var i = 0; i < inputsHTMLList.length; i++){
+      console.log("inputsHTMLList below")
+      console.log(inputsHTMLList)
 
       if(inputsHTMLList[i].value == ""){
         
@@ -86,6 +93,7 @@ function validateForm(inputsHTMLList, v){
             v = false;
           } 
       }
+
    }
 
    return v;
@@ -101,21 +109,21 @@ function showTab(ct){
    tabs[ct].style.display = "block";
 
    // if the tab is o only display the next button
-   console.log("current Tab Below")
-   console.log(currentTab)
-   if(ct == 0){
+   if(ct === 0){
+      //If you are on the first pagge of the form 
+      console.log("ct is equalt to 0")
       prevBtn.style.display = "none";
       submitBtn.style.display = "none";
       nextBtn.style.display = "inline"
-   }
-   // if the tab is the length of the tab list -1 the next button becomes the submit button
-   if(ct == (tabs.length -1)){
+   }else if (ct == (tabs.length -1)){
+      //If you are on the last page of the form
       nextBtn.style.display = "none";
       submitBtn.style.display = "inline"
-      
    }else{
+      //If you are anywhere in the middle of the form
       prevBtn.style.display = "inline";
       nextBtn.style.display = "inline";
       submitBtn.style.display = "none";
    }
+  
 }
