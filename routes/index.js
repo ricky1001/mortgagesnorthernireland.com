@@ -40,10 +40,19 @@ let args = {
 
 //message received
 router.get("/testing", function(req, res){
-  console.log("here")
   res.render("testing", {
                           metatitle: "Testing Index",
                           metadescription: "Testing Index"
+  })
+});
+
+router.post("/testing-fetch", function(req, res){
+  console.log("here r there")
+  console.log("req original  url " + req.originalUrl)
+  console.log("rreq body" + JSON.stringify(req.body)) 
+  return res.status(200).json({
+       status: 200,
+       message: "whatthe  fuck"
   })
 });
 
