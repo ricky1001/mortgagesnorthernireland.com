@@ -23,10 +23,16 @@ const databaseConnect = 'mongodb+srv://ricky1001:Astron!23@mortgageadviserni.gco
 //URL string to connect to mongodb Atlas finish
 
 
+app.use(express.json());
+
+const controller = require("./controller")
+
+app.post("/testing-fetch", controller.postingData) 
+
+
+
 //Model Schemas
 var User =                  require("./models/user");
-
-
 var buytoletRoutes           = require("./routes/buytolet");
 var enquiryRoutes            = require("./routes/enquiry");
 var firstTimeBuyerRoutes     = require("./routes/firstTimeBuyer");
