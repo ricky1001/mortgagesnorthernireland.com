@@ -26,14 +26,6 @@ const databaseConnect = 'mongodb+srv://ricky1001:Astron!23@mortgageadviserni.gco
 //Model Schemas
 var User =                  require("./models/user");
 
-//requiring routes
-
-app.post("/testing-fetch", function(req, res){
-  return res.status(200).json({
-    status: 200,
-    message: "all good"
-  })
-})
 
 var buytoletRoutes           = require("./routes/buytolet");
 var enquiryRoutes            = require("./routes/enquiry");
