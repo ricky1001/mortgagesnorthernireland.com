@@ -14,19 +14,22 @@ submit.addEventListener("click", function(e){
    if(valid){
       //Gather all data in the form and post it to a route
       console.log("About too  run fetch")
+
+      const formData = {
+         firstName: document.getElementById("fname").value,
+         lastName: document.getElementById("lname").value
+      }
       fetch("/testing-fetch", {
          method: "POST",
-         body: JSON.stringify({
-            firstName: "Richard"
-         }),
-         headers:{
-            "Content-Type": "application/json"
-         }
+         body: JSON.stringify(formData),
+         headers: {
+           "Content-Type": "application/json",
+         },
       })
       .then((data =>{
          form.style.display = "none";
          document.getElementById("thankyou").style.display = "block"
-         console.log("data" + data)
+         console.log("success" + JSON.stringify(data))
       }))
       .catch(function (error){
          console.log(error)
