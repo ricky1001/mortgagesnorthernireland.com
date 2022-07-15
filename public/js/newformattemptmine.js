@@ -13,15 +13,22 @@ submit.addEventListener("click", function(e){
    valid = validateForm(inputs, valid);
    if(valid){
       //Gather all data in the form and post it to a route
+      console.log("About too  run fetch")
       fetch("/testing-fetch", {
          method: "POST",
-         body: {
+         body: JSON.stringify({
             firstName: "Richard"
+         }),
+         headers:{
+            "Content-Type": "application/json"
          }
-      }).then((data =>{
+      })
+      .then((data =>{
          form.style.display = "none";
          document.getElementById("thankyou").style.display = "block"
-      })).catch(function (error){
+         console.log("data" + data)
+      }))
+      .catch(function (error){
          console.log(error)
       })
       
