@@ -17,7 +17,10 @@ submit.addEventListener("click", function(e){
 
       const formData = {
          firstName: document.getElementById("fname").value,
-         lastName: document.getElementById("lname").value
+         lastName: document.getElementById("lname").value,
+         email: document.getElementById("email").value,
+         contactNumber: document.getElementById("number").value,
+         enquiry: document.getElementById("enquiry").value
       }
       fetch("/testing-fetch", {
          method: "POST",
@@ -26,10 +29,14 @@ submit.addEventListener("click", function(e){
            "Content-Type": "application/json",
          },
       })
+      .then(function (response){
+         return response.json();
+      })
       .then((data =>{
          form.style.display = "none";
-         document.getElementById("thankyou").style.display = "block"
-         console.log("success" + JSON.stringify(data))
+         document.getElementById("thankyou").style.display = "block";
+         document.getElementById("thankyou").textContent = data.message;
+         console.log("success" + data.message)
       }))
       .catch(function (error){
          console.log(error)
