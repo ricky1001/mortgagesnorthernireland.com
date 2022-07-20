@@ -3,11 +3,12 @@ var router = express.Router();
 
 router.post("/testing-fetch", function(req, res){
      console.log("here r there")
-     console.log(req.body) 
+     console.log("this is the request body" + req.body) 
      return res.status(200).json({
           status: 200,
-          message: "whatthe  fuck"
+          message: "Your enquiry has been received and assigned to an adviser we will contact as soon as possible"
      })
+
 });
 
 
