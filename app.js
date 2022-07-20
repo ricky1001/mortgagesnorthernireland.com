@@ -25,9 +25,9 @@ const databaseConnect = 'mongodb+srv://ricky1001:Astron!23@mortgageadviserni.gco
 
 app.use(express.json());
 
-const controller = require("./controller")
+// const controller = require("./controller")
 
-app.post("/testing-fetch", controller.postingData) 
+// app.post("/testing-fetch", controller.postingData) 
 
 
 
